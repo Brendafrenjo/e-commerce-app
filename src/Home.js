@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div>
+    <div className="hero">
       <div class="card text-bg-dark">
-        <img src="..." class="card-img" alt="..." />
+        <img src="./Images/fashion-background.png" className="card-img img-fluid" alt="Background" />
         <div class="card-img-overlay">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">
