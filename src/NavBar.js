@@ -5,7 +5,7 @@ import Images from "./Images"
 export default function NavBar() {
   return (
     <div className="NavBar">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-style">
+      <nav className="navbar navbar-expand-lg bg-white navbar-style">
         <div className="container-fluid">
           <a className="navbar-brand fw-bold fs-4" href="/">
             <Images />
