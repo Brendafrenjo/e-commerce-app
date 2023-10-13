@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function MainContent() {
-  return <p>Hello</p>;
+  return <h1>e-Commerce App</h1>;
 }
