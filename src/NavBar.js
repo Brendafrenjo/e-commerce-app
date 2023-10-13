@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import Images from "./Images"
 
 export default function NavBar() {
   return (
@@ -7,7 +8,7 @@ export default function NavBar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-style">
         <div className="container-fluid">
           <a className="navbar-brand fw-bold fs-4" href="/">
-            BREE's ESSENTIALS
+            <Images />
           </a>
           <button
             className="navbar-toggler"

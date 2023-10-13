@@ -1,10 +1,10 @@
 import React from "react";
-import img1 from ",/Images/Frenjo's logo";
+import img1 from "./Images/Frenjos-logo.png";
 
 export default function Images() {
   return (
-    <div>
-      <img src={img1} alt="Logo"></img>
+    <div className="Images">
+      <img src={img1} alt="Logo" width="80"></img>
     </div>
   );
 }
