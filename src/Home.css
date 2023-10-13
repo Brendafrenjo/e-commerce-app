@@ -1,0 +1,8 @@
+.hero img {
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  color: white;
+}
