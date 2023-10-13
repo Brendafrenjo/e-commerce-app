@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div classNameName="App">
+    <div className="App">
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-style">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
