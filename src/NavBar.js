@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./NavBar.css";
-import Images from "./Images"
+import Images from "./Images";
 
 export default function NavBar() {
+  function handleResize() {
+    const navbar = document.querySelector(".navbar");
+    if (window.innerWidth >= 992) {
+      navbar.classList.add("fixed-top");
+    } else {
+      navbar.classList.remove("fixed-top");
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="NavBar">
       <nav className="navbar navbar-expand-lg bg-white navbar-style">
