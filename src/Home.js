@@ -7,7 +7,7 @@ export default function Home() {
       <div class="card text-bg-dark">
         <img src="./Images/fashion-background.png" className="card-img img-fluid" alt="Background" />
         <div class="card-img-overlay">
-          <h1 class="card-title">Chic, Timless, Frenjo's</h1>
+          <h1 class="card-title">Chic. Timeless. Frenjo's</h1>
           <p class="card-text">
             < a href="/" className="btn btn-light primary-button">SHOP NOW</a>
           </p>
