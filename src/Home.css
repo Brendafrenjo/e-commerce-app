@@ -6,3 +6,41 @@
   opacity: 0.5;
   color: white;
 }
+
+h1 {
+  text-align: center;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 1.5;
+  padding-top: 300px;
+}
+
+.primary-button {
+  text-transform: uppercase;
+  padding: 18px 30px;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 5px;
+  line-height: 27px;
+  margin-top: 30px;
+}
+
+@media (max-width: 960px) {
+  h1 {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 700;
+    padding-top: 150px;
+  }
+
+  .primary-button {
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 3px;
+    line-height: 20px;
+  }
+}
+
+
