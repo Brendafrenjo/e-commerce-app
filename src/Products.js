@@ -6,6 +6,5 @@ export default function Product() {
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
-
   return <div></div>;
 }
