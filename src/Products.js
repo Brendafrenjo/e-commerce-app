@@ -24,18 +24,18 @@ export default function Product() {
   }, []);
 
   const Loading = () => {
-    return (
-      <>
-        Loading...
-      </>
-    )
-  }
+    return <>Loading...</>;
+  };
 
   const ShowProducts = () => {
     return (
-      <div></div>
-    )
-  }
+      <div className="buttons">
+        <button className="btn btn-outline-dark">All</button>
+        <button className="btn btn-outline-dark">Women's Clothin</button>
+        <button className="btn btn-outline-dark">Men's Clothin</button>
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -47,7 +47,7 @@ export default function Product() {
           </div>
         </div>
         <div className="row justify-content-center">
-          {loading ? <Loading/> : <ShowProducts/>}
+          {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>
     </div>
