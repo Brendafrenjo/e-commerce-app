@@ -23,6 +23,20 @@ export default function Product() {
     getProducts();
   }, []);
 
+  const Loading = () => {
+    return (
+      <>
+        Loading...
+      </>
+    )
+  }
+
+  const ShowProducts = () => {
+    return (
+      <div></div>
+    )
+  }
+
   return (
     <div>
       <div className="container">
