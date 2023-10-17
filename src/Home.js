@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import Products from "./Products"
 import "./Home.css";
 
 export default function Home() {
-  const [state, setState] = useState({ appTitle: "Customers" });
-
   return (
     <div>
       <div className="hero">
@@ -23,7 +22,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <h4>{state.appTitle}</h4>
+      <Products />
     </div>
   );
 }
