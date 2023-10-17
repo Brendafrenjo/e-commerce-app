@@ -27,9 +27,13 @@ export default function Product() {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <h1>Latest Product</h1>
+          <div className="col-12 mb-5">
+            <h1 className="display-6 fw-bolder text-center">Latest Product</h1>
+            <hr />
           </div>
+        </div>
+        <div className="row justify-content-center">
+          {loading ? <Loading/> : <ShowProducts/>}
         </div>
       </div>
     </div>
