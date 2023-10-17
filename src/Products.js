@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Product() {
-  const [data, setData] = useSatte([]);
+  const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
@@ -15,9 +15,23 @@ export default function Product() {
         setFilter(await response.json());
         setLoading(false);
       }
+
+      return () => {
+        componentMounted = false;
+      };
     };
     getProducts();
-  }, [input]);
+  }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h1>Latest Product</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
