@@ -4,7 +4,12 @@ import "./Products.css";
 export default function Products() {
   return (
     <div className="Products">
-      <h1>Customers</h1>
+      <div className="row">
+        <div className="col-12">
+          <h1>Latest Products</h1>
+          <hr />
+        </div>
+      </div>
     </div>
   );
 }
