@@ -9,7 +9,7 @@ export default function Products() {
         <div className="col-12">
           <h1>Latest Products</h1>
           <hr />
-          <div className="buttons">
+          <div className="buttons d-flex justify-content-center mb-5 pb-5">
             <button className="btn btn-outline-dark me-2">Cargo Pants</button>
             <button className="btn btn-outline-dark me-2">Dresses</button>
             <button className="btn btn-outline-dark me-2">Shoes</button>

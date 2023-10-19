@@ -13,7 +13,7 @@ export default function Products() {
   }
 
   return (
-    <div className="Products mt-4">
+    <div className="Products">
       <h4>
         {state.appTitle}{" "}
         <span className="badge bg-success">{state.customersCount}</span>
