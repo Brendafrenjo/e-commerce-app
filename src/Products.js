@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import "./Products.css";
 
 export default function Products() {
-  const [title, setTitle] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(5);
 
-  const state = {appTitle: "Customers"}
+  const state = { appTitle: "Customers", customersCount: data };
+
+  function handleRefresh(event) {
+    console.log("Refresh clicked");
+    event.preventDefault();
+    setData(10);
+  }
 
   return (
     <div className="Products">
@@ -15,7 +20,13 @@ export default function Products() {
           <hr />
         </div>
       </div>
-      <h4>{state.appTitle}</h4>
+      <h4>
+        {state.appTitle}{" "}
+        <span className="badge bg-success">{state.customersCount}</span>
+        <button className="btn btn-success ms-2" onClick={handleRefresh}>
+          Refresh
+        </button>
+      </h4>
     </div>
   );
 }
