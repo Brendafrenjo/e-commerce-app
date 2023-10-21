@@ -4,7 +4,6 @@ import { FallingLines } from "react-loader-spinner";
 import MainContent from "./MainContent";
 
 export default function Products() {
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(null);
 
   if (loading) {
