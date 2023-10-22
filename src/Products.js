@@ -5,8 +5,7 @@ import MainContent from "./MainContent";
 
 export default function Products() {
   const [loading, setLoading] = useState(null);
-  const [data, setData] = useState(null)
-
+  
   if (loading) {
     return (
       <div className="Products">
@@ -29,8 +28,7 @@ export default function Products() {
       </div>
     );
   } else {
-    setLoading();
-    return (
+    setLoading(
       <div>
       <FallingLines
         color="#4fa94d"
