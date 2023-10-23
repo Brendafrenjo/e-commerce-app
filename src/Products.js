@@ -5,6 +5,7 @@ import MainContent from "./MainContent";
 
 export default function Products() {
   const [loading, setLoading] = useState(null);
+  const [data, setData] = useState(null)
   
   if (loading) {
     return (
