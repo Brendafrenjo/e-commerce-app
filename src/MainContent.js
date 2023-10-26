@@ -18,14 +18,14 @@ export default function Products() {
       {
         id: 2,
         name: "Lucy",
-        phone: "325-154",
+        phone: null,
         email: "lucyfree@gmail.com",
         address: { city: "Siaya" },
       },
       {
         id: 3,
         name: "Grace",
-        phone: "985-523",
+        phone: null,
         email: "gracefree@gmail.com",
         address: { city: "Kisumu" },
       },
@@ -70,7 +70,13 @@ export default function Products() {
               <tr key={index}>
                 <td>{customer.id}</td>
                 <td>{customer.name}</td>
-                <td>{customer.phone}</td>
+                <td>
+                  {customer.phone ? (
+                    customer.phone
+                  ) : (
+                    <div className="bg-warning">No Phone</div>
+                  )}
+                </td>
                 <td>{customer.email}</td>
                 <td>{customer.address.city}</td>
               </tr>
