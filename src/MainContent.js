@@ -45,6 +45,12 @@ export default function Products() {
     setData(10);
   }
 
+  function getPhoneToRender(phone) {
+    {
+      phone ? phone : <div className="bg-warning">No Phone</div>;
+    }
+  }
+
   return (
     <div className="Products">
       <h4>
@@ -70,13 +76,7 @@ export default function Products() {
               <tr key={index}>
                 <td>{customer.id}</td>
                 <td>{customer.name}</td>
-                <td>
-                  {customer.phone ? (
-                    customer.phone
-                  ) : (
-                    <div className="bg-warning">No Phone</div>
-                  )}
-                </td>
+                <td>{getPhoneToRender(customer.phone)}</td>
                 <td>{customer.email}</td>
                 <td>{customer.address.city}</td>
               </tr>
