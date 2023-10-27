@@ -43,12 +43,27 @@ export default function Products() {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center">
-          <button className="btn btn-outline-dark me-2">Cargo Pants</button>
-          <button className="btn btn-outline-dark me-2">Dresses</button>
-          <button className="btn btn-outline-dark me-2">Shoes</button>
-          <button className="btn btn-outline-dark me-2">Shirts and Tops</button>
-          <button className="btn btn-outline-dark">Accessories</button>
+        <div className="buttons flex-container">
+          <div className="box">
+            <div className="buttons-wrapper">
+              <button className="btn btn-outline-dark me-2 mb-3">All</button>
+              <button className="btn btn-outline-dark me-2 mb-3">
+                Men's Clothing
+              </button>
+              <button className="btn btn-outline-dark me-2 mb-3">
+                Women's Clothing
+              </button>
+              <button className="btn btn-outline-dark me-2 mb-3">
+                Jewelary
+              </button>
+              <button className="btn btn-outline-dark me-2 mb-3">
+                Electronics
+              </button>
+              <button className="btn btn-outline-dark mb-3">
+                Tops and Shirts
+              </button>
+            </div>
+          </div>
         </div>
         {filter.map((product, index) => (
           <div className="col-md-3" key={index}>
