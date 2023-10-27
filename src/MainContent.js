@@ -71,11 +71,11 @@ export default function Products() {
                 <td>{customer.id}</td>
                 <td>{customer.name}</td>
                 <td>
-                  {customer.phone
-                    ? customer.phone
-                    : ((
-                        <div className="bg-warning">No Phone</div>
-                      ): customer.phone)}
+                  {customer.phone ? (
+                    customer.phone
+                  ) : (
+                    <div className="bg-warning">No Phone</div>
+                  )}
                 </td>
                 <td>{customer.email}</td>
                 <td>{customer.address.city}</td>
