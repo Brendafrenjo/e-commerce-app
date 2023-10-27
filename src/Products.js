@@ -66,7 +66,7 @@ export default function Products() {
           </div>
         </div>
         {filter.map((product, index) => (
-          <div className="col-md-3 mb-4" key={index}>
+          <div className="col-md-3 mb-4 product-card" key={index}>
             <div className="card">
               <img
                 src={product.image}
