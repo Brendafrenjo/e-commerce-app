@@ -12,8 +12,13 @@
   justify-content: space-evenly;
 }
 
+.product-image {
+  height: 300px;
+}
+
 @media (max-width: 960px) {
   .Products h1 {
     font-weight: 700;
   }
+
 }
