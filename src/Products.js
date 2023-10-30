@@ -66,20 +66,6 @@ export default function Products() {
           </div>
         </div>
         {filter.map((product, index) => (
-          <div className="col-md-3 mb-4 product-card border border-dark me-2 pb-3 pt-3 rounded" key={index}>
-              <img
-                src={product.image}
-                className="card-img-top product-image"
-                alt={product.title}
-              />
-                <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">${product.price}</p>
-                <a href="#" className="btn btn-outline-dark">
-                  Quick Buy
-                </a>
-              </div>
-        ))}
-        {filter.map((product, index) => (
           <div className="col-md-3 mb-4 product-card" key={index}>
             <div className="card">
               <img
