@@ -16,6 +16,10 @@ h5 {
   justify-content: space-evenly;
 }
 
+.product-price {
+  font-size: 14px;
+}
+
 .product-image {
   height: 300px;
 }

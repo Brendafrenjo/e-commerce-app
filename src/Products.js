@@ -40,26 +40,51 @@ export default function Products() {
     );
   };
 
+  const filterProduct = (cat) => {
+    const updatedList = data.filter((x) => x.category === cat);
+    setFilter(updatedList);
+  };
+
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons flex-container">
           <div className="box">
             <div className="buttons-wrapper">
-              <button className="btn btn-outline-dark me-2 mb-3">All</button>
-              <button className="btn btn-outline-dark me-2 mb-3">
+              <button
+                className="btn btn-outline-dark me-2 mb-3"
+                onClick={() => setFilter(data)}
+              >
+                All
+              </button>
+              <button
+                className="btn btn-outline-dark me-2 mb-3"
+                onClick={() => filterProduct("men's cothing")}
+              >
                 Men's Clothing
               </button>
-              <button className="btn btn-outline-dark me-2 mb-3">
+              <button
+                className="btn btn-outline-dark me-2 mb-3"
+                onClick={() => filterProduct("women's cothing")}
+              >
                 Women's Clothing
               </button>
-              <button className="btn btn-outline-dark me-2 mb-3">
+              <button
+                className="btn btn-outline-dark me-2 mb-3"
+                onClick={() => filterProduct("jewelary")}
+              >
                 Jewelary
               </button>
-              <button className="btn btn-outline-dark me-2 mb-3">
+              <button
+                className="btn btn-outline-dark me-2 mb-3"
+                onClick={() => filterProduct("electronics")}
+              >
                 Electronics
               </button>
-              <button className="btn btn-outline-dark mb-3">
+              <button
+                className="btn btn-outline-dark mb-3"
+                onClick={() => filterProduct("tops and shirts")}
+              >
                 Tops and Shirts
               </button>
             </div>
@@ -75,9 +100,11 @@ export default function Products() {
               />
               <div className="card-body">
                 <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">${product.price}</p>
+                <p className="card-text lead fw-bold product-price">
+                  ${product.price}
+                </p>
                 <a href="#" className="btn btn-outline-dark">
-                  Quick Buy
+                  Buy Now
                 </a>
               </div>
             </div>
