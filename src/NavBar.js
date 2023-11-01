@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./NavBar.css";
 import Images from "./Images";
+import { NavLink  } from "react-router-dom";
 
 export default function NavBar() {
   function handleResize() {
