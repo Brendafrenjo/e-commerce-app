@@ -59,13 +59,13 @@ export default function Products() {
               </button>
               <button
                 className="btn btn-outline-dark me-2 mb-3"
-                onClick={() => filterProduct("men's cothing")}
+                onClick={() => filterProduct("men's clothing")}
               >
                 Men's Clothing
               </button>
               <button
                 className="btn btn-outline-dark me-2 mb-3"
-                onClick={() => filterProduct("women's cothing")}
+                onClick={() => filterProduct("women's clothing")}
               >
                 Women's Clothing
               </button>
