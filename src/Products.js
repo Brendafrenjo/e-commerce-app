@@ -71,21 +71,15 @@ export default function Products() {
               </button>
               <button
                 className="btn btn-outline-dark me-2 mb-3"
-                onClick={() => filterProduct("jewelary")}
+                onClick={() => filterProduct("jewelery")}
               >
-                Jewelary
+                Jewelery
               </button>
               <button
                 className="btn btn-outline-dark me-2 mb-3"
                 onClick={() => filterProduct("electronics")}
               >
                 Electronics
-              </button>
-              <button
-                className="btn btn-outline-dark mb-3"
-                onClick={() => filterProduct("tops and shirts")}
-              >
-                Tops and Shirts
               </button>
             </div>
           </div>
