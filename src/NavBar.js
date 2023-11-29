@@ -47,29 +47,29 @@ export default function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" to="/">
+                <a className="nav-link" to="/products">
                   Products
                 </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
               </li>
             </ul>
             <div className="buttons">
-              <NavLink to="/" className="btn btn-outline-dark me-2">
+              <NavLink to="/login" className="btn btn-outline-dark me-2">
                 <i className="fa-solid fa-right-to-bracket me-2 icon"></i>Login
               </NavLink>
-              <NavLink to="/" className="btn btn-outline-dark me-2">
+              <NavLink to="/register" className="btn btn-outline-dark me-2">
                 <i className="fa-solid fa-user-plus me-2 icon"></i>Register
               </NavLink>
-              <NavLink to="/" className="btn btn-outline-dark">
+              <NavLink to="/cart" className="btn btn-outline-dark">
                 <i className="fa-solid fa-cart-shopping icon me-2"></i>Cart (0)
               </NavLink>
             </div>
