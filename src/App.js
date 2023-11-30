@@ -3,16 +3,16 @@ import "./App.css";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import Products from "./Products";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/products" component={Products} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={Home} />
+        <Route path="/products" element={Products} />
+      </Routes>
     </div>
   );
 }
