@@ -47,9 +47,9 @@ export default function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" to="/products">
+                <NavLink className="nav-link" to="/products">
                   Products
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
