@@ -40,7 +40,7 @@ export default function Product() {
       <div>
         <div className="col-md-6">
           <img
-            scr={product.image}
+            src={product.image}
             alt={product.title}
             height="400px"
             width="400px"
