@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Products.css";
 import { FallingLines } from "react-loader-spinner";
 import MainContent from "./MainContent";
+import { NavLink } from "react-router-dom";
 
 export default function Products() {
   const [loading, setLoading] = useState(false);
@@ -97,9 +98,9 @@ export default function Products() {
                 <p className="card-text lead fw-bold product-price">
                   ${product.price}
                 </p>
-                <a href="#" className="btn btn-outline-dark">
+                <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
                   Buy Now
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

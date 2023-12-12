@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Bars } from "react-loader-spinner";
 
 export default function Product() {
@@ -31,6 +31,35 @@ export default function Product() {
           wrapperClass=""
           visible={true}
         />
+      </div>
+    );
+  }
+
+  function ShowProduct() {
+    return (
+      <div>
+        <div className="col-md-6">
+          <img
+            scr={product.image}
+            alt={product.title}
+            height="400px"
+            width="400px"
+          />
+        </div>
+        <div className="col-md-6">
+          <h4 className="text-uppercase text-black-50">{product.category}</h4>
+          <h1 className="display-5">{product.title}</h1>
+          <p className="lead">
+            Rating {product.rating && product.rating.rate}
+            <i class="fa-solid fa-star"></i>
+          </p>
+          <h3 className="display-6 fw-bold my-4">${product.price}</h3>
+          <p className="lead">{product.description}</p>
+          <button className="btn btn-outline-dark">Add to Cart</button>
+          <NavLink to="/cart" className="btn btn-dark">
+            Go to Cart
+          </NavLink>
+        </div>
       </div>
     );
   }
