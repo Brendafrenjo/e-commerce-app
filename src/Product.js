@@ -12,9 +12,8 @@ export default function Product() {
 
       const res = await fetch(`https://fakestoreapi.com/products/${id}`);
 
-      const data = await res.json();
-
-      console.log(data);
+      setProduct(await res.json());
+      setLoading(false);
     }
     getProduct();
   }, []);
