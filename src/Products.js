@@ -98,7 +98,7 @@ export default function Products() {
                 <p className="card-text lead fw-bold product-price">
                   ${product.price}
                 </p>
-                <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
+                <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark product-id">
                   Buy Now
                 </NavLink>
               </div>

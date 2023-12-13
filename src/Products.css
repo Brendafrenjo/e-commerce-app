@@ -37,4 +37,9 @@ h5 {
   .product-card {
     width: 230px;
   }
+
+  .product-id {
+    display: block;
+    margin: 0 auto;
+  }
 }

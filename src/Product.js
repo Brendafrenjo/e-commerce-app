@@ -69,7 +69,7 @@ export default function Product() {
   return (
     <div>
       <div className="container">
-        <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
+        <div className="row mb-5 mt-5">{loading ? <Loading /> : <ShowProduct />}</div>
       </div>
     </div>
   );
