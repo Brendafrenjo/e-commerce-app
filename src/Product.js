@@ -42,20 +42,22 @@ export default function Product() {
           <img
             src={product.image}
             alt={product.title}
-            height="400px"
-            width="400px"
+            height="350px"
+            width="350px"
           />
         </div>
         <div className="col-md-6">
-          <h4 className="text-uppercase text-black-50">{product.category}</h4>
-          <h1 className="display-5">{product.title}</h1>
+          <h4 className="text-uppercase text-black-50 pt-3">
+            {product.category}
+          </h4>
+          <h4 className="">{product.title}</h4>
           <p className="lead">
             Rating {product.rating && product.rating.rate}
             <i class="fa-solid fa-star"></i>
           </p>
-          <h3 className="display-6 fw-bold my-4">${product.price}</h3>
+          <h4 className="display-6 fw-bold my-4">${product.price}</h4>
           <p className="lead">{product.description}</p>
-          <button className="btn btn-outline-dark">Add to Cart</button>
+          <button className="btn btn-outline-dark me-2">Add to Cart</button>
           <NavLink to="/cart" className="btn btn-dark">
             Go to Cart
           </NavLink>
