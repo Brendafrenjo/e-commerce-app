@@ -1,4 +1,5 @@
-.Product {
+.Product .container {
+  max-width: 800px;
   display: block;
-  margin: 0 auto;
+  margin: 100px auto;
 }
