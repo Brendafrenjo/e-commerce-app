@@ -1,5 +1,11 @@
-.Product .container {
-  max-width: 800px;
-  display: block;
-  margin: 100px auto;
+@media (min-width: 960px) {
+   .Product .container {
+  margin: 130px auto;
+}
+}
+
+@media (max-width: 960px) {
+   .Product .container {
+  margin: 50px auto;
+}
 }
