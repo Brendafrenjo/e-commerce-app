@@ -25,7 +25,7 @@ export default function Product() {
         <Bars
           height="80"
           width="80"
-          color="#4fa94d"
+          color="#black"
           ariaLabel="bars-loading"
           wrapperStyle={{}}
           wrapperClass=""

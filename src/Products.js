@@ -32,7 +32,7 @@ export default function Products() {
     return (
       <div>
         <FallingLines
-          color="#4fa94d"
+          color="black"
           width="100"
           visible={true}
           ariaLabel="falling-lines-loading"
