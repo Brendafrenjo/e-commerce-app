@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Bars } from "react-loader-spinner";
+import "./Product.css";
 
 export default function Product() {
   const { id } = useParams();
@@ -69,7 +70,9 @@ export default function Product() {
   return (
     <div>
       <div className="container">
-        <div className="row mb-5 mt-5">{loading ? <Loading /> : <ShowProduct />}</div>
+        <div className="row mb-5 mt-5">
+          {loading ? <Loading /> : <ShowProduct />}
+        </div>
       </div>
     </div>
   );
