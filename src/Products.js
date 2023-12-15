@@ -11,7 +11,7 @@ export default function Products() {
   let componentMounted = true;
 
   useEffect(() => {
-    const getProducts = async () => {
+    async function getProducts() {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products");
       if (componentMounted) {
