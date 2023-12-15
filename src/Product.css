@@ -16,13 +16,17 @@
 }
 
 @media (min-width: 960px) {
-   .Product .container {
-  margin: 130px auto;
-}
+  .Product .container {
+    margin: 130px auto;
+  }
+
+  .show-product-container img {
+    margin: 50px 0;
+  }
 }
 
 @media (max-width: 960px) {
-   .Product .container {
-  margin: 50px auto;
-}
+  .Product .container {
+    margin: 50px auto;
+  }
 }

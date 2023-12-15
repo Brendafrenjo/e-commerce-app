@@ -39,29 +39,31 @@ export default function Product() {
   function ShowProduct() {
     return (
       <div className="show-product-container">
-        <div className="col-md-6">
-          <img
-            src={product.image}
-            alt={product.title}
-            height="400px"
-            width="400px"
-          />
-        </div>
-        <div className="col-md-6">
-          <h4 className="text-uppercase text-black-50 pt-3">
-            {product.category}
-          </h4>
-          <h4 className="">{product.title}</h4>
-          <p className="lead">
-            Rating {product.rating && product.rating.rate}
-            <i class="fa-solid fa-star"></i>
-          </p>
-          <h4 className="display-6 fw-bold my-4">${product.price}</h4>
-          <p className="lead">{product.description}</p>
-          <button className="btn btn-outline-dark me-2">Add to Cart</button>
-          <NavLink to="/cart" className="btn btn-dark">
-            Go to Cart
-          </NavLink>
+        <div className="row">
+          <div className="col-lg-6">
+            <img
+              src={product.image}
+              alt={product.title}
+              height="400px"
+              width="400px"
+            />
+          </div>
+          <div className="col-lg-6">
+            <h4 className="text-uppercase text-black-50 pt-3">
+              {product.category}
+            </h4>
+            <h4 className="">{product.title}</h4>
+            <p className="lead">
+              Rating {product.rating && product.rating.rate}
+              <i class="fa-solid fa-star"></i>
+            </p>
+            <h4 className="display-6 fw-bold my-4">${product.price}</h4>
+            <p className="lead">{product.description}</p>
+            <button className="btn btn-outline-dark me-2">Add to Cart</button>
+            <NavLink to="/cart" className="btn btn-dark">
+              Go to Cart
+            </NavLink>
+          </div>
         </div>
       </div>
     );
