@@ -30,7 +30,7 @@ export default function Products() {
 
   const Loading = () => {
     return (
-      <div>
+      <div className="loader-container">
         <FallingLines
           color="black"
           width="100"

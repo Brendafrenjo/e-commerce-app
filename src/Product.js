@@ -22,7 +22,7 @@ export default function Product() {
 
   function Loading() {
     return (
-      <div>
+      <div className="loader-container">
         <Bars
           height="80"
           width="80"

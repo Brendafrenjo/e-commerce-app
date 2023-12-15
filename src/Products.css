@@ -24,6 +24,13 @@ h5 {
   height: 300px;
 }
 
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
 @media (max-width: 960px) {
   .Products h1 {
     font-weight: 700;
