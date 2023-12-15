@@ -48,7 +48,7 @@ export default function Product() {
               width="400px"
             />
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 description">
             <h4 className="text-uppercase text-black-50 pt-3">
               {product.category}
             </h4>
@@ -57,8 +57,8 @@ export default function Product() {
               Rating {product.rating && product.rating.rate}
               <i class="fa-solid fa-star"></i>
             </p>
-            <h4 className="display-6 fw-bold my-4">${product.price}</h4>
-            <p className="lead">{product.description}</p>
+            <h4 className="display-6 fw-bold mb-3">${product.price}</h4>
+            <p>{product.description}</p>
             <button className="btn btn-outline-dark me-2">Add to Cart</button>
             <NavLink to="/cart" className="btn btn-dark">
               Go to Cart

@@ -8,6 +8,10 @@
   display: flex;
 }
 
+.description {
+    margin-top: 10px;
+  }
+
 .loader-container {
   display: flex;
   align-items: center;
@@ -21,7 +25,7 @@
   }
 
   .show-product-container img {
-    margin: 50px 0;
+    margin: 10px 0;
   }
 }
 
@@ -29,4 +33,9 @@
   .Product .container {
     margin: 50px auto;
   }
+
+  .description {
+    margin-top: 20px;
+  }
+
 }
