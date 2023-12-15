@@ -94,11 +94,16 @@ export default function Products() {
                 alt={product.title}
               />
               <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
+                <h5 className="card-title lead fw-bold">
+                  {product.title.substring(0, 12)}...
+                </h5>
                 <p className="card-text lead fw-bold product-price">
                   ${product.price}
                 </p>
-                <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark product-id">
+                <NavLink
+                  to={`/products/${product.id}`}
+                  className="btn btn-outline-dark product-id"
+                >
                   Buy Now
                 </NavLink>
               </div>
