@@ -1,3 +1,15 @@
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 240px 0;
+}
+
+.show-product-container {
+  display: flex;
+}
+
 .loader-container {
   display: flex;
   align-items: center;
@@ -6,14 +18,8 @@
 }
 
 @media (min-width: 960px) {
-   .Product .container {
-  margin: 130px auto;
-  display: block;
-}
+  .centered-container {
+    margin: 70px 0;
+  }
 }
 
-@media (max-width: 960px) {
-   .Product .container {
-  margin: 50px auto;
-}
-}

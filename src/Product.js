@@ -38,13 +38,13 @@ export default function Product() {
 
   function ShowProduct() {
     return (
-      <div>
+      <div className="show-product-container">
         <div className="col-md-6">
           <img
             src={product.image}
             alt={product.title}
-            height="350px"
-            width="350px"
+            height="400px"
+            width="400px"
           />
         </div>
         <div className="col-md-6">
@@ -70,7 +70,7 @@ export default function Product() {
   return (
     <div className="Product">
       <div className="container">
-        <div >
+        <div className="centered-container">
           {loading ? <Loading /> : <ShowProduct />}
         </div>
       </div>
