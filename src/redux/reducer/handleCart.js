@@ -21,7 +21,6 @@ function handleCart(state = cart, action) {
           },
         ];
       }
-      break;
 
     case "DELETE_ITEM":
       const exist1 = state.find((x) => x.id === product.id);
@@ -33,7 +32,6 @@ function handleCart(state = cart, action) {
         );
       }
       
-      break;
     default:
       return state;
   }
