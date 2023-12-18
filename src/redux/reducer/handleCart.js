@@ -5,14 +5,13 @@ function handleCart(state = cart, action) {
   switch (action.type) {
     case "ADD_ITEM":
       //Check if Product is Already Exist//
-      const exist = find((x) => x.id === product.id);
+      const exist = state.find((x) => x.id === product.id);
       if (exist) {
         //Increase the Quantity//
-        return state.map(() =>
+        return state.map((x) =>
           x.id === product.id ? { ...x, qty: x.qty + 1 } : x
         );
       } else {
-        const product = action.payload;
         return [
           ...state,
           {
@@ -21,6 +20,7 @@ function handleCart(state = cart, action) {
           },
         ];
       }
+
     case "DELETE_ITEM":
       const exist1 = state.find((x) => x.id === product.id);
       if (exist1.qty === 1) {
@@ -30,9 +30,9 @@ function handleCart(state = cart, action) {
           x.id === product.id ? { ...x, qty: x.qty - 1 } : x
         );
       }
-      break;
+
     default:
-      break;
+      return state;
   }
 }
 
