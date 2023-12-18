@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Products.css";
 import { FallingLines } from "react-loader-spinner";
 import MainContent from "./MainContent";
@@ -8,24 +8,23 @@ export default function Products() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
-  let componentMounted = true;
+  const componentMounted = useRef(true);
 
   useEffect(() => {
     async function getProducts() {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products");
-      if (componentMounted) {
+      if (componentMounted.current) {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
       }
-
-      return () => {
-        componentMounted = false;
-      };
-    };
-
+    }
     getProducts();
+
+    return () => {
+      componentMounted = false;
+    };
   }, []);
 
   const Loading = () => {
