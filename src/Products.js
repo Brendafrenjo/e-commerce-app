@@ -23,7 +23,7 @@ export default function Products() {
     getProducts();
 
     return () => {
-      componentMounted = false;
+      componentMounted.current = false;
     };
   }, []);
 
