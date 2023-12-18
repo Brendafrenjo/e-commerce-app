@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { addCart } from "../redux/action";
+import { useDispatch } from "react-redux";
+import { addCart } from "./redux/action";
 import { NavLink, useParams } from "react-router-dom";
 import { Bars } from "react-loader-spinner";
 import "./Product.css";
