@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addCart } from "../redux/action";
 import { NavLink, useParams } from "react-router-dom";
 import { Bars } from "react-loader-spinner";
 import "./Product.css";
@@ -7,6 +9,11 @@ export default function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  function addProduct(product) {
+    dispatch(addCart(product));
+  }
 
   useEffect(() => {
     async function getProduct() {
@@ -60,7 +67,7 @@ export default function Product() {
             <h4 className="display-6 fw-bold mb-3">${product.price}</h4>
             <p>{product.description}</p>
             <button className="btn btn-outline-dark me-2">Add to Cart</button>
-            <NavLink to="/cart" className="btn btn-dark">
+            <NavLink to="/cart" className="btn btn-dark" onClick={()=>addProduct(product)}>
               Go to Cart
             </NavLink>
           </div>
