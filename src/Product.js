@@ -25,7 +25,7 @@ export default function Product() {
       setLoading(false);
     }
     getProduct();
-  }, []);
+  }, [id]);
 
   function Loading() {
     return (
