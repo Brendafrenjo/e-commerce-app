@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import Products from "./Products";
-import { Routes, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Product from "./Product";
 import LogIn from "./LogIn";
 import Cart from "./Cart";
@@ -20,6 +20,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/not-found" element={<NotFound />} />
         <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
     </div>
   );
