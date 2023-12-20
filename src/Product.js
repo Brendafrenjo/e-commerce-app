@@ -66,8 +66,13 @@ export default function Product() {
             </p>
             <h4 className="display-6 fw-bold mb-3">${product.price}</h4>
             <p>{product.description}</p>
-            <button className="btn btn-outline-dark me-2">Add to Cart</button>
-            <NavLink to="/cart" className="btn btn-dark" onClick={()=>addProduct(product)}>
+            <button
+              className="btn btn-outline-dark me-2"
+              onClick={() => addProduct(product)}
+            >
+              Add to Cart
+            </button>
+            <NavLink to="/cart" className="btn btn-dark">
               Go to Cart
             </NavLink>
           </div>
