@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(107, 107, 107);
-  min-height: 80vh;
+  color: rgb(63, 63, 63);
+  height: 80vh;
 }
 
 .NotFound h2 {
