@@ -3,7 +3,6 @@ import "./NavBar.css";
 import Images from "./Images";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import LogIn from "./LogIn";
 
 export default function NavBar() {
   const state = useSelector((state) => state.handleCart);
