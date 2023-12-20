@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import "./NavBar.css";
 import Images from "./Images";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function NavBar() {
+  const state = useSelector((state) => state.handleCart);
+
   function handleResize() {
     const navbar = document.querySelector(".navbar");
     if (window.innerWidth >= 992) {
@@ -70,7 +73,8 @@ export default function NavBar() {
                 <i className="fa-solid fa-user-plus me-2 icon"></i>Register
               </NavLink>
               <NavLink to="/cart" className="btn btn-outline-dark">
-                <i className="fa-solid fa-cart-shopping icon me-2"></i>Cart (0)
+                <i className="fa-solid fa-cart-shopping icon me-2"></i>Cart (
+                {state.length})
               </NavLink>
             </div>
           </div>
