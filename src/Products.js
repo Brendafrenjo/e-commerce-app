@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Products.css";
-import { FallingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import MainContent from "./MainContent";
 import { NavLink } from "react-router-dom";
 
@@ -30,11 +30,15 @@ export default function Products() {
   const Loading = () => {
     return (
       <div className="loader-container">
-        <FallingLines
-          color="black"
-          width="100"
+        <ThreeDots
           visible={true}
-          ariaLabel="falling-lines-loading"
+          height="80"
+          width="80"
+          color="black"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
         />
       </div>
     );
