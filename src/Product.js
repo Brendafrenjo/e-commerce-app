@@ -62,7 +62,7 @@ export default function Product() {
             <h4 className="">{product.title}</h4>
             <p className="lead">
               Rating {product.rating && product.rating.rate}
-              <i class="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
             </p>
             <h4 className="display-6 fw-bold mb-3">${product.price}</h4>
             <p>{product.description}</p>

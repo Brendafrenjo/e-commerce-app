@@ -7,37 +7,44 @@ function handleCart(state = cart, action) {
   switch (action.type) {
     case "ADD_ITEM":
       //Check if Product is Already Exist//
-      const exist = state.find((x) => x.id === product.id);
-      if (exist) {
+      const existingProduct = state.find((x) => x.id === product.id);
+      if (existingProduct) {
         //Increase the Quantity//
-        toast.info(`${exist.title} cart quantity increased`, {
+        toast.info(`${existingProduct.title} cart quantity increased`, {
           position: "bottom-left",
         });
-        return state.map((x) =>
+        const updatedState = state.map((x) =>
           x.id === product.id ? { ...x, qty: x.qty + 1 } : x
         );
+
+        localStorage.setItem("cartItems", JSON.stringify(updatedState));
+        return updatedState;
       } else {
         toast.success(`${action.payload.title} added to cart`, {
           position: "bottom-left",
         });
-        const product = action.payload;
-        return [
+
+        const updatedState = [
           ...state,
           {
             ...product,
             qty: 1,
           },
         ];
+        localStorage.setItem("cartItems", JSON.stringify(updatedState));
+        return updatedState;
       }
 
     case "DELETE_ITEM":
-      const exist1 = state.find((x) => x.id === product.id);
-      if (exist1.qty === 1) {
-        return state.filter((x) => x.id !== exist1.id);
+      const existProductToDelete = state.find((x) => x.id === product.id);
+      if (existProductToDelete.qty === 1) {
+        return state.filter((x) => x.id !== existProductToDelete.id);
       } else {
-        return state.map((x) =>
+        const updatedState = state.map((x) =>
           x.id === product.id ? { ...x, qty: x.qty - 1 } : x
         );
+        localStorage.setItem("cartItems", JSON.stringify(updatedState));
+        return updatedState;
       }
 
     default:
