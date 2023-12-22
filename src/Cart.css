@@ -1,0 +1,26 @@
+.emptyCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 960px) {
+  .Cart {
+    margin: 130px auto;
+  }
+
+  .show-product-container img {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .Cart {
+    margin: 50px auto;
+  }
+
+  .description {
+    margin-top: 20px;
+  }
+
+}
