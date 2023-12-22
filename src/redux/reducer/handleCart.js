@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const cart = [];
 
 function handleCart(state = cart, action) {
@@ -8,10 +10,16 @@ function handleCart(state = cart, action) {
       const exist = state.find((x) => x.id === product.id);
       if (exist) {
         //Increase the Quantity//
+        toast.info(`${exist.title} cart quantity increased`, {
+          position: "bottom-left",
+        });
         return state.map((x) =>
           x.id === product.id ? { ...x, qty: x.qty + 1 } : x
         );
       } else {
+        toast.success(`${action.payload.title} added to cart`, {
+          position: "bottom-left",
+        });
         const product = action.payload;
         return [
           ...state,
