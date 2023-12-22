@@ -27,6 +27,14 @@ export default function Products() {
     };
   }, []);
 
+  function ErrorOccured() {
+    return (
+      <div className="ErrorOccuerd">
+        <p>Error! Something went wrong!</p>
+      </div>
+    );
+  }
+
   const Loading = () => {
     return (
       <div className="loader-container">
@@ -127,7 +135,13 @@ export default function Products() {
           </div>
         </div>
         <div className=" row justify-content-center mb-5 pb-5">
-          {loading ? <Loading /> : <ShowProducts />}
+          {loading ? (
+            <Loading />
+          ) : filter.length === 0 ? (
+            <ErrorOccured />
+          ) : (
+            <ShowProducts />
+          )}
         </div>
         <MainContent />
       </div>

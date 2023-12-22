@@ -24,7 +24,7 @@ h5 {
   height: 300px;
 }
 
-.loader-container {
+.loader-container, .ErrorOccuerd {
   display: flex;
   align-items: center;
   justify-content: center;
