@@ -15,14 +15,13 @@ export default function Cart() {
 
   function handleAdd(product) {
     dispatch(addCart(product));
-    }
-    
-    const calculateSubtotal = () => {
-      return handleCart.reduce((total, product) => {
-        return total + product.qty * product.price;
-      }, 0);
-    };
+  }
 
+  const calculateSubtotal = () => {
+    return handleCart.reduce((total, product) => {
+      return total + product.qty * product.price;
+    }, 0);
+  };
 
   function emptyCart() {
     return (
@@ -42,74 +41,76 @@ export default function Cart() {
 
   function displayCartItems() {
     return (
-      <div className="row">
-        <div>
-          <div className="titles">
-            <h3 className="product-title">Product</h3>
-            <h3 className="price">Price</h3>
-            <h3 className="Quantity">Quantity</h3>
-            <h3 className="total">Total</h3>
-          </div>
-          <div className="cart-item">
-            {handleCart.map((product) => (
-              <div className="col-md-12 cart-item" key={product.id}>
-                <div className="rounded-3">
-                  <div className="container">
-                    <div className="row justify-content-center">
-                      <div className="col-md-4 mb-3 mt-3 cart-product">
-                        <img
-                          src={product.image}
-                          alt={product.title}
-                          height="250px"
-                          width="230px"
-                        />
-                      </div>
-                      <div className="col-md-4 mb-3 mt-2">
-                        <h5 className="pt-2 pb-3">{product.title}</h5>
-                        <button
-                          className="btn btn-outline-dark"
-                          onClick={() => handleDel(product)}
-                        >
-                          <i className="fa fa-minus"></i>
-                        </button>
-                        <span className="count">{product.qty}</span>
-                        <button
-                          className="btn btn-outline-dark"
-                          onClick={() => handleAdd(product)}
-                        >
-                          <i className="fa fa-plus"></i>
-                        </button>
-                        <p className="fw-bold mt-2">
-                          ${product.qty * product.price}
-                        </p>
-                        <button className="btn btn-dark">Remove</button>
+      <div className="displayCartItems">
+        <div className="container">
+          <div className="row">
+            <div className="cart-item">
+              {handleCart.map((product) => (
+                <div className="col-md-12 cart-item" key={product.id}>
+                  <div className="rounded-3">
+                    <div className="container">
+                      <div className="row justify-content-center">
+                        <div className="col-md-6 mb-3 mt-3 cart-product">
+                          <img
+                            src={product.image}
+                            alt={product.title}
+                            height="200px"
+                            width="180px"
+                          />
+                        </div>
+                        <div className="col-md-4 mb-3 mt-2 main-content">
+                          <h4 className="pt-2 pb-3">{product.title}</h4>
+                          <div className="cart-product-quantity d-flex justify-content-center">
+                            <button
+                              className="btn btn-outline-dark"
+                              onClick={() => handleDel(product)}
+                            >
+                              <i className="fa fa-minus"></i>
+                            </button>
+                            <div className="count ps-2 pe-2">{product.qty}</div>
+                            <button
+                              className="btn btn-outline-dark"
+                              onClick={() => handleAdd(product)}
+                            >
+                              <i className="fa fa-plus"></i>
+                            </button>
+                          </div>
+                          <p className="fw-bold mt-2">
+                            ${product.qty * product.price}
+                          </p>
+                          <button className="btn btn-dark">Remove</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="col-md-12 cart-summary">
-            <button className="clear-cart btn btn-dark">Clear Cart</button>
-            <div className="cart-checkout">
-              <div className="subtotal">
-                <span>Subtotal</span>
-                <span className="amount">${calculateSubtotal()}</span>
-              </div>
-              <p>Taxes and shipping calculated at checkout</p>
+              ))}
             </div>
-            <NavLink
-              to="/checkout"
-              className="btn btn-outline-dark mt-3 w-30 mx-auto"
-            >
-              Check Out
-            </NavLink>
-            <br />
-            <NavLink to="/products" className="btn btn-outline-dark mt-3">
-              <i className="fa-solid fa-arrow-left me-2"></i>
-              Continue Shopping
-            </NavLink>
+            <div className="col-md-12 ">
+              <div className="cart-summary">
+                <button className="clear-cart btn btn-outline-dark mt-3">
+                  Clear Cart
+                </button>
+                <div className="cart-checkout">
+                  <div className="subtotal">
+                    <span>Subtotal</span>
+                    <span className="amount">${calculateSubtotal()}</span>
+                  </div>
+                  <p>Taxes and shipping calculated at checkout</p>
+                </div>
+              </div>
+              <NavLink
+                to="/checkout"
+                className="btn btn-dark mt-3 w-30 mx-auto"
+              >
+                Check Out
+              </NavLink>
+              <br />
+              <NavLink to="/products" className="btn btn-outline-dark mt-3">
+                <i className="fa-solid fa-arrow-left me-2"></i>
+                Continue Shopping
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
@@ -120,7 +121,7 @@ export default function Cart() {
     <div className="Cart">
       <div className="container">
         <div>
-          <h1 className="mb-4">Shopping Cart</h1>
+          <h1>Shopping Cart</h1>
         </div>
         <div className=" row justify-content-center mb-5 pb-5">
           {handleCart.length === 0 ? emptyCart() : displayCartItems()}
