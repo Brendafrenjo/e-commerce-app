@@ -75,11 +75,11 @@ export default function Product() {
             <NavLink to="/cart" className="btn btn-dark">
               Go to Cart
             </NavLink>
-          </div>
-          <div className="col-md-12">
-            <NavLink to="/products" className="btn btn-outline-dark mt-3">
-              More Shopping
-            </NavLink>
+            <div className="col-md-12">
+              <NavLink to="/products" className="btn btn-outline-dark mt-3">
+                More Shopping
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

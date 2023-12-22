@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Products.css";
 import { ThreeDots } from "react-loader-spinner";
-import MainContent from "./MainContent";
 import { NavLink } from "react-router-dom";
 
 export default function Products() {
@@ -143,7 +142,6 @@ export default function Products() {
             <ShowProducts />
           )}
         </div>
-        <MainContent />
       </div>
     </div>
   );
