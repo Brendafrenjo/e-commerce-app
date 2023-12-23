@@ -44,6 +44,11 @@ h4 {
   background: none;
 }
 
+.cart-product-quantity button:hover { 
+  background-color: transparent;
+  border: 1 solid transparent;
+}
+
 .cart-summary {
   display: flex;
   justify-content: space-between;
