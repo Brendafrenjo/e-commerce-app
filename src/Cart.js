@@ -62,14 +62,14 @@ export default function Cart() {
                           <h4 className="pt-2 pb-3">{product.title}</h4>
                           <div className="cart-product-quantity d-flex justify-content-center">
                             <button
-                              className="btn btn-outline-dark"
+                              className="btn btn-outline-black"
                               onClick={() => handleDel(product)}
                             >
                               <i className="fa fa-minus"></i>
                             </button>
                             <div className="count ps-2 pe-2">{product.qty}</div>
                             <button
-                              className="btn btn-outline-dark"
+                              className="btn btn-outline-black"
                               onClick={() => handleAdd(product)}
                             >
                               <i className="fa fa-plus"></i>
