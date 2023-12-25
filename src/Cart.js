@@ -19,7 +19,7 @@ export default function Cart() {
 
   const calculateSubtotal = () => {
     return handleCart.reduce((total, product) => {
-      return total + product.qty * product.price;
+      return total + product.qty * Math.round(product.price);
     }, 0);
   };
 
@@ -77,7 +77,7 @@ export default function Cart() {
                         </button>
                       </div>
                       <p className="fw-bold lead mt-2">
-                        ${product.qty * product.price}
+                        ${product.qty * Math.round(product.price)}
                       </p>
                       <button className="btn btn-dark">Remove</button>
                     </div>
