@@ -47,14 +47,22 @@ function handleCart(state = cart, action) {
       }
 
     case "DELETE_ITEM":
+      // Check if the product to be deleted exists in the state
       const existProductToDelete = state.find((x) => x.id === product.id);
+
+      // If the quantity of the product to be deleted is 1, remove it from the state
       if (existProductToDelete.qty === 1) {
         return state.filter((x) => x.id !== existProductToDelete.id);
       } else {
+        // If the quantity is greater than 1, decrement the quantity
         const updatedState = state.map((x) =>
           x.id === product.id ? { ...x, qty: x.qty - 1 } : x
         );
+
+        // Update the local storage with the updated state
         localStorage.setItem("cartItems", JSON.stringify(updatedState));
+
+        // Return the updated state
         return updatedState;
       }
 
