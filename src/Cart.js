@@ -1,13 +1,22 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { addCart, deleteCart } from "./redux/action";
+import {
+  addCart,
+  deleteCart,
+  initializeCartFromLocalStorage,
+} from "./redux/action";
 import "./Cart.css";
 
 export default function Cart() {
   const { handleCart } = useSelector((state) => state);
 
   const dispatch = useDispatch();
+
+  // Initialize cart from local storage when the component mounts
+  useEffect(() => {
+    dispatch(initializeCartFromLocalStorage());
+  }, [dispatch]);
 
   function handleDel(product) {
     dispatch(deleteCart(product));
