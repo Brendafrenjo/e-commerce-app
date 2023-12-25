@@ -66,6 +66,10 @@ function handleCart(state = cart, action) {
         return updatedState;
       }
 
+    case "INITIALIZE_CART":
+      // Directly return the payload received from local storage
+      return action.payload;
+
     default:
       return state;
   }

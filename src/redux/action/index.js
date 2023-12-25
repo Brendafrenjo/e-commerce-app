@@ -16,6 +16,8 @@ export function deleteCart(product) {
   };
 }
 
+export const INITIALIZE_CART = "INITIALIZE_CART";
+
 export const initializeCartFromLocalStorage = () => {
   const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
   return {
