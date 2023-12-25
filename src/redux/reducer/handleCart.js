@@ -52,8 +52,14 @@ function handleCart(state = cart, action) {
 
       // If the quantity of the product to be deleted is 1, remove it from the state
       if (existProductToDelete.qty === 1) {
+        toast.success(`${existProductToDelete.title} removed from cart`, {
+          position: "bottom-left",
+        });
         return state.filter((x) => x.id !== existProductToDelete.id);
       } else {
+        toast.info(`${existProductToDelete.title} cart quantity decreased`, {
+          position: "bottom-left",
+        });
         // If the quantity is greater than 1, decrement the quantity
         const updatedState = state.map((x) =>
           x.id === product.id ? { ...x, qty: x.qty - 1 } : x
