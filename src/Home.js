@@ -15,7 +15,7 @@ export default function Home() {
           <div className="card-img-overlay">
             <h1 className="card-title">Chic. Timeless. Frenjo's</h1>
             <p className="card-text">
-              <a href="/" className="btn btn-light primary-button">
+              <a href="/products" className="btn btn-light primary-button">
                 SHOP NOW
               </a>
             </p>
