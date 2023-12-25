@@ -12,6 +12,11 @@ h4 {
   align-items: center;
 }
 
+.emptyCart p {
+  color: rgb(87, 87, 87);
+  font-size: 18px;
+}
+
 .displayCartItems {
   margin: 32px 0 16px 0;
 }
@@ -47,10 +52,48 @@ h4 {
 .cart-summary {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid grey;
+  padding-top: 32px;
+  margin-top: 8px;
+}
+
+.item {
+  border-top: 1px solid grey;
+  padding-top: 32px;
 }
 
 .clear-cart {
- margin-left: 30px;
+  margin-left: 30px;
+}
+
+.cart-checkout {
+  width: 270px;
+  max-width: 100%;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.amount {
+  font-weight: 700;
+}
+
+.cart-checkout p {
+  font-size: 14px;
+  font-weight: 200;
+  margin: 8px 0;
+}
+
+.continue-shopping, .start-shopping {
+  color: rgb(87, 87, 87);
+}
+
+.check-out-info {
+
 }
 
 @media (min-width: 960px) {

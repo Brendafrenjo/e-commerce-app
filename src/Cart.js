@@ -27,9 +27,12 @@ export default function Cart() {
     return (
       <div className="emptyCart">
         <div className="col-md-5">
-          <p>Your cart is empty!</p>
-          <div className="start-shopping">
-            <NavLink to="/products" className="btn btn-outline-dark">
+          <p className="mt-2">Your cart is empty!</p>
+          <div className="">
+            <NavLink
+              to="/products"
+              className="start-shopping text-decoration-none"
+            >
               <i className="fa-solid fa-arrow-left me-2"></i>
               Start Shopping
             </NavLink>
@@ -43,49 +46,45 @@ export default function Cart() {
     return (
       <div className="displayCartItems">
         <div className="container">
-          <div className="row">
-            <div className="cart-item">
-              {handleCart.map((product) => (
-                <div className="col-md-12 cart-item" key={product.id}>
-                  <div className="rounded-3">
-                    <div className="container">
-                      <div className="row justify-content-center">
-                        <div className="col-md-6 mb-3 mt-3 cart-product">
-                          <img
-                            src={product.image}
-                            alt={product.title}
-                            height="200px"
-                            width="180px"
-                          />
-                        </div>
-                        <div className="col-md-4 mb-3 mt-2 main-content">
-                          <h4 className="pt-2 pb-3">{product.title}</h4>
-                          <div className="cart-product-quantity d-flex justify-content-center">
-                            <button
-                              className="btn btn-outline-black"
-                              onClick={() => handleDel(product)}
-                            >
-                              <i className="fa fa-minus"></i>
-                            </button>
-                            <div className="count ps-2 pe-2">{product.qty}</div>
-                            <button
-                              className="btn btn-outline-black"
-                              onClick={() => handleAdd(product)}
-                            >
-                              <i className="fa fa-plus"></i>
-                            </button>
-                          </div>
-                          <p className="fw-bold mt-2">
-                            ${product.qty * product.price}
-                          </p>
-                          <button className="btn btn-dark">Remove</button>
-                        </div>
+          <div className="row cart-item">
+            {handleCart.map((product) => (
+              <div className="col-md-12 cart-item item" key={product.id}>
+                <div className="rounded-3 container">
+                  <div className="row justify-content-center">
+                    <div className="col-md-6 mb-3 cart-product">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        height="200px"
+                        width="180px"
+                      />
+                    </div>
+                    <div className="col-md-4 mb-3 mt-2 main-content">
+                      <h4 className="pt-2 pb-3">{product.title}</h4>
+                      <div className="cart-product-quantity d-flex justify-content-center">
+                        <button
+                          className="btn btn-outline-black"
+                          onClick={() => handleDel(product)}
+                        >
+                          <i className="fa fa-minus"></i>
+                        </button>
+                        <div className="count ps-2 pe-2">{product.qty}</div>
+                        <button
+                          className="btn btn-outline-black"
+                          onClick={() => handleAdd(product)}
+                        >
+                          <i className="fa fa-plus"></i>
+                        </button>
                       </div>
+                      <p className="fw-bold lead mt-2">
+                        ${product.qty * product.price}
+                      </p>
+                      <button className="btn btn-dark">Remove</button>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
             <div className="col-md-12 ">
               <div className="cart-summary">
                 <button className="clear-cart btn btn-outline-dark mt-3">
@@ -93,24 +92,29 @@ export default function Cart() {
                 </button>
                 <div className="cart-checkout">
                   <div className="subtotal">
-                    <span>Subtotal</span>
+                    <span>Subtotal:</span>
                     <span className="amount">${calculateSubtotal()}</span>
                   </div>
                   <p>Taxes and shipping calculated at checkout</p>
                 </div>
               </div>
-              <NavLink
-                to="/checkout"
-                className="btn btn-dark mt-3 w-30 mx-auto"
-              >
-                Check Out
-              </NavLink>
-              <br />
-              <NavLink to="/products" className="btn btn-outline-dark mt-3">
-                <i className="fa-solid fa-arrow-left me-2"></i>
-                Continue Shopping
-              </NavLink>
             </div>
+          </div>{" "}
+          <div className="check-out-info">
+            <NavLink
+              to="/checkout"
+              className="btn btn-dark mt-3 mb-2 w-40 mx-auto check-out"
+            >
+              Check Out
+            </NavLink>
+            <br />
+            <NavLink
+              to="/products"
+              className="continue-shopping text-decoration-none"
+            >
+              <i className="fa-solid fa-arrow-left me-2"></i>
+              Continue Shopping
+            </NavLink>
           </div>
         </div>
       </div>
