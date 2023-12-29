@@ -5,7 +5,7 @@ export default function LogIn() {
     <div>
       <div className="row">
         <div className="col-md-9">
-          <h4>LogIn</h4>
+          <h1>LogIn</h1>
         </div>
       </div>
     </div>

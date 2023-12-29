@@ -109,10 +109,10 @@ export default function Cart() {
               </div>
             </div>
           </div>{" "}
-          <div className="check-out-info">
+          <div className="check-out-info mt-3 text-end">
             <NavLink
               to="/checkout"
-              className="btn btn-dark mt-3 mb-2 w-40 mx-auto check-out"
+              className="btn btn-dark mb-2 check-out custom-width"
             >
               Check Out
             </NavLink>
