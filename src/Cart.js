@@ -28,7 +28,7 @@ export default function Cart() {
 
   const calculateSubtotal = () => {
     return handleCart.reduce((total, product) => {
-      return total + product.qty * Math.round(product.price);
+      return total + Math.round(product.qty * product.price);
     }, 0);
   };
 
@@ -54,45 +54,6 @@ export default function Cart() {
   function displayCartItems() {
     return (
       <div className="displayCartItems">
-        <div className="titles">
-          <h3 className="product-title">Product</h3>
-          <h3 className="price">Price</h3>
-          <h3 className="Quantity">Quantity</h3>
-          <h3 className="total">Total</h3>
-          <div className="cart-items-container">
-            {handleCart.map((product) => (
-              <div className="cart-item-item" key={product.id}>
-                <div className="cart-product-product">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    height="200px"
-                    width="180px"
-                  />
-                  <div>
-                    <p>{product.title}</p>
-                    <button className="btn btn-dark">Remove</button>
-                  </div>
-                </div>
-                <div className="cart-product-price-price">
-                  ${Math.round(product.price)}
-                </div>
-                <div className="cart-product-quantity-quantity">
-                  <button>
-                    <i className="fa fa-minus"></i>
-                  </button>
-                  <div>{product.qty}</div>
-                  <button>
-                    <i className="fa fa-plus"></i>
-                  </button>
-                </div>
-                <div className="cart-product-total-price">
-                  ${product.qty * Math.round(product.price)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="container">
           <div className="row cart-item">
             {handleCart.map((product) => (
@@ -110,7 +71,7 @@ export default function Cart() {
                     <div className="col-md-4 mb-3 mt-2 main-content">
                       <h4 className="pt-2 pb-1">{product.title}</h4>
                       <div className="cart-product-price fw-bold lead mb-2">
-                        ${Math.round(product.price)}
+                        ${product.price}
                       </div>
                       <div className="cart-product-quantity d-flex justify-content-center">
                         <button
@@ -128,7 +89,7 @@ export default function Cart() {
                         </button>
                       </div>
                       <p className="fw-bold lead mt-2">
-                        ${product.qty * Math.round(product.price)}
+                        ${Math.round(product.qty * product.price)}
                       </p>
                       <button className="btn btn-dark">Remove</button>
                     </div>

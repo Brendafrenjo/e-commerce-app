@@ -17,23 +17,6 @@ h4 {
   font-size: 18px;
 }
 
-.titles {
-  margin: 32px 0 16px 0;
-}
-
-.titles h3 {
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.cart-item-item, .titles {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
-  column-gap: 8px;
-}
-
 .displayCartItems {
   margin: 32px 64px;
 }
