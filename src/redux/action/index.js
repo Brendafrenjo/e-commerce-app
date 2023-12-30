@@ -16,6 +16,14 @@ export function deleteCart(product) {
   };
 }
 
+// Remove item from cart
+export function removeFromCart(productId) {
+  return {
+    type: "REMOVE_FROM_CART",
+    payload: productId,
+  };
+}
+
 export const INITIALIZE_CART = "INITIALIZE_CART";
 
 export const initializeCartFromLocalStorage = () => {

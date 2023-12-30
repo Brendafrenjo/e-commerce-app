@@ -72,6 +72,22 @@ function handleCart(state = cart, action) {
         return updatedState;
       }
 
+    case "REMOVE_FROM_CART":
+      // Find the product to be removed from the cart
+      const removedProduct = state.find((x) => x.id === action.payload);
+
+      // Filter out the product with the specified ID to remove it from the cart
+      const nextCartItems = state.filter((x) => x.id !== action.payload);
+
+      // Display a success toast notification indicating the removal of the product
+      toast.success(`${removedProduct.title} removed from cart`, {
+        position: "bottom-left",
+      });
+
+      // Update local storage with the modified cart items
+      localStorage.setItem("cartItems", JSON.stringify(nextCartItems));
+      return nextCartItems;
+
     case "INITIALIZE_CART":
       // Directly return the payload received from local storage
       return action.payload;

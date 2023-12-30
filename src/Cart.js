@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import {
   addCart,
   deleteCart,
+  removeFromCart,
   initializeCartFromLocalStorage,
 } from "./redux/action";
 import "./Cart.css";
@@ -24,6 +25,10 @@ export default function Cart() {
 
   function handleAdd(product) {
     dispatch(addCart(product));
+  }
+
+  function handleRemove(productId) {
+    dispatch(removeFromCart(productId));
   }
 
   const calculateSubtotal = () => {
@@ -69,7 +74,7 @@ export default function Cart() {
                       />
                     </div>
                     <div className="col-md-4 mb-3 mt-2 main-content">
-                      <h4 className="pt-2 pb-1">{product.title}</h4>
+                      <h4 className="pb-1">{product.title}</h4>
                       <div className="cart-product-price fw-bold lead mb-2">
                         ${product.price}
                       </div>
@@ -91,7 +96,9 @@ export default function Cart() {
                       <p className="fw-bold lead mt-2">
                         ${Math.round(product.qty * product.price)}
                       </p>
-                      <button className="btn btn-dark">Remove</button>
+                      <button className="btn btn-dark" onClick={() => handleRemove(product.id)}>
+                        Remove
+                      </button>
                     </div>
                   </div>
                 </div>
