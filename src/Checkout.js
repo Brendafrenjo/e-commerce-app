@@ -1,9 +1,20 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
 
 export default function Checkout() {
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [shippingInfo, setShippingInfo] = useState({
+    tel: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipCode: "",
+    county: "",
+    town: "",
+  });
+
+  const navigate = useNavigate();
 
   const counties = [
     "Mombasa",
@@ -55,20 +66,71 @@ export default function Checkout() {
     "Nairobi",
   ];
 
+  const handleShippingInfoChange = (e) => {
+    const { name, value } = e.target;
+    setShippingInfo((prevShippingInfo) => ({
+      ...prevShippingInfo,
+      [name]: value,
+    }));
+  };
+
+  // Function to handle the submit process
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      shippingInfo.tel.trim() === "" ||
+      shippingInfo.firstName.trim() === "" ||
+      shippingInfo.lastName.trim() === "" ||
+      shippingInfo.town.trim() === "" ||
+      shippingInfo.county.trim() === "" ||
+      shippingInfo.zipCode.trim() === ""
+    ) {
+      alert("All fields are required");
+      return;
+    }
+
+    console.log("Information submitted:", shippingInfo);
+
+    setShippingInfo({
+      tel: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      zipCode: "",
+      county: "",
+      town: "",
+    });
+  };
+
   // Function to handle the checkout process
   const handleCheckout = () => {
-    // Perform any necessary checkout logic here
+    if (
+      shippingInfo.tel &&
+      shippingInfo.firstName &&
+      shippingInfo.lastName &&
+      shippingInfo.town &&
+      shippingInfo.county &&
+      shippingInfo.zipCode
+    ) {
+      // Perform any necessary checkout logic here
+      // Mark the order as successfully placed
+      setOrderPlaced(true);
 
-    // Mark the order as successfully placed
-    setOrderPlaced(true);
+      // Use history.push to navigate to the order confirmation page
+      navigate.push("/order-confirmation");
+    } else {
+      // Handle incomplete checkout (e.g., show an error message)
+      alert("Please provide complete shipping information.");
+    }
   };
+
   return (
     <div className="Checkout">
-      <div className="contained">
+      <div className="container">
         {orderPlaced && <p>Redirecting...</p>}
         <h1>Checkout</h1>
         <p>Please fill your delivery information</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-4">
               <div className="form-group mb-2">
@@ -89,20 +151,24 @@ export default function Checkout() {
               <div className="form-group">
                 <input
                   type="tel"
+                  id="tel"
+                  name="tel"
                   placeholder="e.g. 700200100"
                   className="form-control"
+                  onChange={handleShippingInfoChange}
+                  value={shippingInfo.tel}
                 />
               </div>
             </div>
           </div>
-        </form>
-        <form>
           <input
             type="text"
             id="firstName"
             name="firstName"
             placeholder="First name"
             className="form-control mb-2"
+            onChange={handleShippingInfoChange}
+            value={shippingInfo.firstName}
           />
           <input
             type="text"
@@ -110,6 +176,8 @@ export default function Checkout() {
             name="lastName"
             placeholder="Last name"
             className="form-control mb-2"
+            onChange={handleShippingInfoChange}
+            value={shippingInfo.lastName}
           />
           <input
             type="email"
@@ -117,6 +185,8 @@ export default function Checkout() {
             name="email"
             placeholder="name@example.com"
             className="form-control mb-2"
+            onChange={handleShippingInfoChange}
+            value={shippingInfo.email}
           />
           <input
             type="text"
@@ -124,8 +194,16 @@ export default function Checkout() {
             name="zipCode"
             placeholder="e.g. 00100"
             className="form-control mb-2"
+            onChange={handleShippingInfoChange}
+            value={shippingInfo.zipCode}
           />
-          <select className="form-select form-control mb-2">
+          <select
+            className="form-select form-control mb-2"
+            id="county"
+            name="county"
+            onChange={handleShippingInfoChange}
+            value={shippingInfo.county}
+          >
             <option value="" selected>
               Select a County
             </option>
@@ -135,9 +213,21 @@ export default function Checkout() {
               </option>
             ))}
           </select>
-          <input type="text" placeholder="Town" className="form-control mb-2" />
+          <input
+            type="text"
+            id="town"
+            name="town"
+            placeholder="Town"
+            className="form-control mb-2"
+            onChange={handleShippingInfoChange}
+            value={shippingInfo.town}
+          />
         </form>
-        <button type="submit" className="btn btn-dark mt-2 place-order">
+        <button
+          type="button"
+          className="btn btn-dark mt-2 place-order"
+          onClick={handleCheckout}
+        >
           Place Order
         </button>
       </div>
