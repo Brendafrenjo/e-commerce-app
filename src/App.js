@@ -11,6 +11,7 @@ import LogIn from "./LogIn";
 import Cart from "./Cart";
 import NotFound from "./NotFound";
 import Checkout from "./Checkout";
+import OrderConfirmation from "./OrderConfirmation";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
