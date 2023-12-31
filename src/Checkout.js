@@ -13,7 +13,6 @@ export default function Checkout() {
     county: "",
     town: "",
   });
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("Mpesa");
 
   const navigate = useNavigate();
 
@@ -73,11 +72,6 @@ export default function Checkout() {
       ...prevShippingInfo,
       [name]: value,
     }));
-  };
-
-  const handlePaymentMethodChange = (e) => {
-    const { value } = e.target;
-    setSelectedPaymentMethod(value);
   };
 
   const isEmailValid = (email) => {
@@ -215,21 +209,6 @@ export default function Checkout() {
             value={shippingInfo.town}
           />
         </form>
-
-        <label htmlFor="paymentMethod" className="form-label">
-          Payment Method
-        </label>
-        <select
-          id="paymentMethod"
-          name="paymentMethod"
-          className="form-select"
-          onChange={handlePaymentMethodChange}
-          value={selectedPaymentMethod}
-        >
-          <option value="Credit Card">Credit Card</option>
-          <option value="PayPal">PayPal</option>
-          <option value="PayPal">Mpesa</option>
-        </select>
         <button
           type="button"
           className="btn btn-dark mt-2 place-order"
