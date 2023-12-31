@@ -13,6 +13,7 @@ export default function Checkout() {
     county: "",
     town: "",
   });
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("Mpesa");
 
   const navigate = useNavigate();
 
@@ -74,6 +75,23 @@ export default function Checkout() {
     }));
   };
 
+  const handlePaymentMethodChange = (e) => {
+    const { value } = e.target;
+    setSelectedPaymentMethod(value);
+  };
+
+  const isEmailValid = (email) => {
+    // Simple email validation using a regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const isPhoneNumberValid = (tel) => {
+    // Simple phone number validation using a regular expression
+    const telRegex = /^\d{10}$/;
+    return telRegex.test(tel);
+  };
+
   // Function to handle the checkout process
   const handleCheckout = () => {
     if (
@@ -82,7 +100,9 @@ export default function Checkout() {
       shippingInfo.lastName &&
       shippingInfo.town &&
       shippingInfo.county &&
-      shippingInfo.zipCode
+      shippingInfo.zipCode &&
+      isEmailValid(shippingInfo.email) &&
+      isPhoneNumberValid(shippingInfo.tel)
     ) {
       // Perform any necessary checkout logic here
       // Mark the order as successfully placed
@@ -195,6 +215,21 @@ export default function Checkout() {
             value={shippingInfo.town}
           />
         </form>
+
+        <label htmlFor="paymentMethod" className="form-label">
+          Payment Method
+        </label>
+        <select
+          id="paymentMethod"
+          name="paymentMethod"
+          className="form-select"
+          onChange={handlePaymentMethodChange}
+          value={selectedPaymentMethod}
+        >
+          <option value="Credit Card">Credit Card</option>
+          <option value="PayPal">PayPal</option>
+          <option value="PayPal">Mpesa</option>
+        </select>
         <button
           type="button"
           className="btn btn-dark mt-2 place-order"
