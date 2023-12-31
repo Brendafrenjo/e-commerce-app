@@ -1,3 +1,10 @@
+export const ADD_ITEM = "ADD_ITEM";
+export const DELETE_ITEM = "DELETE_ITEM";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const CLEAR_CART = "CLEAR_CART";
+export const INITIALIZE_CART = "INITIALIZE_CART";
+export const INITIALIZE_ORDER_DETAILS = "INITIALIZE_ORDER_DETAILS";
+
 //Add item to cart//
 
 export function addCart(product) {
@@ -24,14 +31,14 @@ export function removeFromCart(productId) {
   };
 }
 
+//Clear cart
 export function clearCart() {
   return {
-    type: "CLEAR_CART"
-  }
+    type: "CLEAR_CART",
+  };
 }
 
-export const INITIALIZE_CART = "INITIALIZE_CART";
-
+//Initialize the shopping cart from local storage
 export const initializeCartFromLocalStorage = () => {
   const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
   return {
@@ -39,3 +46,9 @@ export const initializeCartFromLocalStorage = () => {
     payload: storedCart,
   };
 };
+
+//Initialize order details
+export const initializeOrderDetails = (orderDetails) => ({
+  type: INITIALIZE_ORDER_DETAILS,
+  payload: orderDetails,
+});
