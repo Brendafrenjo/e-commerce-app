@@ -6,6 +6,7 @@ import {
   deleteCart,
   removeFromCart,
   initializeCartFromLocalStorage,
+  clearCart,
 } from "./redux/action";
 import "./Cart.css";
 
@@ -31,9 +32,13 @@ export default function Cart() {
     dispatch(removeFromCart(productId));
   }
 
+  function handleClear() {
+    dispatch(clearCart());
+  }
+
   const calculateSubtotal = () => {
     return handleCart.reduce((total, product) => {
-      return total + Math.round(product.qty * product.price);
+      return total + product.qty * product.price;
     }, 0);
   };
 
@@ -96,7 +101,10 @@ export default function Cart() {
                       <p className="fw-bold lead mt-2">
                         ${Math.round(product.qty * product.price)}
                       </p>
-                      <button className="btn btn-dark" onClick={() => handleRemove(product.id)}>
+                      <button
+                        className="btn btn-dark"
+                        onClick={() => handleRemove(product.id)}
+                      >
                         Remove
                       </button>
                     </div>
@@ -106,13 +114,18 @@ export default function Cart() {
             ))}
             <div className="col-md-12 ">
               <div className="cart-summary">
-                <button className="clear-cart btn btn-outline-dark mt-3">
+                <button
+                  className="clear-cart btn btn-outline-dark mt-3"
+                  onClick={handleClear}
+                >
                   Clear Cart
                 </button>
                 <div className="cart-checkout">
                   <div className="subtotal">
                     <span>Subtotal:</span>
-                    <span className="amount">${calculateSubtotal()}</span>
+                    <span className="amount">
+                      ${Math.round(calculateSubtotal())}
+                    </span>
                   </div>
                   <p>Taxes and shipping calculated at checkout</p>
                 </div>

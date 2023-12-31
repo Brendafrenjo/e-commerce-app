@@ -52,7 +52,7 @@ function handleCart(state = cart, action) {
 
       // If the quantity of the product to be deleted is 1, remove it from the state
       if (existProductToDelete.qty === 1) {
-        toast.success(`${existProductToDelete.title} removed from cart`, {
+        toast.error(`${existProductToDelete.title} removed from cart`, {
           position: "bottom-left",
         });
         return state.filter((x) => x.id !== existProductToDelete.id);
@@ -80,13 +80,25 @@ function handleCart(state = cart, action) {
       const nextCartItems = state.filter((x) => x.id !== action.payload);
 
       // Display a success toast notification indicating the removal of the product
-      toast.success(`${removedProduct.title} removed from cart`, {
+      toast.error(`${removedProduct.title} removed from cart`, {
         position: "bottom-left",
       });
 
       // Update local storage with the modified cart items
       localStorage.setItem("cartItems", JSON.stringify(nextCartItems));
       return nextCartItems;
+
+    case "CLEAR_CART": 
+      // Clear the cart by returning an empty array
+  toast.warn("Cart cleared", {
+    position: "bottom-left",
+  });
+
+  // Update the local storage with the cleared cart
+  localStorage.setItem("cartItems", JSON.stringify([]));
+
+  // Return an empty array to clear the cart
+  return [];
 
     case "INITIALIZE_CART":
       // Directly return the payload received from local storage
