@@ -74,34 +74,6 @@ export default function Checkout() {
     }));
   };
 
-  // Function to handle the submit process
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (
-      shippingInfo.tel.trim() === "" ||
-      shippingInfo.firstName.trim() === "" ||
-      shippingInfo.lastName.trim() === "" ||
-      shippingInfo.town.trim() === "" ||
-      shippingInfo.county.trim() === "" ||
-      shippingInfo.zipCode.trim() === ""
-    ) {
-      alert("All fields are required");
-      return;
-    }
-
-    console.log("Information submitted:", shippingInfo);
-
-    setShippingInfo({
-      tel: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      zipCode: "",
-      county: "",
-      town: "",
-    });
-  };
-
   // Function to handle the checkout process
   const handleCheckout = () => {
     if (
@@ -130,7 +102,7 @@ export default function Checkout() {
         {orderPlaced && <p>Redirecting...</p>}
         <h1>Checkout</h1>
         <p>Please fill your delivery information</p>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="row">
             <div className="col-4">
               <div className="form-group mb-2">
