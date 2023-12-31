@@ -88,20 +88,24 @@ function handleCart(state = cart, action) {
       localStorage.setItem("cartItems", JSON.stringify(nextCartItems));
       return nextCartItems;
 
-    case "CLEAR_CART": 
+    case "CLEAR_CART":
       // Clear the cart by returning an empty array
-  toast.warn("Cart cleared", {
-    position: "bottom-left",
-  });
+      toast.warn("Cart cleared", {
+        position: "bottom-left",
+      });
 
-  // Update the local storage with the cleared cart
-  localStorage.setItem("cartItems", JSON.stringify([]));
+      // Update the local storage with the cleared cart
+      localStorage.setItem("cartItems", JSON.stringify([]));
 
-  // Return an empty array to clear the cart
-  return [];
+      // Return an empty array to clear the cart
+      return [];
 
     case "INITIALIZE_CART":
       // Directly return the payload received from local storage
+      return action.payload;
+
+    case "INITIALIZE_ORDER_DETAILS":
+      // Directly return the payload received from action
       return action.payload;
 
     default:
