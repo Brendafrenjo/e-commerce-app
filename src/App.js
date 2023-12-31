@@ -1,6 +1,6 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
- import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -10,6 +10,7 @@ import Product from "./Product";
 import LogIn from "./LogIn";
 import Cart from "./Cart";
 import NotFound from "./NotFound";
+import Checkout from "./Checkout";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/not-found" element={<NotFound />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
