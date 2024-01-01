@@ -101,11 +101,20 @@ export default function Checkout() {
       shippingInfo.county &&
       shippingInfo.zipCode &&
       isEmailValid(shippingInfo.email) &&
-      isPhoneNumberValid(shippingInfo.tel)
+      isPhoneNumberValid(shippingInfo.tel) &&
+      handleCart.length > 0
     ) {
       // Dispatch an action to add the product to the Redux store
       handleCart.map((product) => {
-        dispatch(addCart(product));
+        dispatch(
+          addCart({
+            id: product.id,
+            title: product.title,
+            image: product.image,
+            price: product.price,
+            Quantity: product.qty,
+          })
+        );
       });
 
       // Mark the order as successfully placed
