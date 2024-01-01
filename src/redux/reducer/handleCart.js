@@ -104,10 +104,6 @@ function handleCart(state = cart, action) {
       // Directly return the payload received from local storage
       return action.payload;
 
-    case "INITIALIZE_ORDER_DETAILS":
-      // Directly return the payload received from action
-      return action.payload;
-
     default:
       return state;
   }

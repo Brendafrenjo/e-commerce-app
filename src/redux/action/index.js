@@ -3,7 +3,6 @@ export const DELETE_ITEM = "DELETE_ITEM";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const CLEAR_CART = "CLEAR_CART";
 export const INITIALIZE_CART = "INITIALIZE_CART";
-export const INITIALIZE_ORDER_DETAILS = "INITIALIZE_ORDER_DETAILS";
 
 //Add item to cart//
 
@@ -46,9 +45,3 @@ export const initializeCartFromLocalStorage = () => {
     payload: storedCart,
   };
 };
-
-//Initialize order details
-export const initializeOrderDetails = (orderDetails) => ({
-  type: INITIALIZE_ORDER_DETAILS,
-  payload: orderDetails,
-});
