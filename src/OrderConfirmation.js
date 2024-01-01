@@ -8,11 +8,13 @@ export default function OrderConfirmation() {
   const { shippingInfo, handleCart } = location.state || {};
   const [paymentMethod, setPaymentMethod] = useState("");
 
-  const product = useSelector((state) => {
-    console.log(state);
-    state.products.find((x) => x.id === handleCart.product.id)
-  });
-
+  const products = useSelector((state) => {
+    console.log("Current Redux state:", state);
+    return handleCart.map((x) =>
+      Object.values(state).find((product) => product.id === x.id)
+    );
+  }).filter((product) => product !== undefined);
+  
   const handlePaymentChange = (event) => {
     setPaymentMethod(event.target.value);
   };
@@ -31,62 +33,77 @@ export default function OrderConfirmation() {
       <h1>Order Confirmation</h1>
       <h3>Client Information</h3>
       <p>
-        <strong>First Name:</strong> {shippingInfo.firstName}
+        <strong>First Name:</strong> {shippingInfo?.firstName}
       </p>
       <p>
-        <strong>Last Name:</strong> {shippingInfo.lastName}
+        <strong>Last Name:</strong> {shippingInfo?.lastName}
       </p>
       <p>
-        <strong>Email:</strong> {shippingInfo.email}
+        <strong>Email:</strong> {shippingInfo?.email}
       </p>
       <p>
-        <strong>Phone Number:</strong> {shippingInfo.tel}
+        <strong>Phone Number:</strong> {shippingInfo?.tel}
       </p>
       <p>
-        <strong>County:</strong> {shippingInfo.county}
+        <strong>County:</strong> {shippingInfo?.county}
       </p>
       <p>
-        <strong>Town:</strong> {shippingInfo.town}
+        <strong>Town:</strong> {shippingInfo?.town}
       </p>
-      <div>
-        <h3 className="mb-3">Payment Method</h3>
-        <form>
-          <label>
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="Mpesa"
-              onChange={handlePaymentChange}
-            />
-            Mpesa
-          </label>
-          <br />
-          <label>
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="creditCard"
-              onChange={handlePaymentChange}
-            />
-            Visa/Master Card
-          </label>
-          <br />
-          <label>
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="paypal"
-              onChange={handlePaymentChange}
-            />
-            PayPal
-          </label>
-        </form>
-      </div>
+      {handleCart && handleCart.length > 0 && (
+        <div>
+          <h3 className="mb-3">Payment Method</h3>
+          <form>
+            <label>
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="Mpesa"
+                onChange={handlePaymentChange}
+              />
+              Mpesa
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="creditCard"
+                onChange={handlePaymentChange}
+              />
+              Visa/Master Card
+            </label>
+            <br />
+            <label>
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="paypal"
+                onChange={handlePaymentChange}
+              />
+              PayPal
+            </label>
+          </form>
+        </div>
+      )}
       <h3 className="mt-3">Order Summary</h3>
-      <img src="" alt="" height="" width="" />
-      <h4 className="">Titled</h4>
-      <small>as picture</small>
-      <div className="">$</div>
+      {products.length > 0 &&
+        products.map(
+          (product) =>
+            product && (
+              <div key={product.id} className="order-summary-item">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  height="50"
+                  width="50"
+                />
+                <h4 className="">{product.title}</h4>
+                <small>as shown in picture</small>
+                <div className="">${product.price}</div>
+              </div>
+            )
+        )}
       <div className="coupon">
         <h4>Discount</h4>
         <div className="row">
