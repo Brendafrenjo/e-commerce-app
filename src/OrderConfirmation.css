@@ -1,7 +1,22 @@
-h2 {
+h1 {
   font-weight: 400;
+}
+
+h3 {
+   font-weight: 400;
+}
+
+.coupon {
+  display: block;
+  margin: 0 auto;
 }
 
 .OrderConfirmation {
   margin: 80px 0;
+}
+
+@media (min-width: 500px) {
+    .coupon {
+        max-width: 350px;
+    }
 }
