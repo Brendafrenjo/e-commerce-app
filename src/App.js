@@ -12,6 +12,7 @@ import Cart from "./Cart";
 import NotFound from "./NotFound";
 import Checkout from "./Checkout";
 import OrderConfirmation from "./OrderConfirmation";
+import AuthenticationContainer from "./AuthenticationContainer";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route
+          path="/authentication-container"
+          element={<AuthenticationContainer />}
+        />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
