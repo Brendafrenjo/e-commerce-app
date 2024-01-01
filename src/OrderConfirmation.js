@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./OrderConfirmation.css";
 
 export default function OrderConfirmation() {
   const location = useLocation();
-  const shippingInfo = location.state?.shippingInfo || {};
-
+  const { shippingInfo, handleCart } = location.state || {};
   const [paymentMethod, setPaymentMethod] = useState("");
+
+  const product = useSelector((state) => {
+    console.log(state);
+    state.products.find((x) => x.id === handleCart.product.id)
+  });
 
   const handlePaymentChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -126,7 +131,9 @@ export default function OrderConfirmation() {
           <p>$Total Amoun</p>
         </span>
         <span>
-          <button className="btn btn-dark" onClick={handlePayNow}>Place Order</button>
+          <button className="btn btn-outline-dark" onClick={handlePayNow}>
+            Place Order
+          </button>
         </span>
       </div>
     </div>

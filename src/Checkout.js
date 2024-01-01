@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart } from "./redux/action";
 import { Bars } from "react-loader-spinner";
 import "./Checkout.css";
 
@@ -15,7 +17,9 @@ export default function Checkout() {
     town: "",
   });
 
+  const { handleCart } = useSelector((state) => state);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const counties = [
     "Baringo",
@@ -99,12 +103,21 @@ export default function Checkout() {
       isEmailValid(shippingInfo.email) &&
       isPhoneNumberValid(shippingInfo.tel)
     ) {
-      // Perform any necessary checkout logic here
+      // Dispatch an action to add the product to the Redux store
+      handleCart.map((product) => {
+        dispatch(addCart(product));
+      });
+
       // Mark the order as successfully placed
       setOrderPlaced(true);
 
       // Use history.push to navigate to the order confirmation page
-      navigate("/order-confirmation", { state: { shippingInfo } });
+      navigate("/order-confirmation", {
+        state: {
+          shippingInfo,
+          handleCart,
+        },
+      });
     } else {
       // Handle incomplete checkout (e.g., show an error message)
       alert("Please provide complete shipping information.");
@@ -117,7 +130,7 @@ export default function Checkout() {
         <Bars
           height="80"
           width="80"
-          color="#4fa94d"
+          color="#black"
           ariaLabel="bars-loading"
           wrapperStyle={{}}
           wrapperClass=""
@@ -130,7 +143,6 @@ export default function Checkout() {
   function CheckoutForm() {
     return (
       <div className="CheckoutForm">
-        <h1>Checkout</h1>
         <p>Please fill your delivery information</p>
         <form>
           <div className="row">
@@ -239,6 +251,7 @@ export default function Checkout() {
   return (
     <div className="Checkout">
       <div className="container">
+        <h1>Checkout</h1>
         {orderPlaced ? <Loading /> : <CheckoutForm />}
       </div>
     </div>
