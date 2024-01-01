@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Bars } from "react-loader-spinner";
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -17,53 +18,53 @@ export default function Checkout() {
   const navigate = useNavigate();
 
   const counties = [
-    "Mombasa",
-    "Kwale",
-    "Kilifi",
-    "Tana River",
-    "Lamu",
-    "Taita-Taveta",
-    "Garissa",
-    "Wajir",
-    "Mandera",
-    "Marsabit",
-    "Isiolo",
-    "Meru",
-    "Tharaka-Nithi",
-    "Embu",
-    "Kitui",
-    "Machakos",
-    "Makueni",
-    "Nyandarua",
-    "Nyeri",
-    "Kirinyaga",
-    "Murang'a",
-    "Kiambu",
-    "Turkana",
-    "West Pokot",
-    "Samburu",
-    "Trans Nzoia",
-    "Uasin Gishu",
-    "Elgeyo-Marakwet",
-    "Nandi",
     "Baringo",
-    "Laikipia",
-    "Nakuru",
-    "Narok",
-    "Kajiado",
-    "Kericho",
     "Bomet",
-    "Kakamega",
-    "Vihiga",
     "Bungoma",
     "Busia",
-    "Siaya",
-    "Kisumu",
+    "Elgeyo-Marakwet",
+    "Embu",
+    "Garissa",
     "Homa Bay",
-    "Migori",
+    "Isiolo",
+    "Kajiado",
+    "Kakamega",
+    "Kericho",
+    "Kerynaga",
+    "Kilifi",
+    "Kirinyaga",
     "Kisii",
-    "Nyamira",
+    "Kisumu",
+    "Kitui",
+    "Kwale",
+    "Laikipia",
+    "Lamu",
+    "Machakos",
+    "Makueni",
+    "Mandera",
+    "Marsabit",
+    "Meru",
+    "Migori",
+    "Mombasa",
+    "Murang'a",
     "Nairobi",
+    "Nakuru",
+    "Nandi",
+    "Narok",
+    "Nyamira",
+    "Nyandarua",
+    "Nyeri",
+    "Samburu",
+    "Siaya",
+    "Taita-Taveta",
+    "Tana River",
+    "Tharaka-Nithi",
+    "Trans Nzoia",
+    "Turkana",
+    "Uasin Gishu",
+    "Vihiga",
+    "Wajir",
+    "West Pokot",
   ];
 
   const handleShippingInfoChange = (e) => {
@@ -110,10 +111,25 @@ export default function Checkout() {
     }
   };
 
-  return (
-    <div className="Checkout">
-      <div className="container">
-        {orderPlaced && <p>Redirecting...</p>}
+  function Loading() {
+    return (
+      <div className="loader-container">
+        <Bars
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
+  }
+
+  function CheckoutForm() {
+    return (
+      <div className="CheckoutForm">
         <h1>Checkout</h1>
         <p>Please fill your delivery information</p>
         <form>
@@ -216,6 +232,14 @@ export default function Checkout() {
         >
           Place Order
         </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="Checkout">
+      <div className="container">
+        {orderPlaced ? <Loading /> : <CheckoutForm />}
       </div>
     </div>
   );

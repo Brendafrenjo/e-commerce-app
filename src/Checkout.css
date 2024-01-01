@@ -1,27 +1,34 @@
 .Checkout {
-    display: block;
-    margin: 0 auto;
-    padding: 32px 0;
+  display: block;
+  margin: 0 auto;
+  padding: 32px 0;
 }
 
 .Checkout .place-order {
-    width: 300px;
+  width: 300px;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
 }
 
 @media (max-width: 600px) {
   .Checkout .place-order {
     width: 200px;
-}  
+  }
 }
 
 @media (max-width: 280px) {
   .Checkout .place-order {
     width: 150px;
-}  
+  }
 }
 
 @media (min-width: 500px) {
-    .Checkout {
-        max-width: 400px;
-    }
+  .Checkout {
+    max-width: 400px;
+  }
 }
