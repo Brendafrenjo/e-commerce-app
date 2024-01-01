@@ -103,7 +103,7 @@ export default function Checkout() {
       setOrderPlaced(true);
 
       // Use history.push to navigate to the order confirmation page
-      navigate("/order-confirmation");
+      navigate("/order-confirmation", { state: { shippingInfo } });
     } else {
       // Handle incomplete checkout (e.g., show an error message)
       alert("Please provide complete shipping information.");
