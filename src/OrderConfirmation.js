@@ -6,15 +6,34 @@ import "./OrderConfirmation.css";
 export default function OrderConfirmation() {
   const location = useLocation();
   const { shippingInfo, handleCart } = location.state || {};
+  console.log("handleCart:", handleCart);
   const [paymentMethod, setPaymentMethod] = useState("");
 
   const products = useSelector((state) => {
     console.log("Current Redux state:", state);
-    return handleCart.map((x) =>
-      Object.values(state).find((product) => product.id === x.id)
-    );
-  }).filter((product) => product !== undefined);
-  
+    console.log("handleCart:", handleCart);
+
+    if (typeof state !== "object" || state === null) {
+      console.error("Redux state is not an object.");
+      return [];
+    }
+
+    return handleCart
+      .map((cartItem) => {
+        const productId = cartItem.id;
+        const product = state[productId];
+
+          console.log(`Product for ID ${productId}:`, product);
+
+        if (product) {
+          return product; 
+        }
+
+        return null;
+      })
+      .filter((product) => product !== null);
+  });
+
   const handlePaymentChange = (event) => {
     setPaymentMethod(event.target.value);
   };
@@ -88,22 +107,19 @@ export default function OrderConfirmation() {
       )}
       <h3 className="mt-3">Order Summary</h3>
       {products.length > 0 &&
-        products.map(
-          (product) =>
-            product && (
-              <div key={product.id} className="order-summary-item">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  height="50"
-                  width="50"
-                />
-                <h4 className="">{product.title}</h4>
-                <small>as shown in picture</small>
-                <div className="">${product.price}</div>
-              </div>
-            )
-        )}
+        products.map((product) => (
+          <div key={product.id} className="order-summary-item">
+            <img
+              src={product.image}
+              alt={product.title}
+              height="50"
+              width="50"
+            />
+            <h4 className="">{product.title}</h4>
+            <small>as shown in picture</small>
+            <div className="">${product.price}</div>
+          </div>
+        ))}
       <div className="coupon">
         <h4>Discount</h4>
         <div className="row">
