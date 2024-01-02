@@ -1,0 +1,35 @@
+h2 {
+  font-size: 35px;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+.RegistrationForm {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.description {
+  line-height: 1.2;
+  margin-top: 17px;
+  font-size: 12px;
+}
+
+.sign-up {
+  width: 180px;
+  font-weight: 700;
+}
+
+@media (min-width: 500px) {
+  .RegistrationForm {
+    max-width: 410px;
+  }
+}
