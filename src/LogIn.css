@@ -1,0 +1,30 @@
+h1 {
+  font-size: 35px;
+}
+
+.LogIn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 10px;
+  border: 1px solid none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.log-in-form,
+.log-in,
+.create-new-account {
+  height: 50px;
+}
+
+.log-in,
+.create-new-account {
+  font-weight: 700;
+}
+
+@media (min-width: 500px) {
+  .LogIn {
+    max-width: 410px;
+  }
+}
