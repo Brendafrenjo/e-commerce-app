@@ -70,7 +70,7 @@ export default function NavBar() {
                 <i className="fa-solid fa-right-to-bracket me-2 icon"></i>Login
               </NavLink>
               <NavLink to="/register" className="btn btn-outline-dark me-2">
-                <i className="fa-solid fa-user-plus me-2 icon"></i>Register
+                <i className="fa-solid fa-user-plus me-2 icon"></i>Sign Up
               </NavLink>
               <NavLink to="/cart" className="btn btn-outline-dark">
                 <i className="fa-solid fa-cart-shopping icon me-2"></i>Cart (
