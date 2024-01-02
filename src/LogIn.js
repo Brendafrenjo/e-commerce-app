@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./LogIn.css";
 
-export default function LogIn() {
+export default function LogIn({ onSignIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,34 +11,45 @@ export default function LogIn() {
   };
 
   return (
-    <div>
-      <div className="row">
-        <div className="col-md-9">
-          <h1>LogIn</h1>
-          <label htmlFor="signInUsername">Username:</label>
-          <input
-            type="text"
-            id="signInUsername"
-            name="signInUsername"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-
-          <label htmlFor="signInPassword">Password:</label>
-          <input
-            type="password"
-            id="signInPassword"
-            name="signInPassword"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="button" onClick={handleSignIn}>
-            LogIn
-          </button>
-        </div>
-      </div>
+    <div className="LogIn">
+      <h1>LogIn</h1>
+      <form>
+        <input
+          type="text"
+          id="signInUsername"
+          name="signInUsername"
+          placeholder="Username"
+          className="form-control log-in-form"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          id="signInPassword"
+          name="signInPassword"
+          placeholder="Password"
+          className="form-control log-in-form mt-2"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button
+          className="btn btn-dark mt-3 mb-2 form-control log-in"
+          type="button"
+          onClick={handleSignIn}
+        >
+          Log in
+        </button>
+        <br />
+        <a href="example" className="">
+          Forgotten Password?
+        </a>
+        <hr />
+        <button className="btn btn-outline-dark mb-3 mt-2 create-new-account">
+          Create new account
+        </button>
+      </form>
     </div>
   );
 }
