@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LogIn from "./LogIn";
 import Register from "./Register";
+import "./AuthenticationContainer.css";
 
 export default function AuthenticationContainer() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -16,7 +17,7 @@ export default function AuthenticationContainer() {
   };
 
   return (
-    <div>
+    <div className="AuthenticationContainer">
       {isSignIn ? (
         <LogIn onSignIn={handleSignIn} />
       ) : (

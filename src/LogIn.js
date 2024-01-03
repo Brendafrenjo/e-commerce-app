@@ -55,9 +55,12 @@ export default function LogIn({ onSignIn }) {
                 Forgotten Password?
               </NavLink>
               <hr />
-              <button className="btn btn-outline-dark mb-3 mt-2 create-new-account">
+              <NavLink
+                to="/register"
+                className="btn btn-outline-dark mb-3 mt-2 create-new-account"
+              >
                 Create new account
-              </button>
+              </NavLink>
             </form>
           </div>
         </div>

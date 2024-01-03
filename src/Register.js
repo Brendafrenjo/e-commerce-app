@@ -78,8 +78,8 @@ export default function RegistrationForm(onRegister) {
       <div className="description text-muted text">
         <small>
           By clicking Sign Up, you agree to our{" "}
-          <a href="/">Terms, Privacy Policy </a>
-          and <a href="/">Cookies Policy</a>. You may receive SMS notifications
+          <a href="example">Terms, Privacy Policy </a>
+          and <a href="example">Cookies Policy</a>. You may receive SMS notifications
           from us and can opt out at any time.
         </small>
       </div>
