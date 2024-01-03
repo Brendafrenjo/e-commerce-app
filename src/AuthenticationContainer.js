@@ -23,10 +23,10 @@ export default function AuthenticationContainer() {
         <Register onRegister={handleRegister} />
       )}
 
-      <p onClick={() => setIsSignIn(!isSignIn)} className="mt-3">
+      <p onClick={() => setIsSignIn(!isSignIn)} className="mt-3 isSignIn">
         {isSignIn
           ? "Don't have an account? Register here."
-          : "Already have an account? LonIn in here."}
+          : "Already have an account? Log in here."}
       </p>
     </div>
   );

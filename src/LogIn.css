@@ -2,10 +2,27 @@ h1 {
   font-size: 35px;
 }
 
-.LogIn {
+.LogIn-Container h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.LogIn-Container {
   display: block;
   margin: 0 auto;
   margin-top: 40px;
+}
+
+.LogIn-Container p {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.LogIn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
   padding: 10px;
   border: 1px solid none;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -23,8 +40,47 @@ h1 {
   font-weight: 700;
 }
 
-@media (min-width: 500px) {
+@media (max-width: 600px) {
+  .LogIn-Container h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
   .LogIn {
+    margin-top: 15px;
+  }
+
+  .LogIn-Container p {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 500px) {
+  .LogIn,
+  .LogIn-Container {
     max-width: 410px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .LogIn-Container {
+    margin-top: 180px;
+    text-align: left;
+    margin-right: 50px;
+  }
+
+  .LogIn-Container h1 {
+    font-size: 52px;
+  }
+
+  .LogIn-Container p {
+    font-size: 28px;
+  }
+
+  .LogIn {
+    margin-top: 110px;
+    margin-left: 20px;
   }
 }
