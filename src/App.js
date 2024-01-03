@@ -21,7 +21,8 @@ function App() {
   const hideNavBar =
     location.pathname === "/authentication-container" ||
     location.pathname === "/register" ||
-    location.pathname === "/login";
+    location.pathname === "/login" ||
+    location.pathname === "/find-your-account";
 
   return (
     <div className="App">
