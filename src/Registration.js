@@ -1,19 +1,42 @@
 import React, { useState } from "react";
-import "./Register.css";
+import { useNavigate } from "react-router-dom";
+import "./Registration.css";
 
-export default function RegistrationForm(onRegister) {
+export default function Registration(onRegister) {
   const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [registrationError, setRegistrationError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleRegister = () => {
-    // Add any validation logic here
+    if (!username || !email || !password) {
+      setRegistrationError("All fields are required.");
+      return;
+    }
 
-    // Call the parent component's onRegister function with the new user credentials
-    onRegister({ username, password });
+    const newUser = { username, email, password, firstname, surname };
+    console.log("Simulating user registration:", newUser);
+
+    if (username === "existingUser") {
+      setRegistrationError(
+        "Username already exists. Please choose a different one."
+      );
+      return;
+    }
+
+    setRegistrationError(null);
+
+    onRegister(newUser);
+
+    navigate("/home");
   };
 
   return (
-    <div className="RegistrationForm">
+    <div className="Registration">
       <h2>Sign Up</h2>
       <p className="text-start">It's quick and easy</p>
       <hr />
@@ -22,24 +45,24 @@ export default function RegistrationForm(onRegister) {
           <div className="col-6">
             <input
               type="text"
-              id="registerUsername"
-              name="registerUsername"
+              id="registerFirstname"
+              name="registerFirstname"
               placeholder="First name"
               className="form-control registration-form"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
               required
             />
           </div>
           <div className="col-6">
             <input
               type="text"
-              id="registerUsername"
-              name="registerUsername"
+              id="registerSurname"
+              name="registerSurname"
               placeholder="Surname"
               className="form-control registration-form"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
               required
             />
           </div>
@@ -56,12 +79,12 @@ export default function RegistrationForm(onRegister) {
         />
         <input
           type="email"
-          id="email"
-          name="email"
+          id="registerEmail"
+          name="registerEmail"
           placeholder="Email address"
           className="form-control registration-form mt-3"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
@@ -79,8 +102,8 @@ export default function RegistrationForm(onRegister) {
         <small>
           By clicking Sign Up, you agree to our{" "}
           <a href="example">Terms, Privacy Policy </a>
-          and <a href="example">Cookies Policy</a>. You may receive SMS notifications
-          from us and can opt out at any time.
+          and <a href="example">Cookies Policy</a>. You may receive SMS
+          notifications from us and can opt out at any time.
         </small>
       </div>
       <br />

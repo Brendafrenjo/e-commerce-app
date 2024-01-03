@@ -56,7 +56,7 @@ export default function LogIn({ onSignIn }) {
               </NavLink>
               <hr />
               <NavLink
-                to="/register"
+                to="/registration"
                 className="btn btn-outline-dark mb-3 mt-2 create-new-account"
               >
                 Create new account

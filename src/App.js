@@ -13,14 +13,14 @@ import NotFound from "./NotFound";
 import Checkout from "./Checkout";
 import OrderConfirmation from "./OrderConfirmation";
 import AuthenticationContainer from "./AuthenticationContainer";
-import Register from "./Register";
+import Registration from "./Registration";
 import FindYourAccount from "./FindYourAccount";
 
 function App() {
   const location = useLocation();
   const hideNavBar =
     location.pathname === "/authentication-container" ||
-    location.pathname === "/register" ||
+    location.pathname === "/registration" ||
     location.pathname === "/login" ||
     location.pathname === "/find-your-account";
 
@@ -40,7 +40,7 @@ function App() {
           path="/authentication-container"
           element={<AuthenticationContainer />}
         />
-        <Route path="/register" element={<Register />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/find-your-account" element={<FindYourAccount />} />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
