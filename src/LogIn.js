@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./LogIn.css";
+import { NavLink } from "react-router-dom";
 
 export default function LogIn({ onSignIn }) {
   const [username, setUsername] = useState("");
@@ -50,9 +51,9 @@ export default function LogIn({ onSignIn }) {
                 Log in
               </button>
               <br />
-              <a href="example" className="">
+              <NavLink to="/find-your-account" className="">
                 Forgotten Password?
-              </a>
+              </NavLink>
               <hr />
               <button className="btn btn-outline-dark mb-3 mt-2 create-new-account">
                 Create new account
