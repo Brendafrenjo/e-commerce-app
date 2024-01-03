@@ -1,0 +1,33 @@
+.FindYourAccount h3 {
+  font-weight: 500;
+}
+
+.FindYourAccount p {
+  font-size: 17px;
+}
+
+.FindYourAccount {
+  display: block;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 10px;
+  border: 1px solid none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+}
+
+.cancel-button,
+.search-button {
+  width: 90px;
+}
+
+@media (min-width: 500px) {
+  .FindYourAccount {
+    max-width: 480px;
+  }
+}
