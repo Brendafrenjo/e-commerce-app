@@ -1,5 +1,6 @@
 import React from "react";
 import "./FindYourAccount.css";
+import { NavLink } from "react-router-dom";
 
 export default function FindYourAccount() {
   return (
@@ -21,7 +22,12 @@ export default function FindYourAccount() {
       </form>
       <hr />
       <div className="buttons">
-        <button className="btn btn-outline-dark me-2 cancel-button">Cancel</button>
+        <NavLink
+          to="/authentication-container"
+          className="btn btn-outline-dark me-2 cancel-button"
+        >
+          Cancel
+        </NavLink>
         <button className="btn btn-dark search-button">Search</button>
       </div>
     </div>
