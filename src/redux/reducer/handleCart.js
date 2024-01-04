@@ -1,8 +1,8 @@
 import { toast } from "react-toastify";
 
-const cart = [];
+const initialCartState = [];
 
-function handleCart(state = cart, action) {
+function handleCart(state = initialCartState, action) {
   const product = action.payload;
   switch (action.type) {
     case "ADD_ITEM":

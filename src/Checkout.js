@@ -17,11 +17,13 @@ export default function Checkout() {
     town: "",
   });
 
-  const { handleCart } = useSelector((state) => state);
+  const handleCart = useSelector((state) => state.handleCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  console.log("Shipping Info:", shippingInfo);
+  console.log("Handle Cart:", handleCart);
 
-  const counties = [
+  let counties = [
     "Baringo",
     "Bomet",
     "Bungoma",
@@ -102,10 +104,10 @@ export default function Checkout() {
       shippingInfo.zipCode &&
       isEmailValid(shippingInfo.email) &&
       isPhoneNumberValid(shippingInfo.tel) &&
-      handleCart.length > 0
+      handleCart.length === 0
     ) {
       // Dispatch an action to add the product to the Redux store
-      handleCart.map((product) => {
+      handleCart.forEach((product) => {
         dispatch(
           addCart({
             id: product.id,
@@ -231,7 +233,7 @@ export default function Checkout() {
               Select a County
             </option>
             {counties.map((county, index) => (
-              <option key={index} value={index + 1}>
+              <option key={index} value={county}>
                 {county}
               </option>
             ))}
