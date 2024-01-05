@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./LogIn.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Bars } from "react-loader-spinner";
 
-export default function LogIn({ onSignIn }) {
+export default function LogIn() {
   const [logInSuccessful, setLogInSuccessful] = useState(false);
   const [signInInfo, setSignInInfo] = useState({
     signInUsername: "",
@@ -29,7 +30,23 @@ export default function LogIn({ onSignIn }) {
     }
   };
 
-  function sigInForm() {
+  function Loading() {
+    return (
+      <div className="loader-container">
+        <Bars
+          height="80"
+          width="80"
+          color="#black"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
+  }
+
+  function signInForm() {
     <div className="row">
       <div className="col-lg-6">
         <div className="LogIn-Container">
@@ -86,7 +103,7 @@ export default function LogIn({ onSignIn }) {
 
   return (
     <div className="Container">
-      {logInSuccessful ? <p>Loading...</p> : <sigInForm />}
+      {logInSuccessful ? < Loading/> : <signInForm />}
     </div>
   );
 }
