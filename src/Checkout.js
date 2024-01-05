@@ -141,7 +141,7 @@ export default function Checkout() {
         <Bars
           height="80"
           width="80"
-          color="#black"
+          color="black"
           ariaLabel="bars-loading"
           wrapperStyle={{}}
           wrapperClass=""
