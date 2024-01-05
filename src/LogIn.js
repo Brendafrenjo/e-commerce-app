@@ -46,9 +46,9 @@ export default function LogIn() {
     );
   }
 
-  function signInForm() {
+  function SignInForm() {
     return (
-      <div className="signInForm">
+      <div className="signinForm">
         <div className="row">
           <div className="col-lg-6">
             <div className="LogIn-Container">
@@ -109,7 +109,7 @@ export default function LogIn() {
 
   return (
     <div className="Container">
-      {logInSuccessful ? <Loading /> : <signInForm />}
+      {logInSuccessful ? <Loading /> : <SignInForm />}
     </div>
   );
 }
