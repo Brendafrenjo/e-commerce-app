@@ -12,19 +12,16 @@ export default function LogIn() {
 
   const navigate = useNavigate();
 
-  function handleSignInInfoChange(event) {
-    const { name, value } = event.target;
-    setSignInInfo((prevSignInInfo) => ({
-      ...prevSignInInfo,
-      [name]: value,
-    }));
+  function handleSignInInfoChange(e) {
+    const { name, value } = e.target;
+    setSignInInfo({ ...signInInfo, [name]: value });
   }
 
   const handleSignIn = () => {
     if (signInInfo.signInUsername && signInInfo.signInPassword) {
       setLogInSuccessful(true);
 
-      navigate("/home");
+      navigate("/");
     } else {
       alert("Please provide complete log in information.");
     }
@@ -67,9 +64,8 @@ export default function LogIn() {
                   name="signInUsername"
                   placeholder="Username"
                   className="form-control log-in-form"
-                  value={signInInfo.signInUsername}
                   onChange={handleSignInInfoChange}
-                  required
+                  value={signInInfo.signInUsername}
                 />
                 <input
                   type="password"
@@ -77,9 +73,8 @@ export default function LogIn() {
                   name="signInPassword"
                   placeholder="Password"
                   className="form-control log-in-form mt-2"
-                  value={signInInfo.signInPassword}
                   onChange={handleSignInInfoChange}
-                  required
+                  value={signInInfo.signInPassword}
                 />
                 <button
                   className="btn btn-dark mt-3 mb-2 form-control log-in"
