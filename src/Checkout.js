@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "./redux/action";
-import { Bars } from "react-loader-spinner";
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -95,25 +94,18 @@ export default function Checkout() {
 
   // Function to handle the checkout process
   const handleCheckout = () => {
-    const {
-      shipTel,
-      shipFirstName,
-      shipLastName,
-      shipTown,
-      shipCounty,
-      shipZipCode,
-      shipEmail,
-    } = shippingInfo;
+    const { tel, firstName, lastName, email, zipCode, county, town } =
+      shippingInfo;
 
     if (
-      shippingInfo.tel &&
-      shippingInfo.firstName &&
-      shippingInfo.lastName &&
-      shippingInfo.town &&
-      shippingInfo.county &&
-      shippingInfo.zipCode &&
-      isEmailValid(shippingInfo.email) &&
-      isPhoneNumberValid(shippingInfo.tel) &&
+      tel &&
+      firstName &&
+      lastName &&
+      town &&
+      county &&
+      zipCode &&
+      isEmailValid(email) &&
+      isPhoneNumberValid(tel) &&
       handleCart.length === 0
     ) {
       // Dispatch an action to add the product to the Redux store
@@ -141,58 +133,46 @@ export default function Checkout() {
       });
     } else {
       let errorMessage = "Please provide complete shipping information:\n";
-     
-      if (!shipTel) {
-       errorMessage += "- Valid phone number\n";
-     }
 
-      if (!shipFirstName) {
+      if (!tel) {
+        errorMessage += "- Valid phone number\n";
+      }
+
+      if (!firstName) {
         errorMessage += "-First name\n";
       }
 
-       if (!shipLastName) {
-         errorMessage += "-Last name\n";
-       }
+      if (!lastName) {
+        errorMessage += "-Last name\n";
+      }
 
-      if (!shipTown) {
+      if (!town) {
         errorMessage += "-Town\n";
       }
 
-      if (!shipCounty) {
+      if (!county) {
         errorMessage += "-County\n";
       }
 
-      if (!shipZipCode) {
+      if (!zipCode) {
         errorMessage += "-ZipCode\n";
       }
 
-      if (!shipEmail) {
-        errorMessage += "-Email\n";
+      if (!email) {
+        errorMessage += "-Valid email address\n";
       }
 
       alert(errorMessage);
     }
   };
 
-  function Loading() {
-    return (
-      <div className="loader-container">
-        <Bars
-          height="80"
-          width="80"
-          color="black"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
-      </div>
-    );
-  }
-
-  function CheckoutForm() {
-    return (
-      <div className="CheckoutForm">
+  return (
+    <div className="Checkout">
+      <div className="container">
+        <h1>Checkout</h1>
+        {orderPlaced && (
+          <div className="success-message">Checkout successful!</div>
+        )}
         <p>Please fill your delivery information</p>
         <form>
           <div className="row">
@@ -294,15 +274,6 @@ export default function Checkout() {
         >
           Place Order
         </button>
-      </div>
-    );
-  }
-
-  return (
-    <div className="Checkout">
-      <div className="container">
-        <h1>Checkout</h1>
-        {orderPlaced ? <Loading /> : <CheckoutForm />}
       </div>
     </div>
   );
