@@ -88,7 +88,7 @@ export default function Checkout() {
 
   const isPhoneNumberValid = (tel) => {
     // Simple phone number validation using a regular expression
-    const telRegex = /^\d{10}$/;
+    const telRegex = /^(\+\d{1,3})?(\d{10})$/;
     return telRegex.test(tel);
   };
 
@@ -98,14 +98,13 @@ export default function Checkout() {
       shippingInfo;
 
     if (
-      tel &&
+      isPhoneNumberValid(tel) &&
       firstName &&
       lastName &&
       town &&
       county &&
       zipCode &&
       isEmailValid(email) &&
-      isPhoneNumberValid(tel) &&
       handleCart.length === 0
     ) {
       // Dispatch an action to add the product to the Redux store
