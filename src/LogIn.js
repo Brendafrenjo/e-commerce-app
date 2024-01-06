@@ -18,12 +18,24 @@ export default function LogIn() {
   }
 
   const handleSignIn = () => {
-    if (signInInfo.signInUsername && signInInfo.signInPassword) {
+    const { logInUsername, logInPassword } = signInInfo;
+
+    if (signInInfo.signInUsername.trim() && signInInfo.signInPassword.trim()) {
       setLogInSuccessful(true);
 
       navigate("/");
     } else {
-      alert("Please provide complete log in information.");
+      let errorMessage = "Please provide complete log in information:\n";
+
+      if (!logInUsername) {
+        errorMessage += "-Valid username\n";
+      }
+
+      if (!logInPassword) {
+        errorMessage += "-Valid password\n";
+      }
+
+      alert(errorMessage);
     }
   };
 
