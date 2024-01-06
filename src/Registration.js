@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Registration.css";
 
-export default function Registration(onRegister) {
+export default function Registration() {
   const [registrationInfo, setRegistrationInfo] = useState({
     registerFirstname: "",
     registerSurname: "",
@@ -28,9 +28,7 @@ export default function Registration(onRegister) {
     return emailRegex.test(email);
   };
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-
+  const handleRegister = () => {
     const {
       registerFirstname,
       registerSurname,
@@ -40,11 +38,11 @@ export default function Registration(onRegister) {
     } = registrationInfo;
 
     if (
-      registrationInfo.registerFirstname &&
-      registrationInfo.registerSurname &&
-      registrationInfo.registerUsername &&
-      isEmailValid(registrationInfo.registerEmail) &&
-      registrationInfo.registerPassword
+      registerFirstname.trim() &&
+      registerSurname.trim() &&
+      registerUsername.trim() &&
+      isEmailValid(registerEmail) &&
+      registerPassword.trim()
     ) {
       setRegistrationSuccessful(true);
       navigate("/");
