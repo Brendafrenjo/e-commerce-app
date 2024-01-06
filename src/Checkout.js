@@ -95,6 +95,16 @@ export default function Checkout() {
 
   // Function to handle the checkout process
   const handleCheckout = () => {
+    const {
+      shipTel,
+      shipFirstName,
+      shipLastName,
+      shipTown,
+      shipCounty,
+      shipZipCode,
+      shipEmail,
+    } = shippingInfo;
+
     if (
       shippingInfo.tel &&
       shippingInfo.firstName &&
@@ -130,8 +140,37 @@ export default function Checkout() {
         },
       });
     } else {
-      // Handle incomplete checkout (e.g., show an error message)
-      alert("Please provide complete shipping information.");
+      let errorMessage = "Please provide complete shipping information:\n";
+     
+      if (!shipTel) {
+       errorMessage += "- Valid phone number"
+     }
+
+      if (!shipFirstName) {
+        errorMessage += "-First name"
+      }
+
+       if (!shipLastName) {
+         errorMessage += "-Last name";
+       }
+
+      if (!shipTown) {
+        errorMessage += "-Town";
+      }
+
+      if (!shipCounty) {
+        errorMessage += "-County";
+      }
+
+      if (!shipZipCode) {
+        errorMessage += "-ZipCode";
+      }
+
+      if (!shipEmail) {
+        errorMessage += "-Email";
+      }
+
+      alert(errorMessage);
     }
   };
 
