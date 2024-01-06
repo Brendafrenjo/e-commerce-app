@@ -22,6 +22,12 @@ export default function Registration(onRegister) {
     }));
   }
 
+  const isEmailValid = (email) => {
+    // Simple email validation using a regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -139,7 +145,7 @@ export default function Registration(onRegister) {
         <small>
           By clicking Sign Up, you agree to our{" "}
           <a href="example">Terms, Privacy Policy </a>
-          and <a href="example">Cookies Policy</a>. You may receive SMS
+          and <a href="example">Cookies Policy</a>. You may receive Email
           notifications from us and can opt out at any time.
         </small>
       </div>
