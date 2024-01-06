@@ -143,31 +143,31 @@ export default function Checkout() {
       let errorMessage = "Please provide complete shipping information:\n";
      
       if (!shipTel) {
-       errorMessage += "- Valid phone number"
+       errorMessage += "- Valid phone number\n";
      }
 
       if (!shipFirstName) {
-        errorMessage += "-First name"
+        errorMessage += "-First name\n";
       }
 
        if (!shipLastName) {
-         errorMessage += "-Last name";
+         errorMessage += "-Last name\n";
        }
 
       if (!shipTown) {
-        errorMessage += "-Town";
+        errorMessage += "-Town\n";
       }
 
       if (!shipCounty) {
-        errorMessage += "-County";
+        errorMessage += "-County\n";
       }
 
       if (!shipZipCode) {
-        errorMessage += "-ZipCode";
+        errorMessage += "-ZipCode\n";
       }
 
       if (!shipEmail) {
-        errorMessage += "-Email";
+        errorMessage += "-Email\n";
       }
 
       alert(errorMessage);
