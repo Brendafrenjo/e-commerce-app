@@ -3,14 +3,24 @@ import { useNavigate } from "react-router-dom";
 import "./Registration.css";
 
 export default function Registration(onRegister) {
-  const [username, setUsername] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [registrationError, setRegistrationError] = useState(null);
+  const [registrationInfo, setRegistrationInfo] = useState({
+    registerFirstname: "",
+    registerSurname: "",
+    registerUsername: "",
+    registerEmail: "",
+    registerPassword: "",
+  });
+  const [registrationSuccessful, setRegistrationSuccessful] = useState(false);
 
   const navigate = useNavigate();
+
+  function handleInfoChange(e) {
+    const { name, value } = e.target;
+    setRegistrationInfo((prevRegistrationInfo) => ({
+      ...prevRegistrationInfo,
+      [name]: value,
+    }));
+  }
 
   const handleRegister = () => {
     if (!username || !email || !password) {
@@ -49,8 +59,8 @@ export default function Registration(onRegister) {
               name="registerFirstname"
               placeholder="First name"
               className="form-control registration-form"
-              value={firstname}
-              onChange={(e) => setFirstname(e.target.value)}
+              value={registrationInfo.registerFirstname}
+              onChange={handleInfoChange}
               required
             />
           </div>
@@ -61,8 +71,8 @@ export default function Registration(onRegister) {
               name="registerSurname"
               placeholder="Surname"
               className="form-control registration-form"
-              value={surname}
-              onChange={(e) => setSurname(e.target.value)}
+              value={registrationInfo.registerSurname}
+              onChange={handleInfoChange}
               required
             />
           </div>
@@ -73,8 +83,8 @@ export default function Registration(onRegister) {
           name="registerUsername"
           placeholder="Username"
           className="form-control registration-form mt-3"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={registrationInfo.registerUsername}
+          onChange={handleInfoChange}
           required
         />
         <input
@@ -83,8 +93,8 @@ export default function Registration(onRegister) {
           name="registerEmail"
           placeholder="Email address"
           className="form-control registration-form mt-3"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={registrationInfo.registerEmail}
+          onChange={handleInfoChange}
           required
         />
         <input
@@ -93,8 +103,8 @@ export default function Registration(onRegister) {
           name="registerPassword"
           placeholder="Password"
           className="form-control registration-form mt-3"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={registrationInfo.registerPassword}
+          onChange={handleInfoChange}
           required
         />
       </form>
