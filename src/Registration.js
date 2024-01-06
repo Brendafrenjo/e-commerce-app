@@ -43,7 +43,7 @@ export default function Registration(onRegister) {
       registrationInfo.registerFirstname &&
       registrationInfo.registerSurname &&
       registrationInfo.registerUsername &&
-      registrationInfo.registerEmail &&
+      isEmailValid(registrationInfo.registerEmail) &&
       registrationInfo.registerPassword
     ) {
       setRegistrationSuccessful(true);
