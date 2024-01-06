@@ -22,31 +22,58 @@ export default function Registration(onRegister) {
     }));
   }
 
-  const handleRegister = () => {
-    if (!username || !email || !password) {
-      setRegistrationError("All fields are required.");
-      return;
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const {
+      registerFirstname,
+      registerSurname,
+      registerUsername,
+      registerEmail,
+      registerPassword,
+    } = registrationInfo;
+
+    if (
+      registrationInfo.registerFirstname &&
+      registrationInfo.registerSurname &&
+      registrationInfo.registerUsername &&
+      registrationInfo.registerEmail &&
+      registrationInfo.registerPassword
+    ) {
+      setRegistrationSuccessful(true);
+      navigate("/");
+    } else {
+      let errorMessage = "Please provide all the required information:\n";
+
+      if (!registerFirstname) {
+        errorMessage += "- First name\n";
+      }
+
+      if (!registerSurname) {
+        errorMessage += "- Surname\n";
+      }
+
+      if (!registerUsername) {
+        errorMessage += "- Username\n";
+      }
+
+      if (!registerEmail) {
+        errorMessage += "- Valid email address\n";
+      }
+
+      if (!registerPassword) {
+        errorMessage += "- Password\n";
+      }
+
+      alert(errorMessage);
     }
-
-    const newUser = { username, email, password, firstname, surname };
-    console.log("Simulating user registration:", newUser);
-
-    if (username === "existingUser") {
-      setRegistrationError(
-        "Username already exists. Please choose a different one."
-      );
-      return;
-    }
-
-    setRegistrationError(null);
-
-    onRegister(newUser);
-
-    navigate("/home");
   };
 
   return (
     <div className="Registration">
+      {registrationSuccessful && (
+        <div className="success-message">Registration successful!</div>
+      )}
       <h2>Sign Up</h2>
       <p className="text-start">It's quick and easy</p>
       <hr />
