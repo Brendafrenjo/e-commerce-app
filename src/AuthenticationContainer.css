@@ -1,3 +1,7 @@
 .isSignIn:hover {
   cursor: pointer;
 }
+
+.isSignIn {
+  color: #1b73f7;
+}
