@@ -3,7 +3,15 @@ h1 {
 }
 
 h3 {
-   font-weight: 400;
+  font-weight: 400;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.order-summary-item {
+  margin-bottom: 20px;
 }
 
 .coupon {
@@ -30,11 +38,13 @@ h3 {
 
 .icon {
   font-size: 11px;
+}
 
+.client-information {
 }
 
 @media (min-width: 500px) {
-    .coupon {
-        max-width: 350px;
-    }
+  .coupon {
+    max-width: 350px;
+  }
 }

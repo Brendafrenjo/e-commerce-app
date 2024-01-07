@@ -57,29 +57,30 @@ export default function OrderConfirmation() {
 
   return (
     <div className="OrderConfirmation">
-      <h1>Order Confirmation</h1>
-      <h3>Client Information</h3>
-      <p>
-        <strong>First Name:</strong> {shippingInfo?.firstName}
-      </p>
-      <p>
-        <strong>Last Name:</strong> {shippingInfo?.lastName}
-      </p>
-      <p>
-        <strong>Email:</strong> {shippingInfo?.email}
-      </p>
-      <p>
-        <strong>Phone Number:</strong> {shippingInfo?.tel}
-      </p>
-      <p>
-        <strong>County:</strong> {shippingInfo?.county}
-      </p>
-      <p>
-        <strong>Town:</strong> {shippingInfo?.town}
-      </p>
+      <div className="client-information">
+        <h3>Client Information</h3>
+        <hr />
+        <p>
+          <strong>Name:</strong> {shippingInfo?.firstName}{" "}
+          {shippingInfo?.lastName}
+        </p>
+        <p>
+          <strong>Email:</strong> {shippingInfo?.email}
+        </p>
+        <p>
+          <strong>Phone Number:</strong> {shippingInfo?.tel}
+        </p>
+        <p>
+          <strong>Location:</strong> {shippingInfo?.county},{" "}
+          {shippingInfo?.town}
+        </p>
+        <hr />
+      </div>
       {handleCart && handleCart.length > 0 && (
         <div>
-          <h3 className="mb-3">Payment Method</h3>
+          <h3 className="">Payment Method</h3>
+          <small>Trusted Payment, 100% Money Back Guarantee</small>
+          <hr />
           <form>
             <label>
               <input
@@ -111,6 +112,7 @@ export default function OrderConfirmation() {
               PayPal
             </label>
           </form>
+          <hr />
         </div>
       )}
       <h3 className="mt-3">Order Summary</h3>
@@ -130,7 +132,7 @@ export default function OrderConfirmation() {
                   />
                 </div>
                 <div className="col-7">
-                  <h4 className="">{product.title}</h4>
+                  <h4 className="">{product.title.substring(0, 35)}...</h4>
                   <div>
                     <i class="fa-solid fa-xmark icon"></i>
                     {product.qty}
@@ -144,6 +146,7 @@ export default function OrderConfirmation() {
           })}
         </div>
       </div>
+      <hr />
       <div className="coupon">
         <h4>Discount</h4>
         <div className="row">
