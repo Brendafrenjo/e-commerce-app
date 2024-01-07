@@ -188,6 +188,13 @@ export default function OrderConfirmation() {
           </p>
         </span>
       </div>
+      <div className="location">
+        <i className="fa-solid fa-location-dot"></i>
+        <p>
+          {shippingInfo?.county},{" "}
+          {shippingInfo?.town}
+        </p>
+      </div>
       <div className="place-order">
         <span className="subtotal">${Math.round(calculateSubtotal() + 2)}</span>
         <span>
