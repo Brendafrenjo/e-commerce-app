@@ -148,7 +148,7 @@ export default function OrderConfirmation() {
       </div>
       <hr />
       <div className="coupon">
-        <h4>Discount</h4>
+        <h4 className="text-start">Discount</h4>
         <div className="row">
           <div className="col-10">
             <input
@@ -166,29 +166,30 @@ export default function OrderConfirmation() {
           </div>
         </div>
       </div>
-      <a href="example" target="_blank">
+      <hr />
+      <a href="example" target="_blank" className="text-end">
         Shipping Fee Policy
       </a>
-      <h3>Total</h3>
-      <div>
+      <hr />
+      <h3 className="text-start">Total</h3>
+      <div className="total-amount">
         <span>
           <p>Goods Amount:</p>
         </span>
-        <span>${Math.round(calculateSubtotal())}</span>
+        <span className="amount-cost">${Math.round(calculateSubtotal())}</span>
       </div>
-      <div>
+      <div className="shipping-info">
         <span>
           <small>Shipping Fee:</small>
         </span>
-        <span>
-          <p>$2</p>
+        <span className="shipping-cost">
+          <p>
+            <i className="fa-solid fa-plus icon"></i> $2
+          </p>
         </span>
       </div>
-      <div>
-        <span>
-          <p>$Total Amoun</p>
-        </span>
-        <span>${Math.round(calculateSubtotal() + 2)}</span>
+      <div className="place-order">
+        <span className="subtotal">${Math.round(calculateSubtotal() + 2)}</span>
         <span>
           <button className="btn btn-outline-dark" onClick={handlePayNow}>
             Place Order

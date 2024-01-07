@@ -43,6 +43,15 @@ input[type="radio"] {
 .client-information {
 }
 
+.total-amount, .shipping-info, .place-order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount-cost, .shipping-cost, .subtotal {
+  font-weight: 700;
+}
+
 @media (min-width: 500px) {
   .coupon {
     max-width: 350px;
