@@ -105,7 +105,7 @@ export default function Checkout() {
       county &&
       zipCode &&
       isEmailValid(email) &&
-      handleCart.length === 0
+      handleCart.length >= 0
     ) {
       // Dispatch an action to add the product to the Redux store
       handleCart.forEach((product) => {
