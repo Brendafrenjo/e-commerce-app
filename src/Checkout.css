@@ -2,17 +2,13 @@
   display: block;
   margin: 0 auto;
   padding: 32px 0;
+  text-align: center;
 }
 
 .Checkout .place-order {
   width: 300px;
-}
-
-.loader-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
