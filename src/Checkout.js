@@ -19,8 +19,6 @@ export default function Checkout() {
   const handleCart = useSelector((state) => state.handleCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log("Shipping Info:", shippingInfo);
-  console.log("Handle Cart:", handleCart);
 
   let counties = [
     "Baringo",

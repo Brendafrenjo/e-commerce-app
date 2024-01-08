@@ -43,7 +43,7 @@ export default function OrderConfirmation() {
     if (paymentMethod) {
       const shippingFee = 2;
       const totalAmount = calculateSubtotal() + shippingFee;
-      navigate("./payment-successful");
+      navigate("/payment-successful");
     } else {
       alert("Please select a payment method before proceeding.");
     }
