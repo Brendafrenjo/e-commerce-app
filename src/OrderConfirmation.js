@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./OrderConfirmation.css";
 
 export default function OrderConfirmation() {
   const location = useLocation();
   const { shippingInfo = {}, handleCart = [] } = location.state || {};
-  console.log("handleCart:", handleCart);
   const [paymentMethod, setPaymentMethod] = useState("");
 
+  const navigate = useNavigate();
   const products = useSelector((state) => {
-    console.log("Current Redux state:", state);
-    console.log("handleCart:", handleCart);
-
     if (typeof state !== "object" || state === null) {
       console.error("Redux state is not an object.");
       return [];
@@ -22,8 +19,6 @@ export default function OrderConfirmation() {
       .map((cartItem) => {
         const productId = cartItem.id;
         const product = state[productId];
-
-        console.log(`Product for ID ${productId}:`, product);
 
         if (product) {
           return product;
@@ -48,8 +43,7 @@ export default function OrderConfirmation() {
     if (paymentMethod) {
       const shippingFee = 2;
       const totalAmount = calculateSubtotal() + shippingFee;
-      alert(`Payment successful! Thank you for your purchase!`);
-      // You can also redirect the user to a confirmation page or perform other actions.
+      navigate("./payment-successful");
     } else {
       alert("Please select a payment method before proceeding.");
     }
@@ -191,8 +185,7 @@ export default function OrderConfirmation() {
       <div className="location">
         <i className="fa-solid fa-location-dot"></i>
         <p>
-          {shippingInfo?.county},{" "}
-          {shippingInfo?.town}
+          {shippingInfo?.county}, {shippingInfo?.town}
         </p>
       </div>
       <div className="place-order">
