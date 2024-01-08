@@ -1,10 +1,16 @@
 import React from "react";
+import "./PaymentSuccessful.css";
 
-export default function PaymentSuccesful() {
-    return (
-      <div className="PaymentSuccesful">
-        <h1>Payment successful!</h1>
-        <h1>Payment successful! Thank you for your purchase</h1>
+export default function PaymentSuccessful() {
+  return (
+    <div className="PaymentSuccessful">
+      <div className="container">
+        <h1>Thank You!</h1>
+        <p>
+          Thank you for your purchase! Your payment was successful, and we're
+          now processing your order.
+        </p>
       </div>
-    );
+    </div>
+  );
 }
