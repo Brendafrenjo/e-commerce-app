@@ -23,7 +23,8 @@ function App() {
     location.pathname === "/authentication-container" ||
     location.pathname === "/registration" ||
     location.pathname === "/login" ||
-    location.pathname === "/find-your-account";
+    location.pathname === "/find-your-account" ||
+    location.pathname === "/payment-successful";
 
   return (
     <div className="App">
