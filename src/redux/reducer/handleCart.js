@@ -1,8 +1,9 @@
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 const initialCartState = [];
 
-function handleCart(state = initialCartState, action) {
+function handleCart(state = initialCartState, action, currentPathname) {
   const product = action.payload;
   switch (action.type) {
     case "ADD_ITEM":
@@ -10,9 +11,11 @@ function handleCart(state = initialCartState, action) {
       const existingProduct = state.find((x) => x.id === product.id);
       if (existingProduct) {
         // If the product is in the cart, increase its quantity//
-        toast.info(`${existingProduct.title} cart quantity increased`, {
-          position: "bottom-left",
-        });
+        if (currentPathname !== "/order-confirmation") {
+          toast.info(`${existingProduct.title} cart quantity increased`, {
+            position: "bottom-left",
+          });
+        }
         // Update the state by mapping through the existing items
         // and incrementing the quantity of the matching product
         const updatedState = state.map((x) =>
@@ -25,9 +28,11 @@ function handleCart(state = initialCartState, action) {
         return updatedState;
       } else {
         // If the product is not in the cart, add it with quantity 1
-        toast.success(`${action.payload.title} added to cart`, {
-          position: "bottom-left",
-        });
+        if (currentPathname !== "/order-confirmation") {
+          toast.success(`${action.payload.title} added to cart`, {
+            position: "bottom-left",
+          });
+        }
 
         // Create a new state array by spreading the existing items
         // and adding a new item with quantity 1
@@ -110,3 +115,10 @@ function handleCart(state = initialCartState, action) {
 }
 
 export default handleCart;
+
+export const CartHandlerComponent = () => {
+  useLocation();
+  
+
+  return null;
+};
