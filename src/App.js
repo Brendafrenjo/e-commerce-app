@@ -15,6 +15,7 @@ import OrderConfirmation from "./OrderConfirmation";
 import AuthenticationContainer from "./AuthenticationContainer";
 import Registration from "./Registration";
 import FindYourAccount from "./FindYourAccount";
+import PaymentSuccessful from "./PaymentSuccessful";
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
         />
         <Route path="/registration" element={<Registration />} />
         <Route path="/find-your-account" element={<FindYourAccount />} />
+        <Route path="/payment-successful" element={<PaymentSuccessful />} />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
