@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "./redux/action";
 import "./Checkout.css";
@@ -19,6 +19,7 @@ export default function Checkout() {
   const handleCart = useSelector((state) => state.handleCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   let counties = [
     "Baringo",
@@ -106,22 +107,24 @@ export default function Checkout() {
       handleCart.length >= 0
     ) {
       // Dispatch an action to add the product to the Redux store
-      handleCart.forEach((product) => {
-        dispatch(
-          addCart({
-            id: product.id,
-            title: product.title,
-            image: product.image,
-            price: product.price,
-            Quantity: product.qty,
-          })
-        );
-      });
+      if (location.pathname !== "/order-confirmation") {
+        handleCart.forEach((product) => {
+          dispatch(
+            addCart({
+              id: product.id,
+              title: product.title,
+              image: product.image,
+              price: product.price,
+              Quantity: product.qty,
+            })
+          );
+        });
+      }
 
       // Mark the order as successfully placed
       setOrderPlaced(true);
 
-      // Use history.push to navigate to the order confirmation page
+      // Use navigate to navigate to the order confirmation page
       navigate("/order-confirmation", {
         state: {
           shippingInfo,
