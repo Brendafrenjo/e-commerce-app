@@ -69,7 +69,7 @@ export default function NavBar() {
               <NavLink to="/login" className="btn btn-outline-dark me-2">
                 <i className="fa-solid fa-right-to-bracket me-2 icon"></i>Login
               </NavLink>
-              <NavLink to="/register" className="btn btn-outline-dark me-2">
+              <NavLink to="/registration" className="btn btn-outline-dark me-2">
                 <i className="fa-solid fa-user-plus me-2 icon"></i>Sign Up
               </NavLink>
               <NavLink to="/cart" className="btn btn-outline-dark">

@@ -10,6 +10,10 @@ input[type="radio"] {
   margin-right: 10px;
 }
 
+.trusted-payment {
+line-height: 1;
+}
+
 .order-summary-item {
   margin-bottom: 20px;
 }
@@ -20,7 +24,7 @@ input[type="radio"] {
 }
 
 .OrderConfirmation {
-  max-width: 60%;
+  max-width: 50%;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
@@ -45,7 +49,7 @@ input[type="radio"] {
 
 .total-amount,
 .shipping-info,
-.place-order, .order-summary-item-item {
+.place-order, .order-summary-item {
   display: flex;
   justify-content: space-between;
 }
@@ -54,6 +58,12 @@ input[type="radio"] {
 .shipping-cost,
 .subtotal {
   font-weight: 700;
+}
+
+@media (max-width: 280px) {
+  .OrderConfirmation {
+  max-width: 90%;
+}
 }
 
 @media (min-width: 500px) {
@@ -77,4 +87,8 @@ input[type="radio"] {
   img {
     margin-right: 10px;
   }
+
+  .OrderConfirmation {
+  max-width: 80%;
+}
 }

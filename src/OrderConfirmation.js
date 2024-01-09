@@ -70,7 +70,7 @@ export default function OrderConfirmation() {
       {handleCart && handleCart.length > 0 && (
         <div>
           <h3 className="">Payment Method</h3>
-          <small className="text-muted">
+          <small className="text-muted trusted-payment">
             Trusted Payment, 100% Money Back Guarantee
           </small>
           <hr />
@@ -108,12 +108,12 @@ export default function OrderConfirmation() {
           <hr />
         </div>
       )}
-      <h3 className="mt-3 mb-2">Order Summary</h3>
+      <h3 className="mt-3 mb-3">Order Summary</h3>
       <div className="container">
         {Object.keys(handleCart).map((productId) => {
           const product = handleCart[productId];
           return (
-            <div key={productId} className="order-summary-item-item">
+            <div key={productId} className="order-summary-item">
               <span>
                 <img
                   src={product.image}
@@ -123,7 +123,7 @@ export default function OrderConfirmation() {
                   className=""
                 />
               </span>
-              <span className="order-description-description">
+              <span className="order-description">
                 <h5 className="">{product.title.substring(0, 20)}...</h5>
                 <div>
                   <i class="fa-solid fa-xmark icon"></i>
@@ -140,7 +140,7 @@ export default function OrderConfirmation() {
       <hr />
       <div className="coupon">
         <h4 className="text-start">Discount</h4>
-        <div className="row">
+        <div className="row container">
           <div className="col-10">
             <input
               type="text"
