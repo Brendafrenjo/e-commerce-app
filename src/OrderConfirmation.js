@@ -11,7 +11,6 @@ export default function OrderConfirmation() {
   const navigate = useNavigate();
   const products = useSelector((state) => {
     if (typeof state !== "object" || state === null) {
-      console.error("Redux state is not an object.");
       return [];
     }
 
@@ -54,26 +53,24 @@ export default function OrderConfirmation() {
       <div className="client-information">
         <h3>Client Information</h3>
         <hr />
-        <p>
-          <strong>Name:</strong> {shippingInfo?.firstName}{" "}
-          {shippingInfo?.lastName}
-        </p>
-        <p>
-          <strong>Email:</strong> {shippingInfo?.email}
-        </p>
-        <p>
-          <strong>Phone Number:</strong> {shippingInfo?.tel}
-        </p>
-        <p>
-          <strong>Location:</strong> {shippingInfo?.county},{" "}
-          {shippingInfo?.town}
-        </p>
+          <div className="pb-2">
+            {shippingInfo?.firstName} {shippingInfo?.lastName}
+          </div>
+          <div className="pb-2">{shippingInfo?.tel}</div>
+        <div className="pb-2">{shippingInfo?.email}</div>
+        <div>
+          <span>
+            <i className="fa-solid fa-location-dot"></i>
+          </span>{" "}
+          {shippingInfo?.county}, {shippingInfo?.town}
+        </div>
+        <p></p>
         <hr />
       </div>
       {handleCart && handleCart.length > 0 && (
         <div>
           <h3 className="">Payment Method</h3>
-          <small>Trusted Payment, 100% Money Back Guarantee</small>
+          <small className="text-muted">Trusted Payment, 100% Money Back Guarantee</small>
           <hr />
           <form>
             <label>
@@ -125,8 +122,8 @@ export default function OrderConfirmation() {
                     className=""
                   />
                 </div>
-                <div className="col-7">
-                  <h4 className="">{product.title.substring(0, 35)}...</h4>
+                <div className="col-7 order-description">
+                  <h5 className="">{product.title.substring(0, 35)}...</h5>
                   <div>
                     <i class="fa-solid fa-xmark icon"></i>
                     {product.qty}
@@ -166,27 +163,21 @@ export default function OrderConfirmation() {
       </a>
       <hr />
       <h3 className="text-start">Total</h3>
-      <div className="total-amount">
+      <div className="total-amount pb-2">
         <span>
-          <p>Goods Amount:</p>
+          Goods Amount:
         </span>
         <span className="amount-cost">${Math.round(calculateSubtotal())}</span>
       </div>
       <div className="shipping-info">
         <span>
-          <small>Shipping Fee:</small>
+          Shipping Fee:
         </span>
-        <span className="shipping-cost">
-          <p>
+        <span className="shipping-cost pb-3">
+          <span>
             <i className="fa-solid fa-plus icon"></i> $2
-          </p>
+          </span>
         </span>
-      </div>
-      <div className="location">
-        <i className="fa-solid fa-location-dot"></i>
-        <p>
-          {shippingInfo?.county}, {shippingInfo?.town}
-        </p>
       </div>
       <div className="place-order">
         <span className="subtotal">${Math.round(calculateSubtotal() + 2)}</span>

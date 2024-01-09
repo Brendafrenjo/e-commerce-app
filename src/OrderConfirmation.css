@@ -43,7 +43,7 @@ input[type="radio"] {
 .client-information {
 }
 
-.total-amount, .shipping-info, .place-order {
+.total-amount, .shipping-info, .place-order, .name-and-phone {
   display: flex;
   justify-content: space-between;
 }
