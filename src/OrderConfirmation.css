@@ -43,17 +43,38 @@ input[type="radio"] {
 .client-information {
 }
 
-.total-amount, .shipping-info, .place-order, .name-and-phone {
+.total-amount,
+.shipping-info,
+.place-order, .order-summary-item-item {
   display: flex;
   justify-content: space-between;
 }
 
-.amount-cost, .shipping-cost, .subtotal {
+.amount-cost,
+.shipping-cost,
+.subtotal {
   font-weight: 700;
 }
 
 @media (min-width: 500px) {
   .coupon {
     max-width: 350px;
+  }
+}
+
+@media (max-width: 500px) {
+  h5 {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  h5,
+  .icon,
+  .product-price {
+    margin-left: 10px;
+  }
+
+  img {
+    margin-right: 10px;
   }
 }

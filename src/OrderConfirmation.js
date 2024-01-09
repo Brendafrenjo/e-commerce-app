@@ -53,10 +53,10 @@ export default function OrderConfirmation() {
       <div className="client-information">
         <h3>Client Information</h3>
         <hr />
-          <div className="pb-2">
-            {shippingInfo?.firstName} {shippingInfo?.lastName}
-          </div>
-          <div className="pb-2">{shippingInfo?.tel}</div>
+        <div className="pb-2">
+          {shippingInfo?.firstName} {shippingInfo?.lastName}
+        </div>
+        <div className="pb-2">{shippingInfo?.tel}</div>
         <div className="pb-2">{shippingInfo?.email}</div>
         <div>
           <span>
@@ -70,7 +70,9 @@ export default function OrderConfirmation() {
       {handleCart && handleCart.length > 0 && (
         <div>
           <h3 className="">Payment Method</h3>
-          <small className="text-muted">Trusted Payment, 100% Money Back Guarantee</small>
+          <small className="text-muted">
+            Trusted Payment, 100% Money Back Guarantee
+          </small>
           <hr />
           <form>
             <label>
@@ -106,36 +108,34 @@ export default function OrderConfirmation() {
           <hr />
         </div>
       )}
-      <h3 className="mt-3">Order Summary</h3>
-      <div className="container order-summary">
-        <div className="row">
-          {Object.keys(handleCart).map((productId) => {
-            const product = handleCart[productId];
-            return (
-              <div key={productId} className="order-summary-item row">
-                <div className="col-5">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    height="100"
-                    width="100"
-                    className=""
-                  />
+      <h3 className="mt-3 mb-2">Order Summary</h3>
+      <div className="container">
+        {Object.keys(handleCart).map((productId) => {
+          const product = handleCart[productId];
+          return (
+            <div key={productId} className="order-summary-item-item">
+              <span>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  height="100"
+                  width="100"
+                  className=""
+                />
+              </span>
+              <span className="order-description-description">
+                <h5 className="">{product.title.substring(0, 20)}...</h5>
+                <div>
+                  <i class="fa-solid fa-xmark icon"></i>
+                  {product.qty}
                 </div>
-                <div className="col-7 order-description">
-                  <h5 className="">{product.title.substring(0, 35)}...</h5>
-                  <div>
-                    <i class="fa-solid fa-xmark icon"></i>
-                    {product.qty}
-                  </div>
-                  <div className="product-price">
-                    ${Math.round(product.price)}
-                  </div>
+                <div className="product-price">
+                  ${Math.round(product.price)}
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              </span>
+            </div>
+          );
+        })}
       </div>
       <hr />
       <div className="coupon">
@@ -164,15 +164,11 @@ export default function OrderConfirmation() {
       <hr />
       <h3 className="text-start">Total</h3>
       <div className="total-amount pb-2">
-        <span>
-          Goods Amount:
-        </span>
+        <span>Goods Amount:</span>
         <span className="amount-cost">${Math.round(calculateSubtotal())}</span>
       </div>
       <div className="shipping-info">
-        <span>
-          Shipping Fee:
-        </span>
+        <span>Shipping Fee:</span>
         <span className="shipping-cost pb-3">
           <span>
             <i className="fa-solid fa-plus icon"></i> $2
