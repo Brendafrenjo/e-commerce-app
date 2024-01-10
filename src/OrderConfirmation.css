@@ -23,6 +23,10 @@ line-height: 1;
   margin: 0 auto;
 }
 
+.enter-coupon, .apply-button {
+  margin-left: -10px;
+}
+
 .OrderConfirmation {
   max-width: 50%;
   display: block;
@@ -42,9 +46,6 @@ line-height: 1;
 
 .icon {
   font-size: 11px;
-}
-
-.client-information {
 }
 
 .total-amount,

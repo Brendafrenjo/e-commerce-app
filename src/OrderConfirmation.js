@@ -140,18 +140,18 @@ export default function OrderConfirmation() {
       <hr />
       <div className="coupon">
         <h4 className="text-start">Discount</h4>
-        <div className="row container">
+        <div className="row container input-group mb-2">
           <div className="col-10">
             <input
               type="text"
               id="coupon"
               name="coupon"
               placeholder="Enter coupon code"
-              className="form-control mb-2"
+              className="form-control enter-coupon"
             />
           </div>
           <div className="col-2">
-            <button type="submit" class="btn btn-dark">
+            <button type="submit" className="btn btn-dark apply-button">
               Apply
             </button>
           </div>
