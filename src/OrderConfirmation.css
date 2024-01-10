@@ -1,9 +1,13 @@
-h1 {
+.OrderConfirmation h1 {
   font-weight: 400;
 }
 
-h3 {
+.OrderConfirmation h3 {
   font-weight: 400;
+}
+
+.OrderConfirmation h5 {
+  font-size: 15px;
 }
 
 input[type="radio"] {
@@ -11,7 +15,7 @@ input[type="radio"] {
 }
 
 .trusted-payment {
-line-height: 1;
+  line-height: 1;
 }
 
 .order-summary-item {
@@ -23,7 +27,8 @@ line-height: 1;
   margin: 0 auto;
 }
 
-.enter-coupon, .apply-button {
+.enter-coupon,
+.apply-button {
   margin-left: -10px;
 }
 
@@ -50,7 +55,8 @@ line-height: 1;
 
 .total-amount,
 .shipping-info,
-.place-order, .order-summary-item {
+.place-order,
+.order-summary-item {
   display: flex;
   justify-content: space-between;
 }
@@ -63,8 +69,8 @@ line-height: 1;
 
 @media (max-width: 280px) {
   .OrderConfirmation {
-  max-width: 90%;
-}
+    max-width: 90%;
+  }
 }
 
 @media (min-width: 500px) {
@@ -74,22 +80,22 @@ line-height: 1;
 }
 
 @media (max-width: 500px) {
-  h5 {
+  .OrderConfirmation h5 {
     font-size: 14px;
     line-height: 1;
   }
 
-  h5,
+  .OrderConfirmation h5,
   .icon,
   .product-price {
     margin-left: 10px;
   }
 
-  img {
+  .OrderConfirmation img {
     margin-right: 10px;
   }
 
   .OrderConfirmation {
-  max-width: 80%;
-}
+    max-width: 80%;
+  }
 }

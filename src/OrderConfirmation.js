@@ -54,10 +54,24 @@ export default function OrderConfirmation() {
         <h3>Client Information</h3>
         <hr />
         <div className="pb-2">
+          <span>
+            <i class="fa-solid fa-user"></i>
+          </span>{" "}
           {shippingInfo?.firstName} {shippingInfo?.lastName}
         </div>
-        <div className="pb-2">{shippingInfo?.tel}</div>
-        <div className="pb-2">{shippingInfo?.email}</div>
+        <div className="pb-2">
+          <span>
+            <i className="fa-solid fa-phone"></i>
+          </span>{" "}
+          {shippingInfo?.tel}
+        </div>
+        <div className="pb-2">
+          {" "}
+          <spna>
+            <i className="fa-solid fa-envelope"></i>
+          </spna>{" "}
+          {shippingInfo?.email}
+        </div>
         <div>
           <span>
             <i className="fa-solid fa-location-dot"></i>

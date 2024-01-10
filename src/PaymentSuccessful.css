@@ -1,9 +1,9 @@
-h1 {
+.PaymentSuccessful h1 {
   font-size: 50px;
   font-weight: 700;
 }
 
-p {
+.PaymentSuccessful p {
   margin-top: 15px;
   font-size: 20px;
 }
@@ -13,12 +13,12 @@ p {
 }
 
 @media (max-width: 600px) {
-  h1 {
+  .PaymentSuccessful h1 {
     font-size: 40px;
     font-weight: 600;
   }
 
-  p {
+  .PaymentSuccessful p {
     font-size: 16px;
     margin-top: 10px;
   }
