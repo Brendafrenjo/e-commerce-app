@@ -16,6 +16,7 @@ import AuthenticationContainer from "./AuthenticationContainer";
 import Registration from "./Registration";
 import FindYourAccount from "./FindYourAccount";
 import PaymentSuccessful from "./PaymentSuccessful";
+import Footer from "./Footer";
 
 function App() {
   const location = useLocation();
@@ -48,6 +49,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
