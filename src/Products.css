@@ -1,11 +1,12 @@
-h5 {
+.Products h5 {
   font-size: 15px;
 }
 
 .Products h1 {
   text-align: center;
-  font-weight: 800;
   padding-top: 50px;
+  font-weight: 400;
+  font-size: 40px;
 }
 
 .flex-container {
@@ -33,9 +34,9 @@ h5 {
 }
 
 @media (max-width: 960px) {
-  .Products h1 {
-    font-weight: 700;
-  }
+.Products h1 {
+  font-size: 40px;
+}
 
   .product-image {
     height: 200px;
@@ -50,4 +51,10 @@ h5 {
     display: block;
     margin: 0 auto;
   }
+}
+
+@media (max-width: 450px) {
+.Products h1 {
+  font-size: 32px;
+}
 }
