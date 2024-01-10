@@ -59,7 +59,7 @@ export default function Products() {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons flex-container">
+        <div className="buttons flex-container justify-content-center">
           <div className="box">
             <div className="buttons-wrapper">
               <button
