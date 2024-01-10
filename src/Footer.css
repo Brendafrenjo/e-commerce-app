@@ -1,0 +1,17 @@
+.Footer {
+  padding: 30px;
+  background-color: #706ba0;
+  color: white;
+  text-align: end;
+}
+
+.icon {
+    font-size: 25px;
+    color: white;
+}
+
+@media (max-width: 700px) {
+   .Footer {
+    text-align: center;
+   } 
+}
