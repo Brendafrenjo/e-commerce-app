@@ -115,7 +115,7 @@ export default function Cart() {
             <div className="col-md-12 ">
               <div className="cart-summary">
                 <button
-                  className="clear-cart btn btn-outline-dark mt-3"
+                  className="clear-cart btn btn-outline-dark mt-2"
                   onClick={handleClear}
                 >
                   Clear Cart
