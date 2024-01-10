@@ -11,10 +11,8 @@ export default function Footer() {
 
   return (
     <div className="Footer">
-      <small className="footer scroll-to-top-button" onClick={scrollToTop}>
-        Frenjo Fashions
-      </small>
-      <button className="btn btn">
+      <small className="footer">Frenjo Fashions</small>
+      <button className="btn btn scroll-to-top-button" onClick={scrollToTop}>
         <i className="fa-solid fa-chevron-up icon"></i>
       </button>
     </div>

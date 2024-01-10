@@ -3,15 +3,21 @@
   background-color: #706ba0;
   color: white;
   text-align: end;
+  position: relative;
 }
 
 .icon {
-    font-size: 25px;
-    color: white;
+  font-size: 25px;
+  color: white;
+}
+
+.scroll-to-top-button {
+  border: none;
+  outline: none;
 }
 
 @media (max-width: 700px) {
-   .Footer {
+  .Footer {
     text-align: center;
-   } 
+  }
 }
