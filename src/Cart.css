@@ -149,9 +149,3 @@
     text-align: center !important;
   }
 }
-
-@media (max-width: 450px) {
-  .Cart h1 {
-    font-size: 32px;
-  }
-}

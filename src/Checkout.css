@@ -11,6 +11,11 @@
   margin: 0 auto;
 }
 
+.Checkout h1 {
+  font-weight: 400;
+  font-size: 35px;
+}
+
 @media (max-width: 600px) {
   .Checkout .place-order {
     width: 200px;
