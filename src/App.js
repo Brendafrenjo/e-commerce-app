@@ -31,6 +31,10 @@ function App() {
       <ToastContainer />
       {!hideNavBar && <NavBar />}
       <Routes>
+        <Route
+          path="/authentication-container"
+          element={<AuthenticationContainer />}
+        />
         <Route path="/products" element={<Products />} />
         <Route path="products/:id" element={<Product />} />
         <Route path="/login" element={<LogIn />} />
@@ -38,14 +42,10 @@ function App() {
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
-        <Route
-          path="/authentication-container"
-          element={<AuthenticationContainer />}
-        />
         <Route path="/registration" element={<Registration />} />
         <Route path="/find-your-account" element={<FindYourAccount />} />
         <Route path="/payment-successful" element={<PaymentSuccessful />} />
-        <Route exact path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
     </div>
