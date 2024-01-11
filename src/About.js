@@ -24,8 +24,8 @@ export default function About() {
           Redefining Fashion with Timeless Elegance and Innovative Designs.
         </h4>
         <div className="row descriptions-content justify-content-center">
-          <div className="col-lg-4 border rounded descriptions">
-            <i className="fa-solid fa-people-group"></i>
+          <div className="col-md-4 border rounded descriptions">
+            <i className="fa-solid fa-people-group icon"></i>
             <h3>Who We Are</h3>
             <p>
               Welcome to Frenjo Fashions, a dynamic blend of creativity and
@@ -33,8 +33,8 @@ export default function About() {
               fashion, weaving stories through every design.
             </p>
           </div>
-          <div className="col-lg-4 border rounded descriptions">
-            <i className="fa-solid fa-question"></i>
+          <div className="col-md-4 border rounded descriptions">
+            <i className="fa-solid fa-question question-icon"></i>
             <h3>Why Choose Us</h3>
             <p>
               Choose Frenjo for an unparalleled fusion of timeless elegance and
@@ -43,8 +43,8 @@ export default function About() {
               us the preferred choice.
             </p>
           </div>
-          <div className="col-lg-4 border rounded descriptions">
-            <i className="fa-solid fa-lightbulb"></i>
+          <div className="col-md-4 border rounded descriptions mb-5">
+            <i className="fa-solid fa-lightbulb icon"></i>
             <h3>What We Do</h3>
             <p>
               At Frenjo, we curate diverse collections, ranging from Men's and
