@@ -10,6 +10,10 @@
   font-size: 15px;
 }
 
+.OrderConfirmation h4 {
+  font-size: 18px;
+}
+
 input[type="radio"] {
   margin-right: 10px;
 }
@@ -29,15 +33,21 @@ input[type="radio"] {
 
 .enter-coupon,
 .apply-button {
-  margin-left: -10px;
+  margin-left: -11px;
 }
 
 .OrderConfirmation {
   max-width: 50%;
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border: 1px solid none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .order-summary {
@@ -67,9 +77,28 @@ input[type="radio"] {
   font-weight: 700;
 }
 
+.spacing-between {
+  border: none;
+  padding: 5px;
+  background-color: #f1f1f1;
+  margin: 20px 0 20px 0;
+}
+
+.shipping-fee-info {
+  border: none;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin: 20px 0 20px 0;
+}
+
 @media (max-width: 280px) {
   .OrderConfirmation {
     max-width: 90%;
+  }
+
+  .enter-coupon,
+  .apply-button {
+    margin-left: -18px;
   }
 }
 

@@ -28,7 +28,7 @@ function App() {
     location.pathname === "/payment-successful";
 
   const hideFooter =
-    location.pthname === "/authentication-container" ||
+    location.pathname === "/authentication-container" ||
     location.pathname === "/registration" ||
     location.pathname === "/login" ||
     location.pathname === "/find-your-account" ||

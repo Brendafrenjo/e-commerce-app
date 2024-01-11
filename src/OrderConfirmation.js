@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./OrderConfirmation.css";
 
@@ -78,9 +78,8 @@ export default function OrderConfirmation() {
           </span>{" "}
           {shippingInfo?.county}, {shippingInfo?.town}
         </div>
-        <p></p>
-        <hr />
       </div>
+      <div className="spacing-between"></div>
       {handleCart && handleCart.length > 0 && (
         <div>
           <h3 className="">Payment Method</h3>
@@ -119,7 +118,7 @@ export default function OrderConfirmation() {
               PayPal
             </label>
           </form>
-          <hr />
+          <div className="spacing-between"></div>
         </div>
       )}
       <h3 className="mt-3 mb-3">Order Summary</h3>
@@ -151,7 +150,7 @@ export default function OrderConfirmation() {
           );
         })}
       </div>
-      <hr />
+      <div className="spacing-between"></div>
       <div className="coupon">
         <h4 className="text-start">Discount</h4>
         <div className="row container input-group mb-2">
@@ -171,11 +170,11 @@ export default function OrderConfirmation() {
           </div>
         </div>
       </div>
-      <hr />
-      <a href="example" target="_blank" className="text-end">
-        Shipping Fee Policy
-      </a>
-      <hr />
+      <div className="shipping-fee-info">
+        <NavLink to="example" target="_blank" className="text-end">
+          Shipping Fee Policy
+        </NavLink>
+      </div>
       <h3 className="text-start">Total</h3>
       <div className="total-amount pb-2">
         <span>Goods Amount:</span>
