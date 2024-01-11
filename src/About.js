@@ -2,23 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./About.css";
 
 export default function About() {
-  const [isFluid, setFluid] = useState(window.innerWidth > 700);
-
-  useEffect(() => {
-    function handleResize() {
-      setFluid(window.innerWidth > 700);
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <div className="About">
-      <div className={`container${isFluid ? "-fluid" : ""}`}>
+      <div className="container-fluid">
         <h2>Who we are and what we do</h2>
         <h4>
           Redefining Fashion with Timeless Elegance and Innovative Designs.
