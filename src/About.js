@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./About.css";
 
 export default function About() {
@@ -29,7 +29,7 @@ export default function About() {
               us the preferred choice.
             </p>
           </div>
-          <div className="col-md-4 border rounded descriptions mb-5">
+          <div className="col-md-4 border rounded descriptions mb-4">
             <i className="fa-solid fa-lightbulb icon"></i>
             <h3>What We Do</h3>
             <p>
@@ -38,6 +38,30 @@ export default function About() {
               passion for innovation and tradition, ensuring a unique and
               compelling fashion experience.
             </p>
+          </div>
+        </div>
+        <div className="about-us">
+          <div className="row">
+            <div className="col-lg-6">
+              <img
+                src="./Images/clothes-in-a-rack.jpg"
+                className="clothes-rack-img img-fluid"
+                alt="Background"
+              />
+            </div>
+            <div className="col-lg-6">
+              <h2 className="who-we-are">Who is Frenjo Fitness</h2>
+              <p className="about-company">
+                Welcome to Frenjo Fashions, where style meets sophistication
+                across a diverse array of categories. Explore our meticulously
+                crafted collections, including Men's Wear, Women's Wear,
+                Jewelry, and Electronics. Each category is designed to cater to
+                your unique tastes, ensuring a comprehensive shopping experience
+                that seamlessly blends fashion and technology. Discover the
+                perfect ensemble in every department, as we redefine the
+                boundaries of style and innovation at Frenjo Fashions.
+              </p>
+            </div>
           </div>
         </div>
       </div>

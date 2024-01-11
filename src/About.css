@@ -13,6 +13,16 @@
   margin-bottom: 30px;
 }
 
+.About .who-we-are {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.About .about-us {
+  padding: 50px;
+}
+
 .About .descriptions {
   margin: 10px;
   padding: 25px 15px;
@@ -31,12 +41,43 @@
   font-size: 25px;
 }
 
-@media (max-width: 800px) {
-    .About h2 {
-        font-size: 24px;
-    }
+@media (min-width: 1050px) {
+  .About {
+    padding: 40px;
+  }
+}
 
-     .About  {
-        padding: 20px;
-     }
+@media (max-width: 950px) {
+  .About h2 {
+    font-size: 24px;
+  }
+
+  .About .who-we-are {
+    margin-top: 50px;
+  }
+
+  .About {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 950px) {
+  .about-company,
+  .About .who-we-are {
+    margin-left: 40px;
+    text-align: start;
+  }
+}
+
+@media (max-width: 550px) {
+  .About .about-us {
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .About .who-we-are {
+    font-size: 20px;
+    margin-top: 30px;
+  }
 }
