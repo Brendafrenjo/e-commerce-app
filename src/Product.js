@@ -56,15 +56,17 @@ export default function Product() {
             />
           </div>
           <div className="col-lg-6 description">
-            <h4 className="text-uppercase text-black-50 pt-3">
+            <h4 className="text-uppercase text-black-50 pt-3 product-category text-muted">
               {product.category}
             </h4>
-            <h4 className="">{product.title}</h4>
+            <h4 className="product-name">{product.title}</h4>
             <p className="lead">
               Rating {product.rating && product.rating.rate}
-              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star rating"></i>
             </p>
-            <h4 className="display-6 fw-bold mb-3">${product.price}</h4>
+            <h4 className="display-6 fw-bold mb-3 product-price">
+              ${product.price}
+            </h4>
             <p className="product-description">{product.description}</p>
             <button
               className="btn btn-add-to-cart me-2 "
@@ -76,10 +78,7 @@ export default function Product() {
               Go to Cart
             </NavLink>
             <div className="col-md-12">
-              <NavLink
-                to="/products"
-                className="btn btn-shopping-shopping mt-3"
-              >
+              <NavLink to="/products" className="btn product-shopping mt-3">
                 Continue Shopping
               </NavLink>
             </div>

@@ -41,7 +41,7 @@ export default function Products() {
           visible={true}
           height="80"
           width="80"
-          color="black"
+          color="#5f1854"
           radius="9"
           ariaLabel="three-dots-loading"
           wrapperStyle={{}}
