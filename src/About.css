@@ -45,6 +45,10 @@
   .About {
     padding: 40px;
   }
+
+   .About .who-we-are {
+    margin-top: 40px;
+   }
 }
 
 @media (max-width: 950px) {
