@@ -10,7 +10,10 @@
 
 .PaymentSuccessful {
   margin-top: 220px;
+  color:#5f1854;
 }
+
+
 
 @media (max-width: 600px) {
   .PaymentSuccessful h1 {

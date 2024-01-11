@@ -63,31 +63,31 @@ export default function Products() {
           <div className="box">
             <div className="buttons-wrapper">
               <button
-                className="btn btn-outline-dark me-2 mb-3"
+                className="btn btn me-2 mb-3 category-button"
                 onClick={() => setFilter(data)}
               >
                 All
               </button>
               <button
-                className="btn btn-outline-dark me-2 mb-3"
+                className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("men's clothing")}
               >
                 Men's Clothing
               </button>
               <button
-                className="btn btn-outline-dark me-2 mb-3"
+                className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("women's clothing")}
               >
                 Women's Clothing
               </button>
               <button
-                className="btn btn-outline-dark me-2 mb-3"
+                className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("jewelery")}
               >
                 Jewelery
               </button>
               <button
-                className="btn btn-outline-dark me-2 mb-3"
+                className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("electronics")}
               >
                 Electronics
@@ -112,7 +112,7 @@ export default function Products() {
                 </p>
                 <NavLink
                   to={`/products/${product.id}`}
-                  className="btn btn-outline-dark product-id"
+                  className="btn btn product-id buy-now-button"
                 >
                   Buy Now
                 </NavLink>

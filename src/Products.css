@@ -26,17 +26,31 @@
   height: 300px;
 }
 
-.loader-container, .ErrorOccuerd {
+.loader-container,
+.ErrorOccuerd {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50vh;
 }
 
-@media (max-width: 960px) {
-.Products h1 {
-  font-size: 40px;
+.category-button,
+.buy-now-button {
+  border: 1px solid black;
+  color: black;
 }
+
+.category-button:hover,
+.buy-now-button:hover {
+  background-color: #5f1854;
+  border: 1px solid #5f1854;
+  color: white;
+}
+
+@media (max-width: 960px) {
+  .Products h1 {
+    font-size: 40px;
+  }
 
   .product-image {
     height: 200px;
@@ -54,7 +68,7 @@
 }
 
 @media (max-width: 450px) {
-.Products h1 {
-  font-size: 32px;
-}
+  .Products h1 {
+    font-size: 32px;
+  }
 }

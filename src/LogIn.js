@@ -74,7 +74,7 @@ export default function LogIn() {
                 required
               />
               <button
-                className="btn btn-dark mt-3 mb-2 form-control log-in"
+                className="btn btn-log-in mt-3 mb-2 form-control log-in"
                 type="button"
                 onClick={handleSignIn}
               >
@@ -87,7 +87,7 @@ export default function LogIn() {
               <hr />
               <NavLink
                 to="/registration"
-                className="btn btn-outline-dark mb-3 mt-2 create-new-account"
+                className="btn btn-new-account mb-3 mt-2 create-new-account"
               >
                 Create new account
               </NavLink>

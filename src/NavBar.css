@@ -1,3 +1,14 @@
 .NavBar .icon {
   font-size: 15px;
 }
+
+.btn-navbar {
+  color: #5f1854;
+  border: 1px solid #5f1854;
+}
+
+.btn-navbar:hover {
+  background-color: #5f1854;
+  border: 1px solid #5f1854;
+  color: white;
+}

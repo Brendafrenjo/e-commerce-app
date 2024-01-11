@@ -269,7 +269,7 @@ export default function Checkout() {
         </form>
         <button
           type="button"
-          className="btn btn-dark mt-2 place-order"
+          className="btn btn-placeorder mt-2 place-order"
           onClick={handleCheckout}
         >
           Place Order

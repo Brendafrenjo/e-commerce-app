@@ -1,6 +1,7 @@
 h2 {
   font-size: 35px;
   text-align: left;
+  color: #5f1854;
 }
 
 a {
@@ -26,6 +27,18 @@ a {
 .sign-up {
   width: 180px;
   font-weight: 700;
+}
+
+.btn-sign-up {
+  border: 1px solid #5f1854;
+  background-color: #5f1854;
+  color: white;
+}
+
+.btn-sign-up:hover {
+  border: 1px solid black;
+  color: white;
+  background-color: #6b3c64;
 }
 
 @media (min-width: 500px) {

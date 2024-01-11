@@ -6,6 +6,11 @@
   line-height: 1.5;
   padding-top: 240px;
 }
+.hero h1:hover {
+  color: #f5d0ef;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
 
 .primary-button {
   text-transform: uppercase;
@@ -15,11 +20,12 @@
   letter-spacing: 5px;
   line-height: 27px;
   margin-top: 25px;
+  color: #5f1854;
 }
 
 .primary-button:hover {
   color: white;
-  background-color: black;
+  background-color: #5f1854;
 }
 
 .hero img {

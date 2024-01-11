@@ -36,6 +36,28 @@ input[type="radio"] {
   margin-left: -11px;
 }
 
+.apply-button {
+  border: 1px solid #5f1854;
+  background-color: #5f1854;
+  color: white;
+}
+
+.apply-button:hover {
+  border: 1px solid black;
+  color: white;
+  background-color: #6b3c64;
+}
+
+.btn-order {
+   border: 1px solid black;
+}
+
+.btn-order:hover {
+  border: 1px solid #5f1854;
+  background-color: #5f1854;
+  color: white;
+}
+
 .OrderConfirmation {
   max-width: 50%;
   display: block;

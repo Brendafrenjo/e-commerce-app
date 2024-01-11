@@ -150,7 +150,7 @@ export default function Registration() {
       <br />
       <button
         type="button"
-        className="btn btn-dark mb-3 sign-up"
+        className="btn btn-sign-up mb-3 sign-up"
         onClick={handleRegister}
       >
         Sign Up

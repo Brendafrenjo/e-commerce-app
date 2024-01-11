@@ -33,7 +33,7 @@ export default function Product() {
         <Bars
           height="80"
           width="80"
-          color="#black"
+          color="#5f1854"
           ariaLabel="bars-loading"
           wrapperStyle={{}}
           wrapperClass=""
@@ -67,16 +67,19 @@ export default function Product() {
             <h4 className="display-6 fw-bold mb-3">${product.price}</h4>
             <p className="product-description">{product.description}</p>
             <button
-              className="btn btn-outline-dark me-2"
+              className="btn btn-add-to-cart me-2 "
               onClick={() => addProduct(product)}
             >
               Add to Cart
             </button>
-            <NavLink to="/cart" className="btn btn-dark">
+            <NavLink to="/cart" className="btn btn-go-to-cart">
               Go to Cart
             </NavLink>
             <div className="col-md-12">
-              <NavLink to="/products" className="btn btn-outline-dark mt-3">
+              <NavLink
+                to="/products"
+                className="btn btn-shopping-shopping mt-3"
+              >
                 Continue Shopping
               </NavLink>
             </div>

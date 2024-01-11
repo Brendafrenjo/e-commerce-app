@@ -102,6 +102,31 @@
   width: 200px;
 }
 
+.btn-remove,
+.btn-checkout {
+  border: 1px solid #5f1854;
+  background-color: #5f1854;
+  color: white;
+}
+
+.btn-remove:hover,
+.btn-checkout:hover {
+  border: 1px solid black;
+  color: white;
+  background-color: #6b3c64;
+}
+
+.btn-clearcart {
+border: 1px solid black;
+  color: black;
+}
+
+.btn-clearcart:hover {
+  background-color: #5f1854;
+  border: 1px solid #5f1854;
+  color: white;
+}
+
 @media (min-width: 960px) {
   .Cart {
     margin: 130px auto;

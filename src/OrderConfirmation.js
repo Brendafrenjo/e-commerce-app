@@ -122,6 +122,7 @@ export default function OrderConfirmation() {
         </div>
       )}
       <h3 className="mt-3 mb-3">Order Summary</h3>
+      <hr />
       <div className="container">
         {Object.keys(handleCart).map((productId) => {
           const product = handleCart[productId];
@@ -191,7 +192,7 @@ export default function OrderConfirmation() {
       <div className="place-order">
         <span className="subtotal">${Math.round(calculateSubtotal() + 2)}</span>
         <span>
-          <button className="btn btn-outline-dark" onClick={handlePayNow}>
+          <button className="btn btn-order" onClick={handlePayNow}>
             Place Order
           </button>
         </span>

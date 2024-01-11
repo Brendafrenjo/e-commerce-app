@@ -65,14 +65,14 @@ export default function NavBar() {
                 </NavLink>
               </li>
             </ul>
-            <div className="buttons">
-              <NavLink to="/login" className="btn btn-outline-dark me-2">
+            <div className="buttons justify-content-center">
+              <NavLink to="/login" className="btn btn-navbar me-2">
                 <i className="fa-solid fa-right-to-bracket me-2 icon"></i>Login
               </NavLink>
-              <NavLink to="/registration" className="btn btn-outline-dark me-2">
+              <NavLink to="/registration" className="btn btn-navbar me-2">
                 <i className="fa-solid fa-user-plus me-2 icon"></i>Sign Up
               </NavLink>
-              <NavLink to="/cart" className="btn btn-outline-dark">
+              <NavLink to="/cart" className="btn btn-navbar">
                 <i className="fa-solid fa-cart-shopping icon me-2"></i>Cart (
                 {state.length})
               </NavLink>

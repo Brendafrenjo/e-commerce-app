@@ -85,14 +85,14 @@ export default function Cart() {
                       </div>
                       <div className="cart-product-quantity d-flex justify-content-center">
                         <button
-                          className="btn btn-outline-black"
+                          className="btn btn"
                           onClick={() => handleDel(product)}
                         >
                           <i className="fa fa-minus"></i>
                         </button>
                         <div className="count ps-2 pe-2">{product.qty}</div>
                         <button
-                          className="btn btn-outline-black"
+                          className="btn btn"
                           onClick={() => handleAdd(product)}
                         >
                           <i className="fa fa-plus"></i>
@@ -102,7 +102,7 @@ export default function Cart() {
                         ${Math.round(product.qty * product.price)}
                       </p>
                       <button
-                        className="btn btn-dark"
+                        className="btn btn-remove"
                         onClick={() => handleRemove(product.id)}
                       >
                         Remove
@@ -115,7 +115,7 @@ export default function Cart() {
             <div className="col-md-12 ">
               <div className="cart-summary">
                 <button
-                  className="clear-cart btn btn-outline-dark mt-2"
+                  className="clear-cart btn btn-clearcart mt-2"
                   onClick={handleClear}
                 >
                   Clear Cart
@@ -135,7 +135,7 @@ export default function Cart() {
           <div className="check-out-info mt-3 text-end">
             <NavLink
               to="/checkout"
-              className="btn btn-dark mb-2 check-out custom-width"
+              className="btn btn-checkout mb-2 check-out custom-width"
             >
               Check Out
             </NavLink>
