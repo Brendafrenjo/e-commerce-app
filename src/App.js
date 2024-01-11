@@ -27,6 +27,13 @@ function App() {
     location.pathname === "/find-your-account" ||
     location.pathname === "/payment-successful";
 
+  const hideFooter =
+    location.pthname === "/authentication-container" ||
+    location.pathname === "/registration" ||
+    location.pathname === "/login" ||
+    location.pathname === "/find-your-account" ||
+    location.pathname === "/payment-successful";
+
   return (
     <div className="App">
       <ToastContainer />
@@ -49,7 +56,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
-      <Footer />
+      {!hideFooter && <Footer />}
     </div>
   );
 }
