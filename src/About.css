@@ -1,0 +1,19 @@
+.About h2 {
+  text-align: center;
+  margin: 15px 0 20px 0;
+}
+.About h3 {
+    margin: 15px 0;
+    font-size: 22px;
+}
+
+.About h4 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.About .descriptions {
+  margin: 10px;
+  padding: 25px 15px;
+}

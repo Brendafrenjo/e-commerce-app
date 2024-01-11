@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "./About.css";
 
 export default function About() {
+  const [isFluid, setFluid] = useState(window.innerWidth > 700);
+
+  useEffect(() => {
+    function handleResize() {
+      setFluid(window.innerWidth > 700);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="About">
-      <div className="container">
+      <div className={`container${isFluid ? "-fluid" : ""}`}>
         <h2>Who we are and what we do</h2>
         <h4>
-          Redefining
-          Fashion with Timeless Elegance and Innovative Designs.
+          Redefining Fashion with Timeless Elegance and Innovative Designs.
         </h4>
-        <div className="row">
-          <div className="col-lg-4">
+        <div className="row descriptions-content justify-content-center">
+          <div className="col-lg-4 border rounded descriptions">
             <i className="fa-solid fa-people-group"></i>
             <h3>Who We Are</h3>
             <p>
@@ -19,7 +33,7 @@ export default function About() {
               fashion, weaving stories through every design.
             </p>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 border rounded descriptions">
             <i className="fa-solid fa-question"></i>
             <h3>Why Choose Us</h3>
             <p>
@@ -29,7 +43,7 @@ export default function About() {
               us the preferred choice.
             </p>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 border rounded descriptions">
             <i className="fa-solid fa-lightbulb"></i>
             <h3>What We Do</h3>
             <p>
