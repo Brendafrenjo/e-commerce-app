@@ -49,7 +49,7 @@ input[type="radio"] {
 }
 
 .btn-order {
-   border: 1px solid black;
+  border: 1px solid black;
 }
 
 .btn-order:hover {
@@ -83,6 +83,10 @@ input[type="radio"] {
 
 .icon {
   font-size: 11px;
+}
+
+.info-icon {
+  color: #5f1854;
 }
 
 .total-amount,

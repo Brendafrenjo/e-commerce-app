@@ -55,26 +55,26 @@ export default function OrderConfirmation() {
         <hr />
         <div className="pb-2">
           <span>
-            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-user info-icon"></i>
           </span>{" "}
           {shippingInfo?.firstName} {shippingInfo?.lastName}
         </div>
         <div className="pb-2">
           <span>
-            <i className="fa-solid fa-phone"></i>
+            <i className="fa-solid fa-phone info-icon"></i>
           </span>{" "}
           {shippingInfo?.tel}
         </div>
         <div className="pb-2">
           {" "}
           <spna>
-            <i className="fa-solid fa-envelope"></i>
+            <i className="fa-solid fa-envelope info-icon"></i>
           </spna>{" "}
           {shippingInfo?.email}
         </div>
         <div>
           <span>
-            <i className="fa-solid fa-location-dot"></i>
+            <i className="fa-solid fa-location-dot info-icon"></i>
           </span>{" "}
           {shippingInfo?.county}, {shippingInfo?.town}
         </div>
