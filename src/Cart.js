@@ -46,6 +46,7 @@ export default function Cart() {
     return (
       <div className="emptyCart">
         <div className="col-md-5">
+          <i className="fa-solid fa-cart-shopping fa-shake basket"></i>
           <p className="mt-2">Your cart is empty!</p>
           <div className="">
             <NavLink
@@ -65,6 +66,7 @@ export default function Cart() {
     return (
       <div className="displayCartItems">
         <div className="container">
+          <h1 className="mb-4">Shopping Cart</h1>
           <div className="row cart-item">
             {handleCart.map((product) => (
               <div className="col-md-12 cart-item item" key={product.id}>
@@ -155,13 +157,8 @@ export default function Cart() {
 
   return (
     <div className="Cart">
-      <div className="container">
-        <div>
-          <h1>Shopping Cart</h1>
-        </div>
-        <div className=" row justify-content-center mb-5 pb-5">
-          {handleCart.length === 0 ? emptyCart() : displayCartItems()}
-        </div>
+      <div className=" row justify-content-center mb-5 pb-5">
+        {handleCart.length === 0 ? emptyCart() : displayCartItems()}
       </div>
     </div>
   );

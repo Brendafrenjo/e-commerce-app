@@ -50,7 +50,7 @@ export default function About() {
               />
             </div>
             <div className="col-lg-6">
-              <h2 className="who-we-are">Who is Frenjo Fitness</h2>
+              <h2 className="who-we-are">Who is Frenjo Fashions</h2>
               <p className="about-company">
                 Welcome to Frenjo Fashions, where style meets sophistication
                 across a diverse array of categories. Explore our meticulously

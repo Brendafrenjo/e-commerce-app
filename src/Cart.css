@@ -8,14 +8,22 @@
 }
 
 .emptyCart {
+  padding-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 95px;
 }
 
 .emptyCart p {
   color: rgb(87, 87, 87);
   font-size: 18px;
+}
+
+.basket {
+  font-size: 60px;
+  padding: 15px;
+  color: #5f1854;
 }
 
 .displayCartItems {
@@ -117,7 +125,7 @@
 }
 
 .btn-clearcart {
-border: 1px solid black;
+  border: 1px solid black;
   color: black;
 }
 
@@ -172,5 +180,9 @@ border: 1px solid black;
 
   .check-out-info {
     text-align: center !important;
+  }
+
+  .basket {
+  font-size: 45px;
   }
 }
