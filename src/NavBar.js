@@ -66,7 +66,10 @@ export default function NavBar() {
               </li>
             </ul>
             <div className="buttons justify-content-center">
-              <NavLink to="/login" className="btn btn-navbar me-2">
+              <NavLink
+                to="/authentication-container"
+                className="btn btn-navbar me-2"
+              >
                 <i className="fa-solid fa-right-to-bracket me-2 icon"></i>Login
               </NavLink>
               <NavLink to="/registration" className="btn btn-navbar me-2">

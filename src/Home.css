@@ -4,7 +4,7 @@
   font-weight: 800;
   font-size: 100px;
   line-height: 1.5;
-  padding-top: 240px;
+  margin-top: 240px;
 }
 .hero h1:hover {
   color: #f5d0ef;
@@ -21,6 +21,7 @@
   line-height: 27px;
   margin-top: 25px;
   color: #5f1854;
+  transition: all 200ms ease-in;
 }
 
 .primary-button:hover {
@@ -42,7 +43,7 @@
     font-size: 50px;
     line-height: 1;
     font-weight: 700;
-    padding-top: 120px;
+    margin-top: 120px;
   }
 
   .primary-button {
@@ -58,7 +59,7 @@
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 28px;
-    padding-top: 55px;
+    margin: 55px;
   }
 
   .primary-button {
@@ -74,7 +75,7 @@
 @media (max-width: 280px) {
   .hero h1 {
     font-size: 22px;
-    padding-top: 40px;
+    margin-top: 40px;
   }
 
   .primary-button {
