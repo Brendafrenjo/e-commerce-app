@@ -5,6 +5,27 @@
   text-align: end;
 }
 
+.find-us {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.find-us-heading {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.find-us-content {
+  font-size: 15px;
+}
+
+.content {
+  margin-bottom: 10px;
+}
+
 .Footer .icon {
   font-size: 25px;
   color: white;
@@ -13,6 +34,12 @@
 .scroll-to-top-button {
   border: none;
   outline: none;
+}
+
+.footer-information {
+  display: flex;
+  justify-content: space-between;
+  text-align: start;
 }
 
 @media (max-width: 700px) {
