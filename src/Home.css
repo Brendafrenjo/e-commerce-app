@@ -38,51 +38,68 @@
   color: white;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1050px) {
   .hero h1 {
-    font-size: 50px;
-    line-height: 1;
-    font-weight: 700;
-    margin-top: 120px;
+    font-size: 80px;
+    margin-top: 160px;
   }
 
   .primary-button {
-    padding: 12px 24px;
-    font-weight: bold;
-    font-size: 12px;
-    letter-spacing: 3px;
-    line-height: 20px;
-    margin-top: 15px;
+    padding: 16px 32px;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero h1 {
+    font-size: 60px;
+    margin-top: 160px;
+  }
+
+  .primary-button {
+    padding: 16px 32px;
+    font-size: 18px;
+    margin-top: 40px;
   }
 }
 
 @media (max-width: 600px) {
   .hero h1 {
-    font-size: 28px;
-    margin: 55px;
+    font-size: 36px;
+    margin-top: 90px;
   }
 
   .primary-button {
-    padding: 8px 8px;
-    font-weight: bold;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    line-height: 10px;
-    margin-top: 3px;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top: 58px;
+  }
+
+  .primary-button {
+    padding: 6px 12px;
+    font-size: 10px;
   }
 }
 
 @media (max-width: 280px) {
   .hero h1 {
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 40px;
+    margin-bottom: 0;
   }
 
   .primary-button {
-    padding: 6px 6px;
-    font-weight: bold;
+    padding: 3px 6px;
     font-size: 9px;
-    letter-spacing: 1.5px;
-    line-height: 10px;
+    letter-spacing: 3px;
   }
 }

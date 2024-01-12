@@ -8,7 +8,7 @@ export default function Home() {
       <div className="hero">
         <div className="card text-bg-dark">
           <img
-            src="./Images/fashion-background.png"
+            src="./Images/background-picture.png"
             className="card-img img-fluid"
             alt="Background"
           />
