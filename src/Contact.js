@@ -118,6 +118,11 @@ export default function Contact() {
             <i className="fa-brands fa-twitter"></i>
           </a>
         </span>
+        <span className="tiktok">
+          <a href="https://www.tiktok.com/@frenjofashions" target="_blank">
+            <i className="fa-brands fa-tiktok"></i>
+          </a>
+        </span>
       </div>
     </div>
   );
