@@ -79,31 +79,19 @@ export default function Checkout() {
     }));
   };
 
-  const isEmailValid = (email) => {
-    // Simple email validation using a regular expression
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const isPhoneNumberValid = (tel) => {
-    // Simple phone number validation using a regular expression
-    const telRegex = /^(\+\d{1,3})?(\d{10})$/;
-    return telRegex.test(tel);
-  };
-
   // Function to handle the checkout process
   const handleCheckout = () => {
     const { tel, firstName, lastName, email, zipCode, county, town } =
       shippingInfo;
 
     if (
-      isPhoneNumberValid(tel) &&
+      tel &&
       firstName &&
       lastName &&
       town &&
       county &&
       zipCode &&
-      isEmailValid(email) &&
+      email &&
       handleCart.length >= 0
     ) {
       // Dispatch an action to add the product to the Redux store
