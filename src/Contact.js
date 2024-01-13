@@ -180,6 +180,7 @@ export default function Contact() {
               href="https://www.facebook.com/frenjofashions"
               target="_blank"
               title="Facebook"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-facebook"></i>
             </a>
@@ -189,6 +190,7 @@ export default function Contact() {
               href="https://www.instagram.com/frenjofashions"
               target="_blank"
               title="Instagram"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-instagram"></i>
             </a>
@@ -198,6 +200,7 @@ export default function Contact() {
               href="https://twitter.com/frenjofashions"
               target="_blank"
               title="Twitter"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-twitter"></i>
             </a>
@@ -207,6 +210,7 @@ export default function Contact() {
               href="https://www.tiktok.com/@frenjofashions"
               target="_blank"
               title="Tiktok"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-tiktok"></i>
             </a>

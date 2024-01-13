@@ -142,9 +142,15 @@ export default function Registration() {
       <div className="description text-muted text">
         <small>
           By clicking Sign Up, you agree to our{" "}
-          <a href="example">Terms, Privacy Policy </a>
-          and <a href="example">Cookies Policy</a>. You may receive Email
-          notifications from us and can opt out at any time.
+          <a href="example" target="_blank" rel="noreferrer">
+            Terms, Privacy Policy{" "}
+          </a>
+          and{" "}
+          <a href="example" target="_blank" rel="noreferrer">
+            Cookies Policy
+          </a>
+          . You may receive Email notifications from us and can opt out at any
+          time.
         </small>
       </div>
       <br />

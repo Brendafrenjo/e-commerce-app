@@ -181,6 +181,7 @@ export default function OrderConfirmation() {
           target="_blank"
           className="text-end"
           title="Shipping Fee Policy"
+          rel="noreferrer"
         >
           Shipping Fee Policy
         </NavLink>
