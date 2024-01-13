@@ -8,7 +8,6 @@ export default function Contact() {
     lastName: "",
     email: "",
     tel: "",
-    subject: "",
     comments: "",
   });
 
@@ -21,7 +20,7 @@ export default function Contact() {
   }
 
   function handleSubmitComment() {
-    const { firstName, lastName, email, tel, subject, comments } = formData;
+    const { firstName, lastName, email, tel, comments } = formData;
 
     if (firstName && lastName && email && tel && comments) {
       setCommentSubmitted(true);
@@ -146,8 +145,6 @@ export default function Contact() {
                   name="subject"
                   placeholder="Subject:"
                   className="form-control"
-                  value={formData.subject}
-                  onChange={handleChange}
                 />
               </div>
               <div className="col-12">
