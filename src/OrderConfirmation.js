@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import "./OrderConfirmation.css";
 
 export default function OrderConfirmation() {
@@ -9,24 +8,6 @@ export default function OrderConfirmation() {
   const [paymentMethod, setPaymentMethod] = useState("");
 
   const navigate = useNavigate();
-  const products = useSelector((state) => {
-    if (typeof state !== "object" || state === null) {
-      return [];
-    }
-
-    return handleCart
-      .map((cartItem) => {
-        const productId = cartItem.id;
-        const product = state[productId];
-
-        if (product) {
-          return product;
-        }
-
-        return null;
-      })
-      .filter((product) => product !== null);
-  });
 
   const handlePaymentChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -40,8 +21,6 @@ export default function OrderConfirmation() {
 
   const handlePayNow = () => {
     if (paymentMethod) {
-      const shippingFee = 2;
-      const totalAmount = calculateSubtotal() + shippingFee;
       navigate("/payment-successful", "_blank");
     } else {
       alert("Please select a payment method before proceeding.");
