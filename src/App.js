@@ -57,7 +57,7 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/find-your-account" element={<FindYourAccount />} />
         <Route path="/payment-successful" element={<PaymentSuccessful />} />
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
       {!hideFooter && <Footer />}
