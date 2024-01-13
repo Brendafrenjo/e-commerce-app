@@ -49,7 +49,7 @@
 
 @media (max-width: 960px) {
   .Products h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .product-image {
@@ -67,9 +67,15 @@
   }
 }
 
+@media (max-width: 700px) {
+  .Products h1 {
+    font-size: 30px;
+  }
+}
+
 @media (max-width: 450px) {
   .Products h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .product-image {
@@ -82,9 +88,15 @@
   }
 }
 
+@media (max-width: 399px) {
+  .Products h1 {
+    font-size: 22px;
+  }
+}
+
 @media (max-width: 280px) {
   .Products h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .category-button,

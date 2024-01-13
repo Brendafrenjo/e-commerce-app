@@ -17,8 +17,8 @@ export default function Home() {
             <h1 className="card-title">Chic. Timeless. Frenjo's</h1>
             <p className="card-text">
               <NavLink
-                href="/products"
-                className="btn btn-light primary-button"
+                to="/products"
+                className="btn primary-button"
                 title="Shop Now"
               >
                 SHOP NOW
