@@ -31,7 +31,7 @@ export default function Footer() {
             <p>(+254)001002003</p>
           </div>
         </span>
-        <span>
+        <span className="footer-content">
           <span className="footer">Frenjo Fashions</span>
           <button
             className="btn btn scroll-to-top-button"

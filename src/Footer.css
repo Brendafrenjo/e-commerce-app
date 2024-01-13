@@ -42,6 +42,10 @@
   text-align: start;
 }
 
+.footer-content {
+  text-align: end;
+}
+
 @media (max-width: 700px) {
   .Footer {
     text-align: center;
