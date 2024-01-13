@@ -1,11 +1,3 @@
 body {
   text-align: center;
 }
-
-btn-dark {
-  background-color: #5f1854 !important;
-}
-
-btn-outline-dark:hover {
-  background-color: #5f1854 !important;
-}
