@@ -18,6 +18,7 @@ import FindYourAccount from "./FindYourAccount";
 import PaymentSuccessful from "./PaymentSuccessful";
 import Footer from "./Footer";
 import About from "./About";
+import Contact from "./Contact";
 
 function App() {
   const location = useLocation();
@@ -51,6 +52,7 @@ function App() {
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/find-your-account" element={<FindYourAccount />} />
