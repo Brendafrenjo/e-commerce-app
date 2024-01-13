@@ -21,19 +21,39 @@ export default function Contact() {
   }
 
   function handleSubmitComment() {
-    if (
-      formData.firstName &&
-      formData.firstName &&
-      formData.email &&
-      formData.tel &&
-      formData.subject &&
-      formData.comments
-    )
+    const { firstName, lastName, email, tel, subject, comments } = formData;
+
+    if (firstName && lastName && email && tel && comments) {
       setCommentSubmitted(true);
 
-    alert(
-      "Thank you for submitting your comment! We will reach out to you within two business days!"
-    );
+      alert(
+        "Thank you for submitting your comment! We will reach out to you within two business days!"
+      );
+    } else {
+      let errorMessage = "Please provide all the relevant information: \n";
+
+      if (!firstName) {
+        errorMessage = +"-First name\n";
+      }
+
+      if (!lastName) {
+        errorMessage = +"-Last name\n";
+      }
+
+      if (!email) {
+        errorMessage = +"-Valid email address\n";
+      }
+
+      if (!tel) {
+        errorMessage = +"-Valid phone number\n";
+      }
+
+      if (!comments) {
+        errorMessage = +"-Comments\n";
+      }
+
+      alert(errorMessage);
+    }
   }
 
   return (

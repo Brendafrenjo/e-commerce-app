@@ -145,7 +145,7 @@ export default function Checkout() {
       if (!lastName) {
         errorMessage += "-Last name\n";
       }
-
+      
       if (!town) {
         errorMessage += "-Town\n";
       }
