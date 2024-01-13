@@ -24,11 +24,11 @@ export default function FindYourAccount() {
       <div className="buttons">
         <NavLink
           to="/authentication-container"
-          className="btn btn-outline-dark me-2 cancel-button"
+          className="btn btn-cancel me-2 "
         >
           Cancel
         </NavLink>
-        <button className="btn btn-dark search-button">Search</button>
+        <button className="btn btn-clear">Search</button>
       </div>
     </div>
   );

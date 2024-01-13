@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
             <h3 className="find-us-heading">Opening Hours:</h3>
             <p>
-              Mon - start
+              Mon - Sat
               <br />
               8am - 8pm
             </p>
