@@ -71,14 +71,23 @@ export default function Product() {
             <button
               className="btn btn-add-to-cart me-2 "
               onClick={() => addProduct(product)}
+              title="Add to Cart"
             >
               Add to Cart
             </button>
-            <NavLink to="/cart" className="btn btn-go-to-cart">
+            <NavLink
+              to="/cart"
+              className="btn btn-go-to-cart"
+              title="Go to Cart"
+            >
               Go to Cart
             </NavLink>
             <div className="col-md-12">
-              <NavLink to="/products" className="btn product-shopping mt-3">
+              <NavLink
+                to="/products"
+                className="btn product-shopping mt-3"
+                title="Continue Shopping"
+              >
                 Continue Shopping
               </NavLink>
             </div>

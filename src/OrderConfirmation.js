@@ -165,14 +165,23 @@ export default function OrderConfirmation() {
             />
           </div>
           <div className="col-2">
-            <button type="submit" className="btn btn-dark apply-button">
+            <button
+              type="submit"
+              className="btn btn-dark apply-button"
+              title="Apply"
+            >
               Apply
             </button>
           </div>
         </div>
       </div>
       <div className="shipping-fee-info">
-        <NavLink to="example" target="_blank" className="text-end">
+        <NavLink
+          to="example"
+          target="_blank"
+          className="text-end"
+          title="Shipping Fee Policy"
+        >
           Shipping Fee Policy
         </NavLink>
       </div>
@@ -192,7 +201,11 @@ export default function OrderConfirmation() {
       <div className="place-order">
         <span className="subtotal">${Math.round(calculateSubtotal() + 2)}</span>
         <span>
-          <button className="btn btn-order" onClick={handlePayNow}>
+          <button
+            className="btn btn-order"
+            onClick={handlePayNow}
+            title="Place Order"
+          >
             Place Order
           </button>
         </span>

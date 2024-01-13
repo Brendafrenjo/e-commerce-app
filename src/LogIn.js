@@ -77,17 +77,23 @@ export default function LogIn() {
                 className="btn btn-log-in mt-3 mb-2 form-control log-in"
                 type="button"
                 onClick={handleSignIn}
+                title="Log In"
               >
                 Log in
               </button>
               <br />
-              <NavLink to="/find-your-account" className="">
+              <NavLink
+                to="/find-your-account"
+                className=""
+                title="Fogotten Password"
+              >
                 Forgotten Password?
               </NavLink>
               <hr />
               <NavLink
                 to="/registration"
                 className="btn btn-new-account mb-3 mt-2 create-new-account"
+                title="Create a New Account"
               >
                 Create new account
               </NavLink>

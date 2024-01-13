@@ -1,5 +1,5 @@
 import React from "react";
-import Products from "./Products"
+import Products from "./Products";
 import "./Home.css";
 
 export default function Home() {
@@ -15,7 +15,11 @@ export default function Home() {
           <div className="card-img-overlay">
             <h1 className="card-title">Chic. Timeless. Frenjo's</h1>
             <p className="card-text">
-              <a href="/products" className="btn btn-light primary-button">
+              <a
+                href="/products"
+                className="btn btn-light primary-button"
+                title="Shop Now"
+              >
                 SHOP NOW
               </a>
             </p>

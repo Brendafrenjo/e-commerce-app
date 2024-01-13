@@ -35,7 +35,7 @@ export default function Footer() {
           <span className="footer">Frenjo Fashions</span>
           <button
             className="btn btn scroll-to-top-button"
-            onClick={scrollToTop}
+            onClick={scrollToTop} title="Scroll Up"
           >
             <i className="fa-solid fa-chevron-up icon"></i>
           </button>

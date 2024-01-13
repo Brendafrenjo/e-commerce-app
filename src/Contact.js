@@ -163,7 +163,11 @@ export default function Contact() {
                   onChange={handleChange}
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn mt-3 submit-message">
+              <button
+                type="submit"
+                className="btn btn mt-3 submit-message"
+                title="Submit"
+              >
                 Submit
               </button>
             </form>
@@ -172,22 +176,38 @@ export default function Contact() {
         <div className="connect-with-us">
           <h2 className="connect">Connect with Us</h2>
           <span className="facebook">
-            <a href="https://www.facebook.com/frenjofashions" target="_blank">
+            <a
+              href="https://www.facebook.com/frenjofashions"
+              target="_blank"
+              title="Facebook"
+            >
               <i className="fa-brands fa-facebook"></i>
             </a>
           </span>
           <span className="instagram">
-            <a href="https://www.instagram.com/frenjofashions" target="_blank">
+            <a
+              href="https://www.instagram.com/frenjofashions"
+              target="_blank"
+              title="Instagram"
+            >
               <i className="fa-brands fa-instagram"></i>
             </a>
           </span>
           <span className="twitter">
-            <a href="https://twitter.com/frenjofashions" target="_blank">
+            <a
+              href="https://twitter.com/frenjofashions"
+              target="_blank"
+              title="Twitter"
+            >
               <i className="fa-brands fa-twitter"></i>
             </a>
           </span>
           <span className="tiktok">
-            <a href="https://www.tiktok.com/@frenjofashions" target="_blank">
+            <a
+              href="https://www.tiktok.com/@frenjofashions"
+              target="_blank"
+              title="Tiktok"
+            >
               <i className="fa-brands fa-tiktok"></i>
             </a>
           </span>

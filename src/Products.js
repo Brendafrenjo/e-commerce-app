@@ -65,30 +65,35 @@ export default function Products() {
               <button
                 className="btn btn me-2 mb-3 category-button"
                 onClick={() => setFilter(data)}
+                title="All"
               >
                 All
               </button>
               <button
                 className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("men's clothing")}
+                title="Men's Clothing"
               >
                 Men's Clothing
               </button>
               <button
                 className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("women's clothing")}
+                title="Women's Clothing"
               >
                 Women's Clothing
               </button>
               <button
                 className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("jewelery")}
+                title="Jewelery"
               >
                 Jewelery
               </button>
               <button
                 className="btn btn me-2 mb-3 category-button"
                 onClick={() => filterProduct("electronics")}
+                title="Electronics"
               >
                 Electronics
               </button>
@@ -112,7 +117,7 @@ export default function Products() {
                 </p>
                 <NavLink
                   to={`/products/${product.id}`}
-                  className="btn btn product-id buy-now-button"
+                  className="btn btn product-id buy-now-button" title="Buy Now"
                 >
                   Buy Now
                 </NavLink>

@@ -45,22 +45,22 @@ export default function NavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link active" to="/">
+                <NavLink className="nav-link active" to="/" title=" Home">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/products">
+                <NavLink className="nav-link" to="/products" title="Products">
                   Products
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
+                <NavLink className="nav-link" to="/about" title="About">
                   About
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact" title="Contact">
                   Contact
                 </NavLink>
               </li>
@@ -69,13 +69,18 @@ export default function NavBar() {
               <NavLink
                 to="/authentication-container"
                 className="btn btn-navbar me-2"
+                title="Login"
               >
                 <i className="fa-solid fa-right-to-bracket me-2 icon"></i>Login
               </NavLink>
-              <NavLink to="/registration" className="btn btn-navbar me-2">
+              <NavLink
+                to="/registration"
+                className="btn btn-navbar me-2"
+                title="Sign Up"
+              >
                 <i className="fa-solid fa-user-plus me-2 icon"></i>Sign Up
               </NavLink>
-              <NavLink to="/cart" className="btn btn-navbar">
+              <NavLink to="/cart" className="btn btn-navbar" title="Cart">
                 <i className="fa-solid fa-cart-shopping icon me-2"></i>Cart (
                 {state.length})
               </NavLink>

@@ -18,7 +18,11 @@ export default function AuthenticationContainer() {
         {isSignIn ? (
           <>
             Don't have an account?{" "}
-            <span onClick={toggleSignIn} className="isSignIn">
+            <span
+              onClick={toggleSignIn}
+              className="isSignIn"
+              title="Register Here"
+            >
               {" "}
               Register here.
             </span>
@@ -26,7 +30,11 @@ export default function AuthenticationContainer() {
         ) : (
           <>
             Already have an account?{" "}
-            <span onClick={toggleSignIn} className="isSignIn">
+            <span
+              onClick={toggleSignIn}
+              className="isSignIn"
+              title="Log In Here"
+            >
               {" "}
               Log in here.
             </span>

@@ -272,6 +272,7 @@ export default function Checkout() {
           type="button"
           className="btn btn-placeorder mt-2 place-order"
           onClick={handleCheckout}
+          title="Place Order"
         >
           Place Order
         </button>

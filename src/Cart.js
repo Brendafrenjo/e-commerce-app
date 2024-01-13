@@ -52,6 +52,7 @@ export default function Cart() {
             <NavLink
               to="/products"
               className="start-shopping text-decoration-none"
+              title=" Start Shopping"
             >
               <i className="fa-solid fa-arrow-left me-2"></i>
               Start Shopping
@@ -89,6 +90,7 @@ export default function Cart() {
                         <button
                           className="btn btn"
                           onClick={() => handleDel(product)}
+                          title="Delete Item"
                         >
                           <i className="fa fa-minus"></i>
                         </button>
@@ -96,6 +98,7 @@ export default function Cart() {
                         <button
                           className="btn btn"
                           onClick={() => handleAdd(product)}
+                          title="Add Item"
                         >
                           <i className="fa fa-plus"></i>
                         </button>
@@ -106,6 +109,7 @@ export default function Cart() {
                       <button
                         className="btn btn-remove"
                         onClick={() => handleRemove(product.id)}
+                        title="Remove Item"
                       >
                         Remove
                       </button>
@@ -119,6 +123,7 @@ export default function Cart() {
                 <button
                   className="clear-cart btn btn-clearcart mt-2"
                   onClick={handleClear}
+                  title="Clear Cart"
                 >
                   Clear Cart
                 </button>
@@ -138,6 +143,7 @@ export default function Cart() {
             <NavLink
               to="/checkout"
               className="btn btn-checkout mb-2 check-out custom-width"
+              title="Checkout"
             >
               Check Out
             </NavLink>
@@ -145,6 +151,7 @@ export default function Cart() {
             <NavLink
               to="/products"
               className="continue-shopping text-decoration-none"
+              title="Continue Shopping"
             >
               <i className="fa-solid fa-arrow-left me-2"></i>
               Continue Shopping

@@ -12,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 95px;
 }
 
 .emptyCart p {
@@ -135,6 +134,13 @@
   color: white;
 }
 
+@media (max-width: 1050px) {
+  .emptyCart {
+    padding-top: 150px;
+    padding-bottom: 300px;
+  }
+}
+
 @media (min-width: 960px) {
   .Cart {
     margin: 130px auto;
@@ -161,6 +167,11 @@
   .description {
     margin-top: 20px;
   }
+
+   .emptyCart {
+    padding-top: 140px;
+    padding-bottom: 250px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -183,6 +194,10 @@
   }
 
   .basket {
-  font-size: 45px;
+    font-size: 45px;
+  }
+
+   .emptyCart {
+    padding-bottom: 120px;
   }
 }

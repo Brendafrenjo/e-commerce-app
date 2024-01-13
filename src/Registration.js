@@ -152,6 +152,7 @@ export default function Registration() {
         type="button"
         className="btn btn-sign-up mb-3 sign-up"
         onClick={handleRegister}
+        title="Sign Up"
       >
         Sign Up
       </button>
