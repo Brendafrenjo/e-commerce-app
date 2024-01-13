@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addCart } from "./redux/action";
+import { addCart, clearCartAfterOrder } from "./redux/action";
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -110,6 +110,7 @@ export default function Checkout() {
       if (location.pathname !== "/order-confirmation") {
         handleCart.forEach((product) => {
           dispatch(
+            clearCartAfterOrder(),
             addCart({
               id: product.id,
               title: product.title,
@@ -145,7 +146,7 @@ export default function Checkout() {
       if (!lastName) {
         errorMessage += "-Last name\n";
       }
-      
+
       if (!town) {
         errorMessage += "-Town\n";
       }

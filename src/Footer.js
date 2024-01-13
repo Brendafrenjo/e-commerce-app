@@ -28,7 +28,7 @@ export default function Footer() {
               8am - 8pm
             </p>
             <h3 className="find-us-heading">Phone Number:</h3>
-            <p>(+254)001002003</p>
+            <p>(+254)700xxxxxx</p>
           </div>
         </span>
         <span className="footer-content">

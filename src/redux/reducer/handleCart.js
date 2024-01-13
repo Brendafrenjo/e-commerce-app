@@ -99,6 +99,7 @@ function handleCart(state = initialCartState, action, currentPathname) {
         position: "bottom-left",
       });
 
+    case "CLEAR_CART_AFTER_ORDER":
       // Update the local storage with the cleared cart
       localStorage.setItem("cartItems", JSON.stringify([]));
 
@@ -118,7 +119,6 @@ export default handleCart;
 
 export const CartHandlerComponent = () => {
   useLocation();
-  
 
   return null;
 };

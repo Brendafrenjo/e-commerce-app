@@ -37,6 +37,12 @@ export function clearCart() {
   };
 }
 
+export function clearCartAfterOrder() {
+  return {
+    type: "CLEAR_CART_AFTER_ORDER",
+  };
+}
+
 //Initialize the shopping cart from local storage
 export const initializeCartFromLocalStorage = () => {
   const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];

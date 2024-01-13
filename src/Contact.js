@@ -33,23 +33,23 @@ export default function Contact() {
       let errorMessage = "Please provide all the relevant information: \n";
 
       if (!firstName) {
-        errorMessage = +"-First name\n";
+        errorMessage += "-First name\n";
       }
 
       if (!lastName) {
-        errorMessage = +"-Last name\n";
+        errorMessage += "-Last name\n";
       }
 
       if (!email) {
-        errorMessage = +"-Valid email address\n";
+        errorMessage += "-Valid email address\n";
       }
 
       if (!tel) {
-        errorMessage = +"-Valid phone number\n";
+        errorMessage += "-Valid phone number\n";
       }
 
       if (!comments) {
-        errorMessage = +"-Comments\n";
+        errorMessage += "-Comments\n";
       }
 
       alert(errorMessage);
@@ -65,7 +65,7 @@ export default function Contact() {
           <div className="row contact-information">
             <div className="col-md-5 phone">
               <i className="fa-solid fa-phone contact-information-icon"></i>
-              <p>Phone Number</p> (+254)700600500
+              <p>Phone Number</p> (+254)700xxxxxx
             </div>
             <div className="col-md-5 email rounded">
               <i className="fa-solid fa-envelope contact-information-icon"></i>{" "}
