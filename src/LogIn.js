@@ -7,6 +7,7 @@ export default function LogIn() {
   const [signInInfo, setSignInInfo] = useState({
     signInUsername: "",
     signInPassword: "",
+    showPassword: false,
   });
 
   const navigate = useNavigate();
@@ -15,6 +16,10 @@ export default function LogIn() {
     const { name, value } = e.target;
     setSignInInfo({ ...signInInfo, [name]: value });
   }
+
+  const handleTogglePasswordVisibility = () => {
+    setSignInInfo({ ...signInInfo, showPassword: !signInInfo.showPassword });
+  };
 
   const handleSignIn = () => {
     const { signInUsername, signInPassword } = signInInfo;
@@ -64,15 +69,35 @@ export default function LogIn() {
                 required
               />
               <input
-                type="password"
+                type={signInInfo.showPassword ? "text" : "password"}
                 id="signInPassword"
                 name="signInPassword"
                 placeholder="Password"
+                minLength="6"
+                maxLength="12"
                 className="form-control log-in-form mt-2"
                 onChange={handleSignInInfoChange}
                 value={signInInfo.signInPassword}
                 required
               />
+              <span
+                className={`password-toggle-icon ${
+                  signInInfo.showPassword ? "visible" : "hidden"
+                }`}
+                onClick={handleTogglePasswordVisibility}
+              >
+                {signInInfo.showPassword ? (
+                  <>
+                    <i className="fa-regular fa-eye"></i>
+                    <span>Hide password</span>
+                  </>
+                ) : (
+                  <>
+                    <i className="fa-regular fa-eye-slash"></i>{" "}
+                    <span>Show password</span>
+                  </>
+                )}
+              </span>
               <button
                 className="btn btn-log-in mt-3 mb-2 form-control log-in"
                 type="button"
