@@ -98,7 +98,8 @@ function handleCart(state = initialCartState, action, currentPathname) {
       toast.warn("Cart cleared", {
         position: "bottom-left",
       });
-      break;
+      localStorage.setItem("cartItems", JSON.stringify([]));
+      return [];
 
     case "CLEAR_CART_AFTER_ORDER":
       // Update the local storage with the cleared cart
