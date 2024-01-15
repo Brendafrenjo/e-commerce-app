@@ -34,17 +34,27 @@
   height: 50vh;
 }
 
-.category-button,
 .buy-now-button {
   border: 1px solid black;
   color: black;
 }
 
-.category-button:hover,
 .buy-now-button:hover {
   background-color: #5f1854;
   border: 1px solid #5f1854;
   color: white;
+}
+
+.category-button {
+  background-color: #5f1854;
+  border: 1px solid #5f1854;
+  color: white;
+}
+
+.category-button:hover {
+  border: 1px solid #8c2057;
+  color: white;
+  background-color: #8c2057;
 }
 
 @media (max-width: 960px) {
