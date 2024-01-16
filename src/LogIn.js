@@ -75,7 +75,7 @@ export default function LogIn() {
                 placeholder="Password"
                 minLength="6"
                 maxLength="12"
-                className="form-control log-in-form mt-2"
+                className="form-control log-in-form mt-2 mb-2"
                 onChange={handleSignInInfoChange}
                 value={signInInfo.signInPassword}
                 required
@@ -89,7 +89,7 @@ export default function LogIn() {
                 {signInInfo.showPassword ? (
                   <>
                     <i className="fa-regular fa-eye"></i>
-                    <span>Hide password</span>
+                    <span> Hide password</span>
                   </>
                 ) : (
                   <>
