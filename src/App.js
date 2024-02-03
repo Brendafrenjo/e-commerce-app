@@ -19,6 +19,7 @@ import PaymentSuccessful from "./PaymentSuccessful";
 import Footer from "./Footer";
 import About from "./About";
 import Contact from "./Contact";
+import Faqs from "./faqs";
 
 function App() {
   const location = useLocation();
@@ -49,6 +50,7 @@ function App() {
         <Route path="products/:id" element={<Product />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/faqs" element={<Faqs />} />
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/about" element={<About />} />
