@@ -1,3 +1,7 @@
+.links {
+  color: #ffff;
+}
+
 .Footer {
   padding: 30px;
   background-color: #5f1854;
@@ -10,6 +14,7 @@
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 15px;
+  color: #f96d00;
 }
 
 .find-us-heading {
@@ -46,8 +51,46 @@
   text-align: end;
 }
 
+@media (min-width: 900px) {
+  .quick-find {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 999px) {
+  .quick-links {
+    position: relative;
+    left: 110px;
+  }
+}
+
+@media (min-width: 899px) {
+  .quick-links {
+    position: relative;
+    left: 50px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .quick-links {
+    position: relative;
+    left: 220px;
+  }
+}
+
+@media (max-width: 899px) {
+  .quick-links h1 {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 700px) {
   .Footer {
     text-align: center;
+  }
+
+  .find-info {
+    padding-right: 80px;
   }
 }
