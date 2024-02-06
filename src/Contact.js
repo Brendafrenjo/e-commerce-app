@@ -170,7 +170,7 @@ export default function Contact() {
             </form>
           </div>
         </div>
-        <div className="connect-with-us">
+        <div className="connect-with-us" id="contact-us">
           <h2 className="connect">Connect with Us</h2>
           <span className="facebook">
             <a

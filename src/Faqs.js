@@ -3,7 +3,7 @@ import "./Faqs.css";
 
 export default function Faqs() {
   return (
-    <div className="Faqs">
+    <div className="Faqs" id="faqs">
       <div class="container">
         <h1>
           <span class="faq-icon">

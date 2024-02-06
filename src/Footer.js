@@ -10,6 +10,19 @@ export default function Footer() {
     });
   }
 
+  function handleClick() {
+    window.scrollTo(0, 0);
+  }
+
+  function handleContact() {
+    const contact = document.getElementById("contact-us");
+
+    if (contact) {
+      const offsetTop = contact.offsetTop;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+  }
+
   return (
     <div className="Footer">
       <div className="footer-information">
@@ -39,31 +52,51 @@ export default function Footer() {
           </div>
           <div className="quick-links">
             <h1 className="find-us">quick Links</h1>
-            <NavLink to="/return-and-exchange-request" className="links">
+            <NavLink
+              to="/return-and-exchange-request"
+              className="links"
+              onClick={handleClick}
+            >
               RETURN & EXCHANGE REQUEST
             </NavLink>
             <br />
-            <NavLink to="/" className="links">
+            <NavLink to="/contact" className="links" onClick={handleContact}>
               Contact Us!
             </NavLink>
             <br />
-            <NavLink to="/faqs" className="links">
+            <NavLink to="/faqs" className="links" onClick={handleClick}>
               Frequently Asked Questions
             </NavLink>
             <br />
-            <NavLink to="/terms-of-service" className="links">
+            <NavLink
+              to="/terms-of-service"
+              className="links"
+              onClick={handleClick}
+            >
               Terms of Service
             </NavLink>
             <br />
-            <NavLink to="/refund-policy" className="links">
+            <NavLink
+              to="/refund-policy"
+              className="links"
+              onClick={handleClick}
+            >
               Refund Policy
             </NavLink>
             <br />
-            <NavLink to="/terms-and-conditions" className="links">
+            <NavLink
+              to="/terms-and-conditions"
+              className="links"
+              onClick={handleClick}
+            >
               Terms and Conditions
             </NavLink>
             <br />
-            <NavLink to="/checkout-error" className="links">
+            <NavLink
+              to="/checkout-error"
+              className="links"
+              onClick={handleClick}
+            >
               Checkout error
             </NavLink>
           </div>
