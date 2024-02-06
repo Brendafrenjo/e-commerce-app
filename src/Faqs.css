@@ -1,5 +1,5 @@
 .Faqs h1 {
-  color: #f96d00;
+  color: #5f1854;
   font-weight: 700;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -15,12 +15,14 @@
 
 .Faqs p {
   padding-top: 16px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.6;
+  text-align: start;
 }
 
 .Faqs .container {
+  margin: 30px;
   display: block;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -35,12 +37,12 @@
 }
 
 .Faqs .faq {
-  border-bottom: 2px solid #ffff;
+  border-bottom: 2px solid #c4c2c2;
   margin-top: 32px;
   padding-bottom: 16px;
 }
 
-.Faqs .accordion-question {
+.Faqs .question {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -48,12 +50,14 @@
 }
 
 .Faqs .minus-icon {
-  background-color: #ffff;
+  background-color: #5f1854;
+  color: white;
   display: none;
 }
 
 .Faqs .plus-icon {
   background-color: #f96d00;
+  color: #ffff;
 }
 
 .Faqs .plus-icon,
@@ -66,13 +70,13 @@
   color: #141414;
 }
 
-.Faqs .faq .accordion-answer {
+.Faqs .faq .answer {
   height: 0;
   overflow: hidden;
   transition: max-height 1.4s ease;
 }
 
-.Faqs .faq.active .accordion-answer {
+.Faqs .faq.active .answer {
   height: auto;
 }
 
@@ -86,4 +90,76 @@
 
 .Faqs .faq.active .plus-icon {
   display: none;
+}
+
+@media (max-width: 576px) {
+  .Faqs h1 {
+    font-size: 30px;
+  }
+
+  .Faqs p {
+    font-size: 14px;
+  }
+
+  .Faqs h2 {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .Faqs h2::before {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .Faqs .faq-icon {
+  font-size: 30px;
+  position: relative;
+  top: 0;
+}
+
+  .question {
+    display: grid;
+    grid-template-columns: 3fr auto;
+    grid-gap: 35px;
+    align-items: center;
+  }
+
+  .faq-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .faq-icons::after {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  .faq-icon {
+    font-size: 30px;
+    top: 0;
+  }
+
+  .plus-icon,
+  .minus-icon {
+    font-size: 10px;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 280px) {
+  .container {
+    max-width: 250px;
+  }
 }

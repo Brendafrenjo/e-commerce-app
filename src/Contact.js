@@ -199,7 +199,7 @@ export default function Contact() {
               title="Twitter"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-x-twitter"></i>
             </a>
           </span>
           <span className="tiktok">
