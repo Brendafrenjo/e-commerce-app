@@ -48,7 +48,7 @@ export default function Faqs() {
           <span className="faq-icon">
             <i className="fa-solid fa-star"></i>
           </span>
-          <span> FAQ</span>
+          <span> FAQs</span>
         </h1>
         {faqs.map((faq, index) => (
           <div
