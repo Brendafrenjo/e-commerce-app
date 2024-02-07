@@ -21,6 +21,8 @@ export default function Products() {
     }
     getProducts();
 
+    window.scrollTo(0, 0);
+
     return () => {
       componentMounted.current = false;
     };
@@ -117,7 +119,8 @@ export default function Products() {
                 </p>
                 <NavLink
                   to={`/products/${product.id}`}
-                  className="btn btn product-id buy-now-button" title="Buy Now"
+                  className="btn btn product-id buy-now-button"
+                  title="Buy Now"
                 >
                   Buy Now
                 </NavLink>

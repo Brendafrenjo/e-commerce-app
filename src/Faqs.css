@@ -115,29 +115,29 @@
   }
 
   .Faqs .faq-icon {
-  font-size: 30px;
-  position: relative;
-  top: 0;
-}
+    font-size: 30px;
+    position: relative;
+    top: 0;
+  }
 
-  .question {
+  .Faqs .question {
     display: grid;
     grid-template-columns: 3fr auto;
     grid-gap: 35px;
     align-items: center;
   }
 
-  .faq-icons {
+  .Faqs .faq-icons {
     display: flex;
     justify-content: flex-end;
   }
 
-  .faq-icons::after {
+  .Faqs .faq-icons::after {
     margin-right: 0;
     padding-right: 0;
   }
 
-  .container {
+  .Faqs .container {
     padding: 20px;
     margin: 20px;
     max-width: 320px;
@@ -146,20 +146,20 @@
     margin-top: 50px;
   }
 
-  .faq-icon {
+  .Faqs .faq-icon {
     font-size: 30px;
     top: 0;
   }
 
-  .plus-icon,
-  .minus-icon {
+  .Faqs .plus-icon,
+  .Faqs .minus-icon {
     font-size: 10px;
     padding: 7px;
   }
 }
 
 @media (max-width: 280px) {
-  .container {
+  .Faqs .container {
     max-width: 250px;
   }
 }

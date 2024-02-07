@@ -114,6 +114,7 @@ export default function Checkout() {
       setOrderPlaced(true);
 
       // Use navigate to navigate to the order confirmation page
+      window.scrollTo(0, 0);
       navigate("/order-confirmation", {
         state: {
           shippingInfo,

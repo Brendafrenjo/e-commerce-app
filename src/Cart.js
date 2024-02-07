@@ -42,6 +42,10 @@ export default function Cart() {
     }, 0);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   function emptyCart() {
     return (
       <div className="emptyCart">
@@ -144,6 +148,7 @@ export default function Cart() {
               to="/checkout"
               className="btn btn-checkout mb-2 check-out custom-width"
               title="Checkout"
+              onClick={() => window.scrollTo(0, 0)}
             >
               Check Out
             </NavLink>

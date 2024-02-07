@@ -11,6 +11,7 @@ export default function Product() {
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
+
   function addProduct(product) {
     dispatch(addCart(product));
   }
@@ -26,6 +27,10 @@ export default function Product() {
     }
     getProduct();
   }, [id]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function Loading() {
     return (
@@ -79,6 +84,7 @@ export default function Product() {
               to="/cart"
               className="btn btn-go-to-cart"
               title="Go to Cart"
+              onClick={() => window.scrollTo(0, 0)}
             >
               Go to Cart
             </NavLink>
